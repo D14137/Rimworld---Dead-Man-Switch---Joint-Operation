@@ -1,9 +1,30 @@
 # Rimworld Dead Man Switch - Joint Operation
 A mechanoid/weapon expansion mod focused on restoring the ancient joint operation system of ancient combat mechanoid divisions, requiring Dead Man Switch and Dead Man Switch - Ancient Corps as prerequisites.
 
-CE Compatible
+**The CE Patch has been updated.**
 
-Update for 2026-01-15:
+**English translation provided by GPT-5.2. I will refined it recently.**
+
+### Introduction:
+
+This mod introduces multiple classes of heavy mechanoids, sufficient to form a comprehensive joint combat system with both offensive and defensive capabilities, including:  
+- **[Armor]** Cost-effective frontline mechanoids (reusing the sprites of Shortgunners, Hedges, and Bastions)  
+- **[Logistics]** Field repair mechanoids that provide power and health replenishment to conscripted mechanoids  
+- **[Command & Control]** Command mechanoids capable of remotely loading maps and providing support skills  
+- **[Artillery]** Artillery and rocket artillery mechanoids capable of cross-map strikes, along with additional ammunition types (precision-guided munitions, cluster munitions)  
+- **[Shielding]** Shield mechanoids with enhanced high/low-angle protection  
+
+Additionally:  
+- A series of large-caliber weapons for heavy mechanoids has been added.  
+- A high-strength fabric-like material has been introduced for crafting the mod's frontline mechanoids, which can also be used to make clothing.  
+- Two types of line-of-sight-independent orbital targeters (orbital bombardment and orbital junk rain) and their acquisition methods have been added.  
+- Recipes for mass-producing mechanoid construction materials have been included.  
+- Two pieces of equipment that increase mechanitor bandwidth and bandwidth groups have been added.  
+- An early-game, fast-aiming anti-tank rocket launcher has been introduced.  
+- A permanently hostile mechanoid faction—the Rogue Legion—has been added, featuring high-intensity raids but no boss-type units.  
+- The performance of the original Dead Man's Switch mechanoids, as well as some mechanoids from the Ancient Mechanoid Expansion and Synthetic Humanoid Expansion, has been adjusted to make them more effective.  
+
+### Update for 2026-01-15:
 
 1. Added Combat Extended (CE) compatibility:
    - Added CE compatibility for weapons, mechanoids, materials, and apparel.
