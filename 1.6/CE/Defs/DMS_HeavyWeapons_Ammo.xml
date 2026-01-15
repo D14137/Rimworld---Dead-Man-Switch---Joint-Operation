@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingCategoryDef>
+		<defName>Ammo_DMS_AdvancedHeavyWeapons</defName>
+		<label>先进重型武器弹药</label>
+		<parent>AmmoAdvanced</parent>
+		<iconPath>UI/Icons/ThingCategories/CaliberRailgunHighCaliber</iconPath>
+	</ThingCategoryDef>
+
+	<CombatExtended.AmmoCategoryDef>
+		<defName>RailgunHE</defName>
+		<label>磁轨高爆弹</label>
+		<description>磁轨高爆弹与磁轨穿甲弹结构类似，具备弹托和电枢，但将穿甲载荷替换为预制破片载荷，用于杀伤人员和破坏轻型结构。</description>
+	</CombatExtended.AmmoCategoryDef>
+
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_88mmRailGun</defName>
+		<label>88mm电磁射弹</label>
+		<ammoTypes>
+			<Ammo_88mmRailGun_AP>Bullet_88mmRailGun_AP</Ammo_88mmRailGun_AP>
+			<Ammo_88mmRailGun_PF>Bullet_88mmRailGun_PF</Ammo_88mmRailGun_PF>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_30x165mmCharged</defName>
+		<label>30x165mm电荷弹</label>
+		<ammoTypes>
+			<Ammo_30x165mmCharged>Bullet_30x165mmCharged</Ammo_30x165mmCharged>
+			<Ammo_30x165mmCharged_AP>Bullet_30x165mmCharged_AP</Ammo_30x165mmCharged_AP>
+			<Ammo_30x165mmCharged_Ion>Bullet_30x165mmCharged_Ion</Ammo_30x165mmCharged_Ion>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" Name="88mmRailGunBase" ParentName="HeavyAmmoBase" Abstract="True">
+		<tradeTags>
+			<li>CE_AutoEnableTrade_Sellable</li>
+			<li>CE_AutoEnableCrafting_TableMachining</li>
+		</tradeTags>
+		<thingCategories>
+			<li>Ammo_DMS_AdvancedHeavyWeapons</li>
+		</thingCategories>
+		<stackLimit>20</stackLimit>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="88mmRailGunBase">
+		<defName>Ammo_88mmRailGun_AP</defName>
+		<label>88mm电磁射弹</label>
+		<description>基础的动能穿甲弹，中心为贫铀长杆，电枢位于弹体后部，与轨道保持滑动接触以提供加速能力，出膛后自行分离</description>
+		<graphicData>
+			<texPath>Things/Ammo/88mmRailGun</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+			<drawSize>1</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>8</Mass>
+			<Bulk>14</Bulk>
+			<MarketValue>100</MarketValue>
+		</statBases>
+		<ammoClass>RailgunSabot</ammoClass>
+		<detonateProjectile>Bullet_88mmRailGun_AP</detonateProjectile>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="88mmRailGunBase">
+		<defName>Ammo_88mmRailGun_PF</defName>
+		<label>88mm预编程破片弹</label>
+		<description>弹体内嵌预制破片层和爆炸装药，通过可编程电子引信在预定位置引爆</description>
+		<graphicData>
+			<texPath>Things/Ammo/88mmRailGunPF</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+			<drawSize>1</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>12</Mass>
+			<Bulk>22</Bulk>
+			<MarketValue>120</MarketValue>
+		</statBases>
+		<ammoClass>RailgunHE</ammoClass>
+		<detonateProjectile>Bullet_88mmRailGun_PF</detonateProjectile>
+	</ThingDef>
+
+	<ThingDef Name="Base88mmRailGunBullet" ParentName="BaseExplosiveBullet" Abstract="true">
+		<graphicData>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>220</speed>
+			<soundExplode>MortarBomb_Explode</soundExplode>
+			<flyOverhead>false</flyOverhead>
+			<dropsCasings>true</dropsCasings>
+			<casingMoteDefname>Fleck_BigShell</casingMoteDefname>
+			<casingFilthDefname>Filth_CannonAmmoCasings</casingFilthDefname>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base88mmRailGunBullet">
+		<defName>Bullet_88mmRailGun_AP</defName>
+		<label>88mm电磁射弹</label>
+		<graphicData>
+			<texPath>Things/Projectile/88mmRailGun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>380</damageAmountBase>
+			<armorPenetrationSharp>780</armorPenetrationSharp>
+			<armorPenetrationBlunt>120000</armorPenetrationBlunt>
+			<speed>380</speed>
+		</projectile>
+		<comps>
+			<li Class="CombatExtended.CompProperties_ExplosiveCE">
+				<damageAmountBase>90</damageAmountBase>
+				<explosiveDamageType>Bomb</explosiveDamageType>
+				<explosiveRadius>0.5</explosiveRadius>
+				<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="Base88mmRailGunBullet">
+		<defName>Bullet_88mmRailGun_PF</defName>
+		<label>88mm预编程破片弹</label>
+		<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/88mmRailGun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>260</damageAmountBase>
+			<explosionRadius>4</explosionRadius>
+			<soundExplode>MortarBomb_Explode</soundExplode>
+			<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+		</projectile>
+		<comps>
+			<li Class="CombatExtended.CompProperties_Fragments">
+				<fragments>
+					<Fragment_Large>20</Fragment_Large>
+					<Fragment_Small>60</Fragment_Small>
+				</fragments>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_88mmRailGun_AP</defName>
+		<label>制作88mm电磁射弹 x5</label>
+		<description>制作88mm电磁射弹 x5.</description>
+		<jobString>正在制作88mm电磁射弹 x5.</jobString>
+		<workAmount>8600</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>80</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Uranium</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>Uranium</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_88mmRailGun_AP>5</Ammo_88mmRailGun_AP>
+		</products>
+	</RecipeDef>
+
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_88mmRailGun_PF</defName>
+		<label>制作88mm电磁破片弹 x5</label>
+		<description>制作88mm电磁破片弹 x5.</description>
+		<jobString>正在制作88mm电磁破片弹 x5.</jobString>
+		<workAmount>9200</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>80</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSX</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>FSX</li>
+				<li>Chemfuel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_88mmRailGun_PF>5</Ammo_88mmRailGun_PF>
+		</products>
+	</RecipeDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" Name="30x165mmChargedBase" ParentName="SpacerMediumAmmoBase" Abstract="True">
+		<description>先进电荷机炮使用的高穿甲电荷弹.</description>
+		<statBases>
+			<Mass>0.25</Mass>
+			<Bulk>0.28</Bulk>
+		</statBases>
+		<tradeTags>
+			<li>CE_AutoEnableTrade</li>
+			<li>CE_AutoEnableCrafting_FabricationBench</li>
+		</tradeTags>
+		<thingCategories>
+			<li>Ammo_DMS_AdvancedHeavyWeapons</li>
+		</thingCategories>
+		<stackLimit>5000</stackLimit>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="30x165mmChargedBase">
+		<defName>Ammo_30x165mmCharged</defName>
+		<label>30x165mm电荷弹</label>
+		<graphicData>
+			<texPath>Things/Ammo/Charged/LargeRegular</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<ammoClass>Charged</ammoClass>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="30x165mmChargedBase">
+		<defName>Ammo_30x165mmCharged_AP</defName>
+		<label>30x165mm穿甲电荷弹(Conc)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Charged/LargeConc</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<ammoClass>ChargedAP</ammoClass>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="30x165mmChargedBase">
+		<defName>Ammo_30x165mmCharged_Ion</defName>
+		<label>30x165mm电荷弹(Ion)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Charged/LargeIon</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<ammoClass>Ionized</ammoClass>
+		<generateAllowChance>0.5</generateAllowChance>
+	</ThingDef>
+
+	<ThingDef Name="Base30x165mmChargedBullet" ParentName="BaseBulletCE" Abstract="true">
+		<graphicData>
+			<texPath>Things/Projectile/Charged/ChargeShot</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.4,1.4)</drawSize>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bullet</damageDef>
+			<speed>195</speed>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base30x165mmChargedBullet">
+		<defName>Bullet_30x165mmCharged</defName>
+		<label>30x165mm Charged bullet</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>96</damageAmountBase>
+			<secondaryDamage>
+				<li>
+					<def>Bomb_Secondary</def>
+					<amount>34</amount>
+				</li>
+			</secondaryDamage>
+			<armorPenetrationSharp>72</armorPenetrationSharp>
+			<armorPenetrationBlunt>1400</armorPenetrationBlunt>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base30x165mmChargedBullet">
+		<defName>Bullet_30x165mmCharged_AP</defName>
+		<label>30x165mm Charged bullet (Conc.)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>78</damageAmountBase>
+			<secondaryDamage>
+				<li>
+					<def>Bomb_Secondary</def>
+					<amount>14</amount>
+				</li>
+			</secondaryDamage>
+			<armorPenetrationSharp>125</armorPenetrationSharp>
+			<armorPenetrationBlunt>1400</armorPenetrationBlunt>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base30x165mmChargedBullet">
+		<defName>Bullet_30x165mmCharged_Ion</defName>
+		<label>30x165mm Charged bullet (Ion)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>78</damageAmountBase>
+			<secondaryDamage>
+				<li>
+					<def>EMP</def>
+					<amount>50</amount>
+				</li>
+			</secondaryDamage>
+			<armorPenetrationSharp>100</armorPenetrationSharp>
+			<armorPenetrationBlunt>1400</armorPenetrationBlunt>
+			<empShieldBreakChance>1</empShieldBreakChance>
+		</projectile>
+	</ThingDef>
+
+	<RecipeDef ParentName="ChargeAmmoRecipeBase">
+		<defName>MakeAmmo_30x165mmCharged</defName>
+		<label>make 30x165mm Charged cartridge x100</label>
+		<description>Craft 100 30x165mm Charged cartridges.</description>
+		<jobString>Making 30x165mm Charged cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>16</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Plasteel</li>
+				<li>Steel</li>
+				<li>ComponentIndustrial</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_30x165mmCharged>100</Ammo_30x165mmCharged>
+		</products>
+		<workAmount>30200</workAmount>
+	</RecipeDef>
+
+	<RecipeDef ParentName="ChargeAmmoRecipeBase">
+		<defName>MakeAmmo_30x165mmCharged_AP</defName>
+		<label>make 30x165mm Charged (Conc.) cartridge x100</label>
+		<description>Craft 100 30x165mm Charged (Conc.) cartridges.</description>
+		<jobString>Making 30x165mm Charged (Conc.) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>16</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Plasteel</li>
+				<li>Steel</li>
+				<li>ComponentIndustrial</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_30x165mmCharged_AP>100</Ammo_30x165mmCharged_AP>
+		</products>
+		<workAmount>30200</workAmount>
+	</RecipeDef>
+
+	<RecipeDef ParentName="ChargeAmmoRecipeBase">
+		<defName>MakeAmmo_30x165mmCharged_Ion</defName>
+		<label>make 30x165mm Charged (Ion) cartridge x100</label>
+		<description>Craft 100 30x165mm Charged (Ion) cartridges.</description>
+		<jobString>Making 30x165mm Charged (Ion) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Plasteel</li>
+				<li>Steel</li>
+				<li>ComponentIndustrial</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_30x165mmCharged_Ion>100</Ammo_30x165mmCharged_Ion>
+		</products>
+		<workAmount>33600</workAmount>
+	</RecipeDef>
+	
+</Defs>

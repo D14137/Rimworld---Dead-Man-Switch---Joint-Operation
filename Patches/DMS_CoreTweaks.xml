@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- 这一页是必须加入的核心补丁 -->
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>The Dead Man's Switch</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <success>Always</success>
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/RecipeDef[defName="DMS_ResurrectMediumMech"]/fixedIngredientFilter/thingDefs</xpath>
+          <value>
+            <li>Corpse_DMS_Mech_Ranger</li>
+            <li>Corpse_DMS_MechCorps_Sniper</li>
+            <li>Corpse_DMS_MechCorps_Pioneer</li>
+            <li>Corpse_DMS_MechCorps_Arquebusier</li>
+            <li>Corpse_DMS_MechCorps_Molot</li>
+            <li>Corpse_DMS_MechCorps_Ranger</li>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/RecipeDef[defName="DMS_ResurrectHeavyMech"]/fixedIngredientFilter/thingDefs</xpath>
+          <value>
+            <li>Corpse_DMS_Mech_Obsidian</li>
+            <li>Corpse_DMS_Mech_IronCurtain</li>
+            <li>Corpse_DMS_MechCorps_Gorod</li>
+            <li>Corpse_DMS_MechCorps_Obsidian</li>
+            <li>Corpse_DMS_MechCorps_Iguana</li>
+            <li>Corpse_DMS_MechCorps_Tsvetnik</li>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/RecipeDef[defName="DMS_ResurrectUltraheavyMech"]/fixedIngredientFilter/thingDefs</xpath>
+          <value>
+            <li>Corpse_DMS_Mech_Dandelion</li>
+            <li>Corpse_DMS_Mech_AdvancedGeochelone</li>
+            <li>Corpse_DMS_Mech_AdvancedGeocheloneBeta</li>
+            <li>Corpse_DMS_MechCorps_Krepost</li>
+            <li>Corpse_DMS_MechCorps_Tarbosaurus</li>
+            <li>Corpse_DMS_MechCorps_Pravda</li>
+            <li>Corpse_DMS_MechCorps_AdvancedGeochelone</li>
+            <li>Corpse_DMS_Mech_CarettaHeavy</li>
+            <li>Corpse_DMS_Mech_Skullcracker</li>
+          </value>
+        </li>
+
+        
+      </operations>
+    </match>
+  </Operation>
+  
+</Patch>

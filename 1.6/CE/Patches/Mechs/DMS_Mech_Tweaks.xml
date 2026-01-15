@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+<Operation Class="PatchOperationFindMod">
+  <mods>
+    <li>Combat Extended</li>
+  </mods> 
+
+<match Class="PatchOperationSequence">
+  <success>Always</success>
+  <operations>
+    <!-- 鬣蜥 Iguana-->
+    <li Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='DMS_Mech_Iguana']/statBases/ArmorRating_Sharp</xpath>
+      <value>
+          <ArmorRating_Sharp>55</ArmorRating_Sharp>
+      </value>
+    </li>
+    <li Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='DMS_Mech_Iguana']/statBases/ArmorRating_Blunt</xpath>
+      <value>
+          <ArmorRating_Blunt>225</ArmorRating_Blunt>
+      </value>
+    </li>
+
+    <!-- 骇蜥 Tarbosaurus-->
+    <li Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='DMS_Mech_Tarbosaurus']/statBases/ArmorRating_Sharp</xpath>
+      <value>
+          <ArmorRating_Sharp>70</ArmorRating_Sharp>
+      </value>
+    </li>
+    <li Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='DMS_Mech_Tarbosaurus']/statBases/ArmorRating_Blunt</xpath>
+      <value>
+          <ArmorRating_Blunt>250</ArmorRating_Blunt>
+      </value>
+    </li>
+
+      <!-- 棱堡 Krepost-->
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName='DMS_Mech_Krepost']/statBases/ArmorRating_Sharp</xpath>
+        <value>
+            <ArmorRating_Sharp>65</ArmorRating_Sharp>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName='DMS_Mech_Krepost']/statBases/ArmorRating_Blunt</xpath>
+        <value>
+            <ArmorRating_Blunt>240</ArmorRating_Blunt>
+        </value>
+      </li>
+      <!-- 花圃迫击炮 -->
+    <li Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='DMS_Gun_MobileMortar']/verbs/li/range</xpath>
+      <value>
+          <range>400</range>
+      </value>
+    </li>
+    <!-- 正义法槌 -->
+    <li Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='DMS_Gun_JusticeGavel']/verbs/li/range</xpath>
+      <value>
+          <range>120</range>
+      </value>
+    </li>
+
+    </operations>
+  </match>
+</Operation>
+
+</Patch>

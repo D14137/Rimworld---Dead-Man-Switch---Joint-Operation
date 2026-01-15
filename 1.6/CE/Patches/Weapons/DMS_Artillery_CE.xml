@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[defName="DMS_Gun_Sledgehammer"]/modExtensions/li[@Class="PRT_Mod.SelectableAmmo.SelectableAmmoExtension"]</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[defName="DMS_Gun_RocketNest"]/modExtensions/li[@Class="PRT_Mod.SelectableAmmo.SelectableAmmoExtension"]</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[defName="DMS_Gun_Vasilek_C"]/modExtensions/li[@Class="PRT_Mod.SelectableAmmo.SelectableAmmoExtension"]</xpath>
+			</li>
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="DMS_Gun_Sledgehammer"]/comps/li[@Class="PRT_Mod.CrossMapArtillery.CompProperties_CrossMapArtillery"]</xpath>
+				<match Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="DMS_Gun_Sledgehammer"]/comps/li[@Class="PRT_Mod.CrossMapArtillery.CompProperties_CrossMapArtillery"]</xpath>
+				</match>
+			</li>
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="DMS_Gun_RocketNest"]/comps/li[@Class="PRT_Mod.CrossMapArtillery.CompProperties_CrossMapArtillery"]</xpath>
+				<match Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="DMS_Gun_RocketNest"]/comps/li[@Class="PRT_Mod.CrossMapArtillery.CompProperties_CrossMapArtillery"]</xpath>
+				</match>
+			</li>
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/CombatExtended.AmmoSetDef[defName="AmmoSet_155mmHowitzerShell"]/ammoTypes/Ammo_155mmHowitzerShell_SADARM</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/CombatExtended.AmmoSetDef[defName="AmmoSet_155mmHowitzerShell"]/ammoTypes</xpath>
+					<value>
+						<Ammo_155mmHowitzerShell_SADARM>Bullet_155mmHowitzerShell_SADARM</Ammo_155mmHowitzerShell_SADARM>
+					</value>
+				</nomatch>
+			</li>
+
+			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+				<defName>DMS_Gun_Vasilek_C</defName>
+				<statBases>
+					<RangedWeapon_Cooldown>2.8</RangedWeapon_Cooldown>
+					<SightsEfficiency>0.8</SightsEfficiency>
+                    <ShotSpread>2</ShotSpread>
+                    <SwayFactor>2</SwayFactor>
+                    <Bulk>0</Bulk>
+				</statBases>
+				<Properties>
+					<verbClass>PRT_Mod.CE.PRT_Verb_ShootMortarCE</verbClass>
+                    <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+                    <hasStandardCommand>true</hasStandardCommand>
+                    <defaultProjectile>Bullet_81mmMortarShell_HE</defaultProjectile>
+                    <warmupTime>3.0</warmupTime>
+                    <minRange>20</minRange>
+				    <range>200</range>
+                    <burstShotCount>5</burstShotCount>
+					<ticksBetweenBurstShots>15</ticksBetweenBurstShots>
+                    <soundCast>DMS_Shot_VasilekSound</soundCast>
+                    <soundCastTail>GunTail_Heavy</soundCastTail>
+                    <muzzleFlashScale>50</muzzleFlashScale>
+                    <requireLineOfSight>false</requireLineOfSight>
+                    <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+                    <ignorePartialLoSBlocker>True</ignorePartialLoSBlocker>
+					<circularError>0.5</circularError>
+					<indirectFirePenalty>0</indirectFirePenalty>
+                    <targetParams>
+                        <canTargetLocations>true</canTargetLocations>
+                    </targetParams>
+                    <recoilPattern>Mounted</recoilPattern>
+                    <recoilAmount>1.21</recoilAmount>
+				</Properties>
+				<FireModes>
+                    <aiUseBurstMode>true</aiUseBurstMode>
+                    <aiAimMode>AimedShot</aiAimMode>
+                    <aimedBurstShotCount>2</aimedBurstShotCount>
+                </FireModes>
+				<AmmoUser>
+					<magazineSize>5</magazineSize>
+					<reloadTime>12</reloadTime>
+					<ammoSet>AmmoSet_81mmMortarShell</ammoSet>
+				</AmmoUser>
+				<weaponTags>
+                    <li>CE_AI_AOE</li>
+                    <li>NoSwitch</li>
+                </weaponTags>
+			</li>
+			<li Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName="DMS_Gun_Vasilek_C"]/comps</xpath>
+                <value>
+                    <li Class="CombatExtended.CompProperties_Charges">
+                        <chargeSpeeds>
+                            <li>50</li>
+                            <li>60</li>
+                            <li>70</li>
+                            <li>90</li>
+                        </chargeSpeeds>
+                    </li>
+                </value>
+            </li>
+
+			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+				<defName>DMS_Gun_Sledgehammer</defName>
+				<statBases>
+					<AimingAccuracy>2.4</AimingAccuracy>
+          <ShootingAccuracyTurret>1</ShootingAccuracyTurret>
+          <RangedWeapon_Cooldown>3.6</RangedWeapon_Cooldown>
+          <SightsEfficiency>1.2</SightsEfficiency>
+          <ShotSpread>2</ShotSpread>
+          <SwayFactor>2</SwayFactor>
+          <Bulk>0</Bulk>
+				</statBases>
+				<Properties>
+					<verbClass>PRT_Mod.CE.PRT_Verb_ShootMortarCE</verbClass>
+          <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+          <hasStandardCommand>true</hasStandardCommand>
+          <defaultProjectile>Bullet_155mmHowitzerShell_HE</defaultProjectile>
+          <warmupTime>4.0</warmupTime>
+          <minRange>20</minRange>
+          <range>240</range>
+          <burstShotCount>1</burstShotCount>
+          <soundCast>DMS_Shot_JusticeGavel</soundCast>
+          <soundCastTail>GunTail_Heavy</soundCastTail>
+          <muzzleFlashScale>50</muzzleFlashScale>
+          <requireLineOfSight>false</requireLineOfSight>
+          <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+          <ignorePartialLoSBlocker>True</ignorePartialLoSBlocker>
+					<circularError>0.5</circularError>
+					<indirectFirePenalty>0</indirectFirePenalty>
+          <targetParams>
+            <canTargetLocations>true</canTargetLocations>
+          </targetParams>
+          <recoilPattern>Mounted</recoilPattern>
+          <recoilAmount>1.21</recoilAmount>
+				</Properties>
+				<AmmoUser>
+					<magazineSize>1</magazineSize>
+					<reloadTime>6.5</reloadTime>
+					<ammoSet>AmmoSet_155mmHowitzerShell</ammoSet>
+				</AmmoUser>
+			</li>
+			<li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="DMS_Gun_Sledgehammer"]/comps</xpath>
+        <value>
+            <li Class="CombatExtended.CompProperties_Charges">
+                <chargeSpeeds>
+                    <li>50</li>
+                    <li>60</li>
+                    <li>70</li>
+                    <li>90</li>
+                    <li>110</li>
+                    <li>130</li>
+                </chargeSpeeds>
+            </li>
+        </value>
+      </li>
+
+			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+				<defName>DMS_Gun_RocketNest</defName>
+				<statBases>
+					<Bulk>0</Bulk>
+					<SwayFactor>1.50</SwayFactor>
+					<ShotSpread>0.10</ShotSpread>
+					<SightsEfficiency>2.0</SightsEfficiency>
+					<RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+				</statBases>
+				<Properties>
+					<verbClass>PRT_Mod.CE.PRT_Verb_ShootMortarCE</verbClass>
+					<hasStandardCommand>true</hasStandardCommand>
+					<defaultProjectile>Bullet_300mmRocket_HE</defaultProjectile>
+					<warmupTime>2.0</warmupTime>
+					<minRange>20</minRange>
+					<range>240</range>
+					<burstShotCount>12</burstShotCount>
+					<ticksBetweenBurstShots>50</ticksBetweenBurstShots>
+					<soundCast>RocketswarmLauncher_Fire</soundCast>
+					<soundCastTail>GunTail_Heavy</soundCastTail>
+					<muzzleFlashScale>20</muzzleFlashScale>
+					<targetParams>
+						<canTargetLocations>true</canTargetLocations>
+					</targetParams>
+					<recoilAmount>1.49</recoilAmount>
+					<recoilPattern>Mounted</recoilPattern>
+				</Properties>
+				<AmmoUser>
+					<magazineSize>12</magazineSize>
+					<AmmoGenPerMagOverride>6</AmmoGenPerMagOverride>
+					<reloadTime>4</reloadTime>
+					<ammoSet>AmmoSet_300mmRocket</ammoSet>
+				</AmmoUser>
+				<FireModes>
+                    <aiAimMode>AimedShot</aiAimMode>
+                </FireModes>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

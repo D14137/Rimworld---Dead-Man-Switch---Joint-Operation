@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BaseBullet">
+    <defName>PRT_CrossMapVisualShell</defName>
+    <label>跨图炮弹</label>
+    <graphicData>
+      <texPath>Things/Projectile/ShellHighExplosive</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>PRT_Mod.CrossMapArtillery.Projectile_CrossMapVisualShell</thingClass>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <speed>80</speed>
+      <damageAmountBase>0</damageAmountBase>
+      <explosionRadius>0</explosionRadius>
+      <armorPenetrationBase>0</armorPenetrationBase>
+      <flyOverhead>true</flyOverhead>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <soundExplode>Explosion_GiantBomb</soundExplode>
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+    </projectile>
+  </ThingDef>
+</Defs>

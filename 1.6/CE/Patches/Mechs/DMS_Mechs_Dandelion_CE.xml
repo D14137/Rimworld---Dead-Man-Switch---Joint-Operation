@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Dandelion"] </xpath>
+				<value>
+					<inventoryOptions>
+						<skipChance>0</skipChance>
+						<subOptionsChooseOne>
+							<li>
+								<choiceChance>40</choiceChance>
+								<thingDef>Shell_HighExplosive</thingDef>
+								<countRange>
+									<min>20</min>
+									<max>32</max>
+								</countRange>
+							</li>
+							<li>
+								<choiceChance>15</choiceChance>
+								<thingDef>Shell_HighExplosive_HFuzed</thingDef>
+								<countRange>
+									<min>20</min>
+									<max>32</max>
+								</countRange>
+							</li>
+							<li>
+								<choiceChance>30</choiceChance>
+								<thingDef>Shell_Incendiary</thingDef>
+								<countRange>
+									<min>20</min>
+									<max>32</max>
+								</countRange>
+							</li>
+							<li>
+								<choiceChance>10</choiceChance>
+								<thingDef>Shell_EMP</thingDef>
+								<countRange>
+									<min>20</min>
+									<max>32</max>
+								</countRange>
+							</li>
+							<li>
+								<choiceChance>5</choiceChance>
+								<thingDef>Shell_Toxic</thingDef>
+								<countRange>
+									<min>20</min>
+									<max>32</max>
+								</countRange>
+							</li>
+						</subOptionsChooseOne>
+					</inventoryOptions>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Dandelion"]/combatPower</xpath>
+				<value>
+					<combatPower>750</combatPower>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Dandelion"]</xpath>
+				<value>
+					<aiAvoidCover>true</aiAvoidCover>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Dandelion"]</xpath>
+				<value>
+					<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>Quadruped</bodyShape>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Dandelion"]/statBases</xpath>
+				<value>
+					<CarryWeight>250</CarryWeight>
+					<CarryBulk>200</CarryBulk>
+					<AimingAccuracy>1.25</AimingAccuracy>
+					<ShootingAccuracyPawn>1.6</ShootingAccuracyPawn>
+					<MeleeDodgeChance>0.00</MeleeDodgeChance>
+					<MeleeCritChance>0.18</MeleeCritChance>
+					<MeleeParryChance>0.48</MeleeParryChance>
+					<MaxHitPoints>500</MaxHitPoints>
+					<NightVisionEfficiency>0.8</NightVisionEfficiency>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Dandelion"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+					<ArmorRating_Blunt>76</ArmorRating_Blunt>
+				</value>
+			</li>
+
+			<!--only torso-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Dandelion"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+					<ArmorRating_Sharp>40</ArmorRating_Sharp>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Dandelion"]/statBases/ArmorRating_Heat</xpath>
+				<value>
+					<ArmorRating_Heat>0.35</ArmorRating_Heat>
+				</value>
+			</li>
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Dandelion"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="DMS_Mech_Dandelion"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Dandelion"]/comps</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_ArmorDurability">
+						<Durability>4250</Durability>
+						<Regenerates>true</Regenerates>
+						<RegenInterval>1250</RegenInterval>
+						<RegenValue>10</RegenValue>
+						<Repairable>true</Repairable>
+						<RepairIngredients>
+							<Steel>5</Steel>
+							<Tungsteel>5</Tungsteel>
+						</RepairIngredients>
+						<RepairTime>300</RepairTime>
+						<RepairValue>200</RepairValue>
+						<CanOverHeal>true</CanOverHeal>
+						<MaxOverHeal>425</MaxOverHeal>
+						<MinArmorPct>0.8</MinArmorPct>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Mech_Dandelion"]/tools</xpath>
+				<value>
+					<tools Inherit="False">
+						<li Class="CombatExtended.ToolCE">
+							<label>head</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>40</power>
+							<cooldownTime>5.53</cooldownTime>
+							<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+							<armorPenetrationBlunt>43</armorPenetrationBlunt>
+						</li>
+					</tools>
+				</value>
+			</li>
+
+		</operations>
+	</Operation>
+</Patch>

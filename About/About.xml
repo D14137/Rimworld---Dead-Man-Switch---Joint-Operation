@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>The Dead Man's Switch - Joint Operations</name>
+	<author>Proton</author>
+	<packageId>DMS.Proton.JointOperations</packageId>
+	<modVersion IgnoreIfNoMatchingField="true">1.0</modVersion>
+  <supportedVersions>
+		<li>1.6</li>
+  </supportedVersions>
+  <modDependencies>
+		<li>
+			<packageId>Aoba.DeadManSwitch.Core</packageId>
+			<displayName>The Dead Man's Switch</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3121742525</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>Aoba.DeadManSwitch.AncientCorps</packageId>
+			<displayName>The Dead Man's Switch - AncientCorps</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3469398006</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>	
+		<li>Aoba.DeadManSwitch.Core</li>
+		<li>Aoba.DeadManSwitch.AncientCorps</li>
+	</loadAfter>
+	<description>在边缘世界的历史中，战争与冲突是永恒不变的主题。本模组聚焦不同类型机兵的联合作战，致力于还原主战机兵师的信火一体立体攻防作战体系，正义程度相对较高，联合作战体系组建完毕后可以正面对抗闪耀世界毁灭者（但己方损失也会比较大）.
+
+    这一版本暂时不兼容Combat Extended
+
+    本模组添加了多类重型机兵，足以组建一套攻防一体的联合作战体系，包括：
+        - 【装甲】更具性价比的主战机兵（复用了短铳士、篱笆和棱堡的贴图）
+        - 【后勤】可为征召状态下的机兵提供电量和生命值补充的战地抢修机兵
+        - 【指控】可以远程加载地图并提供辅助技能的指控机兵
+        - 【火炮】可以进行跨地图打击的火炮、火箭炮机兵，以及配套的更多弹种（末敏弹、集束弹）
+        - 【防护】拥有更强的高低角护盾的护盾机兵
+    此外，
+        - 添加了一系列供重型机兵使用的大口径武器
+        - 添加了一种高强度布料类材料，用于制造本模组添加的主战机兵，也可以拿来造衣服
+        - 添加了2种无需直线视野的轨道靶向器（轨道轰炸和轨道垃圾雨），以及对应的获取方式
+        - 添加了大批量制造机兵建造材料的配方
+        - 添加了2件提高机械师带宽和带宽组的装备
+        - 添加了1件前期使用的快速瞄准的反坦克火箭筒
+        - 添加了永久敌对的机械体派系——失控军团，袭击强度比较高，但无Boss类角色
+        - 调整了失能机关本体及古代机兵拓展、合成人形拓展里部分机械体的性能，让其更加优秀</description>
+</ModMetaData>

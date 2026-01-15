@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+<!-- 
+  一些对于失能机关及其拓展的微调：
+  
+  将侍女的技能等级从6级调整到10级 
+  将大姐头的技能等级从12级调整到14级
+  提高侍女、大姐头和女士的移动速度
+  提高赫希的移动速度
+  取消赫希的武器限制
+  允许侍女进行搬运和种植工作
+  提高侍女的工作速度
+
+  提高鬣蜥的护甲值，增加固定技能等级
+  提高骇蜥的护甲值，增加固定技能等级
+  提高棱堡的护甲值，增加固定技能等级
+  提高花圃迫击炮的射程
+  提高帝王业火炮的爆炸伤害和爆炸范围
+-->
+
+<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>The Dead Man's Switch - Synthetic</li>
+		</mods>
+
+  <match Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DMS_Mech_Maiden"]/race/mechFixedSkillLevel</xpath>
+          <value>
+            <mechFixedSkillLevel>10</mechFixedSkillLevel>
+          </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DMS_Mech_BigSister"]/race/mechFixedSkillLevel</xpath>
+          <value>
+            <mechFixedSkillLevel>14</mechFixedSkillLevel>
+          </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName='DMS_Mech_Maiden']/statBases/MoveSpeed</xpath>
+        <value>
+            <MoveSpeed>6.5</MoveSpeed>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName='DMS_Mech_BigSister']/statBases/MoveSpeed</xpath>
+        <value>
+            <MoveSpeed>8.5</MoveSpeed>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName='DMS_Mech_Maiden']/race/mechEnabledWorkTypes</xpath>
+        <value>
+            <li>Hauling</li>
+            <li>PlantCutting</li>
+            <li>Growing</li>
+            <!-- <li>Crafting</li> -->
+            <li MayRequire="Dubwise.Rimefeller" >RimefellerCrafting</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName='DMS_Mech_Maiden']/statBases</xpath>
+        <value>
+            <WorkSpeedGlobal>1.2</WorkSpeedGlobal>
+        </value>
+      </li>
+    </operations>
+  </match>
+</Operation>
+
+<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>The Dead Man's Switch - More Synthetics</li>
+		</mods>
+
+  <match Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName='DMS_Mech_Hirsch']/statBases/MoveSpeed</xpath>
+        <value>
+            <MoveSpeed>6.5</MoveSpeed>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName='DMS_Mech_Hirsch']/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/EnableWeaponFilter</xpath>
+        <value>
+            <EnableWeaponFilter>false</EnableWeaponFilter>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName='DMS_Mech_Hirsch']/race/mechEnabledWorkTypes</xpath>
+        <value>
+            <li>Hauling</li>
+            <li>Crafting</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName='DMS_Mech_Hirsch']/race/mechWorkTypePriorities</xpath>
+        <value>
+            <Hauling>3</Hauling>
+            <Crafting>3</Crafting>
+        </value>
+      </li>
+    </operations>
+  </match>
+</Operation>
+
+
+<Operation Class="PatchOperationFindMod">
+  <mods>
+    <li>The Dead Man's Switch</li>
+  </mods>
+
+<match Class="PatchOperationSequence">
+  <success>Always</success>
+  <operations>
+    <!-- 女士 DMS_Mech_Lady-->
+    <li Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName='DMS_Mech_Lady']/statBases/MoveSpeed</xpath>
+      <value>
+          <MoveSpeed>7.5</MoveSpeed>
+      </value>
+    </li>
+    
+    <!-- 鬣蜥 Iguana-->
+    <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName='DMS_Mech_Iguana']/race</xpath>
+        <value>
+            <mechFixedSkillLevel>14</mechFixedSkillLevel>
+        </value>
+    </li>
+    <li Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName='DMS_Mech_Iguana']/race/baseBodySize</xpath>
+      <value>
+          <baseBodySize>2.75</baseBodySize>
+      </value>
+    </li>
+    <li Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName='DMS_Mech_Iguana']/race/baseHealthScale</xpath>
+      <value>
+          <baseHealthScale>3.25</baseHealthScale>
+      </value>
+    </li>
+    <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName='DMS_Mech_Iguana']/statBases</xpath>
+        <value>
+            <IncomingDamageFactor>0.70</IncomingDamageFactor>
+        </value>
+    </li>
+    
+
+    <!-- 骇蜥 Tarbosaurus-->
+    <li Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName='DMS_Mech_Tarbosaurus']/race/baseHealthScale</xpath>
+      <value>
+          <baseHealthScale>6.25</baseHealthScale>
+      </value>
+    </li>
+    <li Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName='DMS_Mech_Tarbosaurus']/race/baseBodySize</xpath>
+      <value>
+          <baseBodySize>3.6</baseBodySize>
+      </value>
+    </li>
+    <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName='DMS_Mech_Tarbosaurus']/race</xpath>
+        <value>
+            <mechFixedSkillLevel>16</mechFixedSkillLevel>
+        </value>
+    </li>
+    <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName='DMS_Mech_Tarbosaurus']/statBases</xpath>
+        <value>
+            <IncomingDamageFactor>0.30</IncomingDamageFactor>
+        </value>
+    </li>
+
+    <!-- 士兵可以使用快反火箭筒 -->
+    <li Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[defName="DMS_Mech_Soldat"]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/UsableWeaponTags</xpath>
+      <value>
+        <li>AAC_WeaponOneUse</li>
+      </value>
+    </li>
+    <li Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[defName="DMS_Mech_Grenadier"]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/UsableWeaponTags</xpath>
+      <value>
+        <li>AAC_WeaponOneUse</li>
+      </value>
+    </li>
+    <li Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[defName="DMS_Mech_Kanonier"]/modExtensions/li[@Class="Fortified.MechWeaponExtension"]/UsableWeaponTags</xpath>
+      <value>
+        <li>AAC_WeaponOneUse</li>
+      </value>
+    </li>
+
+    <!-- 提高Boss掉落物的血量，避免被一炮炸没 -->
+    <li Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName="ComponentFireControl"]/statBases/MaxHitPoints</xpath>
+      <value>
+        <MaxHitPoints>2000</MaxHitPoints>
+      </value>
+    </li>
+    <li Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName="ComponentTransmitter"]/statBases/MaxHitPoints</xpath>
+      <value>
+        <MaxHitPoints>2000</MaxHitPoints>
+      </value>
+    </li>
+    <li Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName="Neurocomputer"]/statBases/MaxHitPoints</xpath>
+      <value>
+        <MaxHitPoints>2000</MaxHitPoints>
+      </value>
+    </li>
+  </operations>
+</match>
+</Operation>
+
+<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>The Dead Man's Switch - AncientCorps</li>
+		</mods>
+
+  <match Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <!-- 棱堡 Krepost-->
+      <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='DMS_Mech_Krepost']/race/mechFixedSkillLevel</xpath>
+          <value>
+              <mechFixedSkillLevel>16</mechFixedSkillLevel>
+          </value>
+      </li>
+      <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName='DMS_Mech_Krepost']/statBases</xpath>
+          <value>
+              <IncomingDamageFactor>0.40</IncomingDamageFactor>
+          </value>
+      </li>
+    <!-- 帝王业火炮 -->
+    <li Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName='DMS_Bullet_EmperoExplosive']/projectile/damageDef</xpath>
+      <value>
+          <damageDef>BombSuper</damageDef>
+      </value>
+    </li>
+    <li Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName='DMS_Bullet_EmperoExplosive']/projectile/explosionRadius</xpath>
+      <value>
+          <explosionRadius>7.9</explosionRadius>
+      </value>
+    </li>
+    <!-- 正义法槌 -->    
+    <li Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName='DMS_Gun_JusticeGavel']/verbs/li/warmupTime</xpath>
+      <value>
+          <warmupTime>4.2</warmupTime>
+      </value>
+    </li>
+    <li Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName='DMS_Bullet_JusticeGavel']/projectile/armorPenetrationBase</xpath>
+      <value>
+          <armorPenetrationBase>1.75</armorPenetrationBase>
+      </value>
+    </li>
+    <li Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName='DMS_Bullet_JusticeGavel']/projectile/damageAmountBase</xpath>
+      <value>
+          <damageAmountBase>325</damageAmountBase>
+      </value>
+    </li>
+    </operations>
+  </match>
+</Operation>
+
+<Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Combat Extended</li>
+    </mods>
+    <nomatch Class="PatchOperationSequence">
+        <success>Always</success>
+        <operations>
+          <!-- 正义法槌 -->  
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName='DMS_Gun_JusticeGavel']/verbs/li/range</xpath>
+            <value>
+                <range>75.9</range>
+            </value>
+          </li>  
+            <!-- 花圃迫击炮 -->
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName='DMS_Gun_MobileMortar']/verbs/li/range</xpath>
+            <value>
+                <range>79.9</range>
+            </value>
+          </li>
+          <!-- 棱堡 Krepost-->
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName='DMS_Mech_Krepost']/statBases/ArmorRating_Sharp</xpath>
+            <value>
+                <ArmorRating_Sharp>1.72</ArmorRating_Sharp>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName='DMS_Mech_Krepost']/statBases/ArmorRating_Blunt</xpath>
+            <value>
+                <ArmorRating_Blunt>1.45</ArmorRating_Blunt>
+            </value>
+          </li>
+
+
+          <!-- 鬣蜥 Iguana-->
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName='DMS_Mech_Iguana']/statBases/ArmorRating_Sharp</xpath>
+            <value>
+                <ArmorRating_Sharp>1.55</ArmorRating_Sharp>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName='DMS_Mech_Iguana']/statBases/ArmorRating_Blunt</xpath>
+            <value>
+                <ArmorRating_Blunt>1.4</ArmorRating_Blunt>
+            </value>
+          </li>
+          <!-- 骇蜥 Tarbosaurus-->
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName='DMS_Mech_Tarbosaurus']/statBases/ArmorRating_Sharp</xpath>
+            <value>
+                <ArmorRating_Sharp>1.9</ArmorRating_Sharp>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName='DMS_Mech_Tarbosaurus']/statBases/ArmorRating_Blunt</xpath>
+            <value>
+                <ArmorRating_Blunt>1.5</ArmorRating_Blunt>
+            </value>
+          </li>
+        </operations>
+    </nomatch>
+</Operation>
+
+</Patch>

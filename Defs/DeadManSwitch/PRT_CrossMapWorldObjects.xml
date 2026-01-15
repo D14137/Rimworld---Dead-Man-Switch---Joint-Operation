@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <WorldObjectDef>
+    <defName>PRT_CrossMapShell</defName>
+    <label>火力投射物</label>
+    <worldObjectClass>PRT_Mod.CrossMapArtillery.WorldObject_CrossMapShell</worldObjectClass>
+    <texture>UI/Overlays/LaunchableMouseAttachment</texture>
+    <useDynamicDrawer>true</useDynamicDrawer>
+    <expandingIcon>true</expandingIcon>
+    <expandingIconTexture>UI/Overlays/LaunchableMouseAttachment</expandingIconTexture>
+  </WorldObjectDef>
+</Defs>

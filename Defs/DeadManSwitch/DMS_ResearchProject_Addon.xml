@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_PRT_HighIntensityConflict</defName>
+    <label>高烈度冲突</label>
+    <description>为应对残酷的高烈度冲突，新一代机兵应运而生。它们强调生存力、火力、机动性与信息化水平的深度融合，旨在复杂电磁环境、高强度对抗及恶劣地形中有效作战，成为合成化部队的核心突击与支援力量，显著提升部队的战场适应性和持续作战能力。\n\n解锁 失能机关：联合作战 模组的内容.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DMS_DeadMansSwitch</li>
+      <li>DMS_EquipmentHeavy</li>
+    </prerequisites>
+    <researchViewX>5.00</researchViewX>
+    <researchViewY>5.00</researchViewY>
+    <discoveredLetterTitle>About: Advanced Parts</discoveredLetterTitle>
+    <discoveredLetterText>Some advanced automatroids require specific parts which are only manufactured in low gravity environments.\n\nColonial High Command turns a blind eye to attracting and destroying their rogue automatroids which will contain the components required for further progression.</discoveredLetterText>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_PRT_ImprovedProductionProcess</defName>
+    <label>改进生产工艺</label>
+    <description>高烈度冲突带来了巨大的机兵和武器损耗，倒逼生产部门改进钨钢、冲压零件等机兵组装材料的生产工艺，大幅提高工业品生产效率.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DMS_PRT_HighIntensityConflict</li>
+    </prerequisites>
+    <researchViewX>6.20</researchViewX>
+    <researchViewY>5.80</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_PRT_AdvancedLiningMaterial</defName>
+    <label>先进内衬材料</label>
+    <description>一种用于装甲防护系统核心层的新材料——碳合芳纶。这种内衬材料在遭受动能或化学能冲击时，能通过独特的变形、断裂或反应机制，高效吸收、分散或削弱来袭弹药的侵彻威力，极大提升车辆、机兵或个人防护装备的生存能力，是应对日益增强战场威胁的关键屏障.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>DMS_PRT_ImprovedProductionProcess</li>
+    </prerequisites>
+    <researchViewX>7.40</researchViewX>
+    <researchViewY>5.80</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_PRT_MilitaryAerospaceTechnology</defName>
+    <label>军事航天技术</label>
+    <description>神奇的逆重科技虽然可以将大量载荷以较小代价送入太空，但终归是我们无法掌握的超凡技术，其稀有性和不可再生性决定了逆重技术对于殖民地可能面临的高烈度冲突而言并非合适的选择\n\n通过运输仓发射器，我们同样可以将轨道航天器送入太空，用大量廉价的侦察、通信卫星在太空织就一张严密的侦察感知网络，为合成化机兵部队的作战提供天基信息支持.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DMS_PRT_HighIntensityConflict</li>
+    </prerequisites>
+    <researchViewX>6.20</researchViewX>
+    <researchViewY>6.60</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_PRT_GlobalPositioningAndStrike</defName>
+    <label>全球定位与打击</label>
+    <description>随着殖民地太空军事技术的进步，我们已可依托高轨多模态侦察卫星群实现全球定位与侦察监视，赋能陆军远程火力实施跨地图打击、为远程战略投送提供情报支撑、构建殖民地反导/反炮兵预警能力.\n\n同时，面对愈发紧张的边缘世界局势，发展天基打击力量，部署具备对地攻击能力的轨道资产，已成为捍卫殖民地军事安全、维护殖民地发展权益、震慑潜在对手派系的重要手段.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DMS_PRT_MilitaryAerospaceTechnology</li>
+    </prerequisites>
+    <researchViewX>7.40</researchViewX>
+    <researchViewY>6.60</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_PRT_HeavyArmoredMech</defName>
+    <label>重装甲机兵</label>
+    <description>随着高烈度冲突的加剧，配备先进复合装甲的重型机兵已成为合成化机兵部队的主要作战力量。此类机兵配备厚度可观的多层复合装甲，可携带威力可观的重型武器，能够在与机械族或其他派系装甲力量的正面冲突中取得优势交换比，在据点攻坚、机动突破、稳固战线方面发挥着无可替代的关键作用，是装甲突击的中坚力量.</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DMS_HeavyAutomatroid</li>
+      <li>DMS_PRT_AdvancedLiningMaterial</li>
+      <li>DMS_PRT_HighIntensityConflict</li>
+    </prerequisites>
+    <researchViewX>9.00</researchViewX>
+    <researchViewY>5.00</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_PRT_ArrayShieldTechnology</defName>
+    <label>阵列护盾技术</label>
+    <description>阵列护盾技术指将护盾核心按特定顺序布设并调频至共振状态，可大幅增强护盾防护性能，且可通过改变护盾波形的相位以实现护盾防御角度调整，被广泛用于担负作战支援任务的第二代护盾机兵.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DMS_PRT_HeavyArmoredMech</li>
+    </prerequisites>
+    <researchViewX>10.00</researchViewX>
+    <researchViewY>4.40</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_PRT_BattlefieldEndurance</defName>
+    <label>战场续航</label>
+    <description>战地抢修力量的强弱是影响合成化机兵部队战斗力发挥的重要因素。搭载维修吊臂、紧急输电系统和大量机兵零件的战地抢修机兵是，其可在二线交战区对受损机兵进行应急维修、弹药补给、供电保障甚至紧急重启处理，可最大限度地减少战斗减员，恢复机兵战斗力，是维持合成化机兵部队持续作战能力和战场韧性的核心保障力量.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DMS_PRT_HeavyArmoredMech</li>
+    </prerequisites>
+    <researchViewX>10.00</researchViewX>
+    <researchViewY>5.60</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_PRT_IntegratedRFManagement</defName>
+    <label>综合射频管理</label>
+    <description>综合射频技术是指通过采用先进的阵列天线、一体化、模块化、可重构的射频传感器系统架构，以及智能化的信号处理和资源管理算法，实现雷达、通信、电子战等多种功能的综合与优化.\n\n搭载综合射频管理系统的机兵可调动高轨侦察卫星群对敌方据点进行侦察监视，也可在战场上实现对我方数据情报的梳理分发和对敌方电子载荷的干扰诱偏，是合成化机兵部队的信息中枢，更是实现信火一体协同的核心要素.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DMS_PRT_HeavyArmoredMech</li>
+      <li>DMS_PRT_GlobalPositioningAndStrike</li>
+    </prerequisites>
+    <researchViewX>10.00</researchViewX>
+    <researchViewY>6.20</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_PRT_IntelligentArtillery</defName>
+    <label>信息化炮兵</label>
+    <description>完成信息化改造的火炮机兵深度融入战场信息网络，能快速响应打击任务，利用数据链提供的目标信息实施高精度、快反应的跨地图或同地图火力打击，可高效清除敌方火力点、装甲目标及集结兵力，为前锋机兵提供及时、可靠的火力掩护与支援\n\n此外、末敏弹、集束弹等新型弹药的应用，使火炮机兵的火力打击能力进一步提升，令炮弹划过天空的呼啸声成为所有胆敢与殖民地为敌者的噩梦.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DMS_PRT_HeavyArmoredMech</li>
+      <li>DMS_PRT_GlobalPositioningAndStrike</li>
+    </prerequisites>
+    <researchViewX>10.00</researchViewX>
+    <researchViewY>6.80</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMS_PRT_AdvancedHeavyWeaponProject</defName>
+    <label>先进重型武器项目</label>
+    <description>为重型机兵开发的下一代主战武器，包含了反装甲专精的电磁炮、可穿透护盾攻击的激光武器以及综合性能优秀的电荷机炮.</description>
+    <baseCost>3000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>DMS_PRT_HeavyArmoredMech</li>
+    </prerequisites>
+    <researchViewX>11.00</researchViewX>
+    <researchViewY>5.00</researchViewY>
+  </ResearchProjectDef>
+</Defs>

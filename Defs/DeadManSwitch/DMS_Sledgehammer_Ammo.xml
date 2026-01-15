@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 重锤155mm榴弹炮弹药 -->
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>DMS_Bullet_Sledgehammer</defName>
+    <label>155mm高爆榴弹</label>
+    <graphicData>
+      <texPath>Things/Projectile/ShellHighExplosive</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <!-- defaultArmorPenetration = 1.3 -->
+      <speed>80</speed>
+      <damageAmountBase>1000</damageAmountBase>
+      <explosionRadius>8.9</explosionRadius>
+      <armorPenetrationBase>0.6</armorPenetrationBase>
+      <explosionChanceToStartFire>0.22</explosionChanceToStartFire>
+      <explosionDamageFalloff>true</explosionDamageFalloff>
+      <explosionEffect>GiantExplosion</explosionEffect>
+      <flyOverhead>true</flyOverhead>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <soundExplode>Explosion_GiantBomb</soundExplode>
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+      <preExplosionSpawnSingleThingDef>Filth_BlastMark</preExplosionSpawnSingleThingDef>
+      <!-- <preExplosionSpawnSingleThingDef>CraterMedium</preExplosionSpawnSingleThingDef> -->
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>DMS_Bullet_Sledgehammer_Shrapnel</defName>
+    <label>155mm榴霰弹</label>
+    <graphicData>
+      <texPath>Things/Projectile/ShellHighExplosive</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>PRT_Mod.Shrapnel.Projectile_ShrapnelCarrier</thingClass>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <speed>80</speed>
+      <damageAmountBase>0</damageAmountBase>
+      <explosionRadius>0</explosionRadius>
+      <armorPenetrationBase>0</armorPenetrationBase>
+      <flyOverhead>true</flyOverhead>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <soundExplode>Explosion_GiantBomb</soundExplode>
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+    </projectile>
+    <modExtensions>
+      <li Class="PRT_Mod.Shrapnel.ShrapnelCarrierExtension">
+        <subProjectileCount>12</subProjectileCount> <!--榴霰弹子弹数量-->
+        <spreadRadius>10</spreadRadius> <!--榴霰弹散布范围-->
+        <splitProgress>0.7</splitProgress> <!--母弹分散进程，在飞过总路程的70%时分散-->
+        <subProjectileDef>DMS_Bullet_Shrapnel_SubProjectile</subProjectileDef>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>DMS_Bullet_Shrapnel_SubProjectile</defName>
+    <label>榴霰弹子弹</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <speed>120</speed>
+      <damageAmountBase>240</damageAmountBase>
+      <explosionRadius>3.9</explosionRadius>
+      <armorPenetrationBase>0.20</armorPenetrationBase>
+      <explosionChanceToStartFire>0.05</explosionChanceToStartFire>
+      <explosionDamageFalloff>true</explosionDamageFalloff>
+      <flyOverhead>true</flyOverhead>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <soundExplode>Explosion_Small</soundExplode>
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>DMS_Bullet_Sledgehammer_SADARM</defName>
+    <label>155mm末敏弹</label>
+    <graphicData>
+      <texPath>Things/Projectile/ShellHighExplosive</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>PRT_Mod.SADARM.Projectile_SADARMCarrier</thingClass>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <speed>80</speed>
+      <damageAmountBase>0</damageAmountBase>
+      <explosionRadius>0</explosionRadius>
+      <armorPenetrationBase>0</armorPenetrationBase>
+      <flyOverhead>true</flyOverhead>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <soundExplode>Explosion_GiantBomb</soundExplode>
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+    </projectile>
+    <modExtensions>
+      <li Class="PRT_Mod.SADARM.SADARMCarrierExtension">
+        <submunitionCount>8</submunitionCount> <!--末敏弹子弹数量-->
+        <spreadRadius>16</spreadRadius> <!--末敏弹索敌范围-->
+        <submunitionSkyfallerDef>DMS_Skyfaller_SADARM_Submunition</submunitionSkyfallerDef>
+        <submunitionProjectileDef>DMS_Bullet_SADARM_Submunition</submunitionProjectileDef>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>DMS_Skyfaller_SADARM_Submunition</defName>
+    <label>末敏子弹</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>PRT_Mod.SADARM.Skyfaller_SADARM_Submunition</thingClass>
+    <skyfaller>
+      <shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+      <shadowSize>0.75</shadowSize>
+    </skyfaller>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>DMS_Bullet_SADARM_Submunition</defName>
+    <label>末敏弹战斗部</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <speed>240</speed>
+      <damageAmountBase>360</damageAmountBase>
+      <explosionRadius>1.9</explosionRadius>
+      <armorPenetrationBase>2.5</armorPenetrationBase>
+      <explosionChanceToStartFire>0.12</explosionChanceToStartFire>
+      <explosionDamageFalloff>true</explosionDamageFalloff>
+      <flyOverhead>true</flyOverhead>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <soundExplode>Explosion_Small</soundExplode>
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+    </projectile>
+  </ThingDef>
+
+</Defs>

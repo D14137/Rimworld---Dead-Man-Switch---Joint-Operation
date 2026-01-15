@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingCategoryDef>
+		<defName>Ammo300mmRocket</defName>
+		<label>300mm远程火箭弹</label>
+		<parent>AmmoRockets</parent>
+	</ThingCategoryDef>
+
+	<CombatExtended.AmmoCategoryDef>
+		<defName>SADARM</defName>
+		<label>末敏弹</label>
+		<description>末敏弹是一种智能弹药，在飞行末段会释放大量智能子弹头，自主探测并攻击目标，是反装甲集群的优秀武器。</description>
+	</CombatExtended.AmmoCategoryDef>
+
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_300mmRocket</defName>
+		<label>300mm远程火箭弹</label>
+		<ammoTypes>
+			<Ammo_300mmRocket_HE>Bullet_300mmRocket_HE</Ammo_300mmRocket_HE>
+			<Ammo_300mmRocket_SADARM>Bullet_300mmRocket_SADARM</Ammo_300mmRocket_SADARM>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" Name="300mmRocketBase" ParentName="HeavyAmmoBase" Abstract="True">
+		<description>用于执行战役打击任务的300mm远程火箭弹</description>
+		<statBases>
+			<MaxHitPoints>400</MaxHitPoints>
+			<MarketValue>400</MarketValue>
+		</statBases>
+		<tradeTags>
+			<li>CE_AutoEnableTrade_Sellable</li>
+			<li>CE_AutoEnableCrafting_TableMachining</li>
+		</tradeTags>
+		<thingCategories>
+			<li>Ammo300mmRocket</li>
+		</thingCategories>
+		<stackLimit>12</stackLimit>
+		<cookOffFlashScale>30</cookOffFlashScale>
+		<cookOffSound>MortarBomb_Explode</cookOffSound>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="300mmRocketBase">
+		<defName>Ammo_300mmRocket_HE</defName>
+		<label>300mm高爆火箭弹(HE)</label>
+		<graphicData>
+			<texPath>Things/Ammo/300mmRocket</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+			<drawSize>1</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>120</Mass>
+			<Bulk>240</Bulk>
+		</statBases>
+		<ammoClass>GrenadeHE</ammoClass>
+		<detonateProjectile>Bullet_300mmRocket_HE</detonateProjectile>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="300mmRocketBase">
+		<defName>Ammo_300mmRocket_SADARM</defName>
+		<label>300mm远程火箭弹(末敏弹)</label>
+		<graphicData>
+			<texPath>Things/Ammo/300mmRocket</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+			<drawSize>1</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>120</Mass>
+			<Bulk>240</Bulk>
+		</statBases>
+		<ammoClass>SADARM</ammoClass>
+		<detonateProjectile>Bullet_300mmRocket_SADARM</detonateProjectile>
+	</ThingDef>
+
+	<ThingDef Name="Base300mmRocket" ParentName="BaseExplosiveBullet" Abstract="true">
+		<graphicData>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>120</speed>
+			<soundExplode>MortarBomb_Explode</soundExplode>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+			<soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+			<soundAmbient>RocketPropelledLoop_Big</soundAmbient>
+			<flyOverhead>true</flyOverhead>
+			<gravityFactor>5</gravityFactor>
+			<shellingProps>
+				<iconPath>Things/WorldObjects/Munitions/Rocket</iconPath>
+				<tilesPerTick>0.6</tilesPerTick>
+				<range>120</range>
+				<damage>0.5</damage>
+			</shellingProps>
+		</projectile>
+		<comps>
+			<li Class="CombatExtended.CompProperties_ProjectileFleck">
+				<FleckDatas>
+					<li>
+						<fleck>Fleck_CERocketFlame</fleck>
+						<emissionsPerTick>7</emissionsPerTick>
+						<flecksPerEmission>3</flecksPerEmission>
+						<scale>1.5</scale>
+						<cutoffTickRange>25~60</cutoffTickRange>
+						<originOffset>0.4</originOffset>
+					</li>
+					<li>
+						<fleck>Fleck_CERocketSmokeTrail</fleck>
+						<emissionsPerTick>1</emissionsPerTick>
+						<rotation>0~360</rotation>
+						<scale>3</scale>
+						<flecksPerEmission>1</flecksPerEmission>
+					</li>
+					<li>
+						<fleck>Fleck_CERocketSmoke</fleck>
+						<emissionsPerTick>2</emissionsPerTick>
+						<rotation>0~360</rotation>
+						<scale>2</scale>
+						<flecksPerEmission>1</flecksPerEmission>
+						<cutoffTickRange>25~60</cutoffTickRange>
+					</li>
+				</FleckDatas>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="Base300mmRocket">
+		<defName>Bullet_300mmRocket_HE</defName>
+		<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+		<label>300mm高爆火箭弹(HE)</label>
+		<graphicData>
+			<texPath>Things/DMS/Rocket_Shot</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>640</damageAmountBase>
+			<explosionRadius>8.9</explosionRadius>
+			<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+			<preExplosionSpawnSingleThingDef>Filth_BlastMark</preExplosionSpawnSingleThingDef>
+		</projectile>
+		<comps>
+			<li Class="CombatExtended.CompProperties_Fragments">
+				<fragments>
+					<Fragment_Large>80</Fragment_Large>
+					<Fragment_Small>114</Fragment_Small>
+				</fragments>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="Base300mmRocket">
+		<defName>Bullet_300mmRocket_SADARM</defName>
+		<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+		<label>300mm远程火箭弹(末敏弹)</label>
+		<graphicData>
+			<texPath>Things/DMS/Rocket_Shot</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Smoke</damageDef>
+			<damageAmountBase>0</damageAmountBase>
+			<explosionRadius>3.5</explosionRadius>
+			<soundExplode>MortarBomb_Explode</soundExplode>
+			<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+			<aimHeightOffset>12</aimHeightOffset>
+			<shellingProps>
+				<damage>0.33</damage>
+			</shellingProps>
+		</projectile>
+		<modExtensions>
+			<li Class="PRT_Mod.SADARM.SADARMCarrierExtension">
+				<submunitionCount>24</submunitionCount>
+				<spreadRadius>24</spreadRadius>
+				<submunitionSkyfallerDef>DMS_Skyfaller_SADARM_Submunition</submunitionSkyfallerDef>
+				<submunitionProjectileDef>DMS_Bullet_SADARM_Submunition_CE</submunitionProjectileDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_300mmRocket_HE</defName>
+		<label>制作300mm高爆火箭弹(HE) x5</label>
+		<description>制作5发300mm高爆火箭弹(HE)。</description>
+		<jobString>制作5发300mm高爆火箭弹(HE)。</jobString>
+		<workAmount>62000</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>500</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSX</li>
+					</thingDefs>
+				</filter>
+				<count>30</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>60</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>FSX</li>
+				<li>Chemfuel</li>
+				<li>ComponentIndustrial</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_300mmRocket_HE>5</Ammo_300mmRocket_HE>
+		</products>
+		<skillRequirements>
+			<Crafting>4</Crafting>
+		</skillRequirements>
+	</RecipeDef>
+
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_300mmRocket_SADARM</defName>
+		<label>制作300mm远程火箭弹(末敏弹) x5</label>
+		<description>制作5发300mm远程火箭弹(末敏弹)。</description>
+		<jobString>制作5发300mm远程火箭弹(末敏弹)。</jobString>
+		<workAmount>102000</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>520</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSX</li>
+					</thingDefs>
+				</filter>
+				<count>25</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>60</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>6</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentSpacer</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>FSX</li>
+				<li>Chemfuel</li>
+				<li>ComponentIndustrial</li>
+				<li>ComponentSpacer</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_300mmRocket_SADARM>5</Ammo_300mmRocket_SADARM>
+		</products>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+		</skillRequirements>
+	</RecipeDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="155mmHowitzerShellBase">
+		<defName>Ammo_155mmHowitzerShell_SADARM</defName>
+		<label>155mm 榴弹炮弹 (末敏弹)</label>
+		<graphicData>
+			<texPath>Things/Ammo/SADARM</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<ammoClass>SADARM</ammoClass>
+		<detonateProjectile>Bullet_155mmHowitzerShell_SADARM</detonateProjectile>
+	</ThingDef>
+
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_155mmHowitzerShell_SADARM</defName>
+		<label>制作155mm 榴弹炮弹 (末敏弹) x5</label>
+		<description>制作5发155mm榴弹炮末敏弹。</description>
+		<jobString>制作5发155mm榴弹炮末敏弹。</jobString>
+		<workAmount>68000</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>260</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSX</li>
+					</thingDefs>
+				</filter>
+				<count>15</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>4</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentSpacer</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>FSX</li>
+				<li>Chemfuel</li>
+				<li>ComponentIndustrial</li>
+				<li>ComponentSpacer</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_155mmHowitzerShell_SADARM>5</Ammo_155mmHowitzerShell_SADARM>
+		</products>
+		<skillRequirements>
+			<Crafting>4</Crafting>
+		</skillRequirements>
+	</RecipeDef>
+
+	<ThingDef ParentName="Base155mmHowitzerShell">
+		<defName>Bullet_155mmHowitzerShell_SADARM</defName>
+		<label>155mm 榴弹炮弹 (末敏弹)</label>
+		<graphicData>
+			<texPath>Things/Projectile/SADARM</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Smoke</damageDef>
+			<damageAmountBase>0</damageAmountBase>
+			<explosionRadius>3.5</explosionRadius>
+			<soundExplode>MortarBomb_Explode</soundExplode>
+			<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+			<aimHeightOffset>12</aimHeightOffset>
+			<shellingProps>
+				<damage>0.33</damage>
+			</shellingProps>
+		</projectile>
+		<modExtensions>
+			<li Class="PRT_Mod.SADARM.SADARMCarrierExtension">
+				<submunitionCount>8</submunitionCount> <!--末敏弹子弹数量-->
+				<spreadRadius>16</spreadRadius> <!--末敏弹索敌范围-->
+				<submunitionSkyfallerDef>DMS_Skyfaller_SADARM_Submunition</submunitionSkyfallerDef>
+				<submunitionProjectileDef>DMS_Bullet_SADARM_Submunition_CE</submunitionProjectileDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseExplosiveBullet">
+		<defName>DMS_Bullet_SADARM_Submunition_CE</defName>
+		<label>末敏弹战斗部</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<thingClass>Projectile_Explosive</thingClass>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>280</damageAmountBase>
+			<soundExplode>MortarBomb_Explode</soundExplode>
+			<armorPenetrationSharp>640</armorPenetrationSharp>
+			<armorPenetrationBlunt>65</armorPenetrationBlunt>
+		</projectile>
+		<comps>
+			<li Class="CombatExtended.CompProperties_ExplosiveCE">
+				<damageAmountBase>120</damageAmountBase>
+				<explosiveDamageType>Bomb</explosiveDamageType>
+				<explosiveRadius>1.2</explosiveRadius>
+				<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+			</li>
+		</comps>
+  </ThingDef>
+</Defs>

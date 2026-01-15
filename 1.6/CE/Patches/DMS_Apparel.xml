@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<!-- 把轨道轰炸靶向器的爆炸换为CE的爆炸 -->
+			 <!-- 没有破片的原因是skyfaller在爆炸时只读取projectile内容，而projectile里没有破片效果，破片是在附属的comp里实现的 -->
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="PRT_OrbitalTargeter_BombardmentNoLOS"]/modExtensions/li[@Class="PRT_Mod.OrbitalBombardment.PRTOrbitalBombardmentExtension"]/projectileDef</xpath>
+				<match Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="PRT_OrbitalTargeter_BombardmentNoLOS"]/modExtensions/li[@Class="PRT_Mod.OrbitalBombardment.PRTOrbitalBombardmentExtension"]/projectileDef</xpath>
+					<value>
+						<projectileDef>Bullet_155mmHowitzerShell_HE</projectileDef>
+					</value>
+				</match>
+			</li>
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="PRT_OrbitalTargeter_BombardmentNoLOS"]/modExtensions/li[@Class="PRT_Mod.OrbitalBombardment.PRTOrbitalBombardmentExtension"]/intervalTicks</xpath>
+				<match Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="PRT_OrbitalTargeter_BombardmentNoLOS"]/modExtensions/li[@Class="PRT_Mod.OrbitalBombardment.PRTOrbitalBombardmentExtension"]/intervalTicks</xpath>
+					<value>
+						<intervalTicks>60</intervalTicks>
+					</value>
+				</match>
+			</li>
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="PRT_OrbitalTargeter_BombardmentNoLOS"]/modExtensions/li[@Class="PRT_Mod.OrbitalBombardment.PRTOrbitalBombardmentExtension"]/spreadRadius</xpath>
+				<match Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="PRT_OrbitalTargeter_BombardmentNoLOS"]/modExtensions/li[@Class="PRT_Mod.OrbitalBombardment.PRTOrbitalBombardmentExtension"]/spreadRadius</xpath>
+					<value>
+						<spreadRadius>15</spreadRadius>
+					</value>
+				</match>
+			</li>
+
+			<!--天链战术头显-->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="AAC_Apparel_CelestialLink"]/statBases</xpath>
+				<value>
+					<Bulk>5</Bulk>
+					<WornBulk>2</WornBulk>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="AAC_Apparel_CelestialLink"]/apparel/layers</xpath>
+				<value>
+					<li>StrappedHead</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[defName="AAC_Apparel_CelestialLink"]</xpath>
+				<value>
+					<li Class="CombatExtended.ApparelDefExtension">
+						<isRadioPack>true</isRadioPack>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

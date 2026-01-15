@@ -1,0 +1,2289 @@
+<Defs>
+
+  <!-- 磐卫 Bastion-->
+  <ThingDef ParentName="BaseAutomatroidRace" Name="BaseAdvancedGeocheloneRace" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Mech_AdvancedGeochelone</defName>
+    <label>磐卫</label>
+    <description>太约代号“盾卫” (Bastion - 堡垒/屏障)。这款履带式伴随护盾发生车是机械化矛头的忠实守护者，凭借其坚固的车体和澎湃的护盾投射能力驰骋于前沿战场。它被设计用于与主战装甲集群同步推进，在行进间瞬间撑开抵御各种定向能或动能火力的能量屏障，为攻击梯队提供至关重要的动态掩体和喘息窗口。在激烈的正面突击和城市攻坚中，它的身影往往是攻势能够持续展开的关键节点，强大的持续作战能力与战场韧性使其深受一线管制指挥官倚重。</description>
+    <statBases>
+      <MoveSpeed>3.8</MoveSpeed>
+      <ArmorRating_Sharp>1.8</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>1.5</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.5</ArmorRating_Heat>  <!--能抗-->
+      <IncomingDamageFactor>0.75</IncomingDamageFactor><!--承伤乘数-->
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">6</BandwidthCost>
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge>
+    </statBases>
+    <race>
+      <body>DMS_Caterpillar</body>
+      <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
+      <baseBodySize>3</baseBodySize>
+      <baseHealthScale>5</baseHealthScale>
+      <mechWeightClass>UltraHeavy</mechWeightClass>
+      <detritusLeavings>
+        <li>
+          <def>DMS_ChunkSlag</def>
+          <texOverrideIndex>6</texOverrideIndex>
+          <spawnChance>0.4</spawnChance>
+        </li>
+        <li>
+          <def>DMS_ChunkSlag</def>
+          <texOverrideIndex>1</texOverrideIndex>
+          <spawnChance>0.4</spawnChance>
+        </li>
+      </detritusLeavings>
+    </race>
+    <comps>
+      <li Class="CompProperties_ProjectileInterceptor">
+        <radius>12</radius>
+        <interceptGroundProjectiles>true</interceptGroundProjectiles>
+        <color>(0.8, 0.8, 1)</color>
+        <reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
+        <activeSound>BulletShield_Ambience</activeSound>
+        <hitPoints>6000</hitPoints>
+        <hitPointsRestoreInstantlyAfterCharge>true</hitPointsRestoreInstantlyAfterCharge>
+        <chargeDurationTicks>600</chargeDurationTicks>
+        <rechargeHitPointsIntervalTicks>2</rechargeHitPointsIntervalTicks> <!--护盾充能1点所需时间:2/60s-->
+        <minIdleAlpha>0.5</minIdleAlpha>
+        <drawWithNoSelection>True</drawWithNoSelection>
+        <disarmedByEmpForTicks>600</disarmedByEmpForTicks>   <!--被EMP瘫痪后重启所需时间:10s-->
+        <gizmoTipKey>ProjectileInterceptorTip</gizmoTipKey>
+      </li>
+    </comps>
+    <tools Inherit="False">
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>5.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <butcherProducts>
+      <DMS_ChunkSlag>5</DMS_ChunkSlag>
+      <Tungsteel>60</Tungsteel>
+      <Steel>24</Steel>
+    </butcherProducts>
+    <damageMultipliers>
+      <li>
+        <damageDef>Blunt</damageDef>
+        <multiplier>0.75</multiplier>
+      </li>
+      <li>
+        <damageDef>Stab</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+    </damageMultipliers>
+    <killedLeavingsPlayerHostile>
+      <Neurocomputer>1</Neurocomputer>
+    </killedLeavingsPlayerHostile>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="BaseAutomatroidKind" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Mech_AdvancedGeochelone</defName>
+    <race>DMS_Mech_AdvancedGeochelone</race>
+    <label>磐卫</label>
+    <combatPower>800</combatPower>
+    <maxPerGroup>2</maxPerGroup>
+    <destroyGearOnDrop>true</destroyGearOnDrop>
+    <isBoss>true</isBoss>
+    <abilities>
+      <li>DMS_SmokeLauncher</li>
+      <li>DMS_RepairMode</li>
+    </abilities>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/DMS/Bastion</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>5.5</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/DMS/Bastion</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>5.5</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags />
+  </PawnKindDef>
+
+  <!--DMS_Mech_AdvancedGeochelone-->
+  <RecipeDef ParentName="DMS_SuperHeavyMechanoidRecipe" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Make_AdvancedGeochelone</defName>
+    <label>组装磐卫</label>
+    <description>组装磐卫</description>
+    <products>
+      <DMS_Mech_AdvancedGeochelone>1</DMS_Mech_AdvancedGeochelone>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef MayRequire="ludeon.rimworld.royalty">BroadshieldCore</ThingDef>
+      <ThingDef>Neurocomputer</ThingDef>
+      <ThingDef>DMS_Mech_AdvancedGeochelone</ThingDef>
+    </descriptionHyperlinks>
+    <researchPrerequisite Inherit="False">DMS_PRT_ArrayShieldTechnology</researchPrerequisite>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>500</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>240</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>120</count>
+      </li>
+      <li MayRequire="ludeon.rimworld.royalty"> 
+        <filter>
+          <thingDefs>
+            <li>BroadshieldCore</li>
+          </thingDefs>
+        </filter>
+        <count>6</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>15</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>15</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neurocomputer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <!-- 伞卫 SkyWard-->
+  <ThingDef ParentName="BaseAutomatroidRace" Name="BaseAdvancedGeocheloneBetaRace" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Mech_AdvancedGeocheloneBeta</defName>
+    <label>伞卫</label>
+    <description>太约代号“天穹守卫” (Sky Ward)。这款履带式伴随防空护盾系统是装甲矛头的“无形保护伞”。它能同步伴随装甲机动部队，快速展开强大的高角能量场护盾，编织一张足以有效迟滞或击毁来袭空袭兵刃（导弹、火箭弹、精确滑翔弹及部分低空无人机）的动态防御网。其存在的意义并非全空域防御，而在于为珍贵的进攻核心提供关键性的防空缓冲区，将敌方曲射火力和远程打击的威胁大幅削减，保障攻击力量得以专注于前出打击与机动突破。在高强度的多维立体威胁下，它成为了维系装甲突击集群生存能力不可替代的存在。</description>
+    <statBases>
+      <MoveSpeed>3.8</MoveSpeed>
+      <ArmorRating_Sharp>1.8</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>1.5</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.5</ArmorRating_Heat>  <!--能抗-->
+      <IncomingDamageFactor>0.75</IncomingDamageFactor><!--承伤乘数-->
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">6</BandwidthCost>
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge>
+    </statBases>
+    <race>
+      <body>DMS_Caterpillar</body>
+      <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
+      <baseBodySize>3</baseBodySize>
+      <baseHealthScale>5</baseHealthScale>
+      <mechWeightClass>UltraHeavy</mechWeightClass>
+      <detritusLeavings>
+        <li>
+          <def>DMS_ChunkSlag</def>
+          <texOverrideIndex>6</texOverrideIndex>
+          <spawnChance>0.4</spawnChance>
+        </li>
+        <li>
+          <def>DMS_ChunkSlag</def>
+          <texOverrideIndex>1</texOverrideIndex>
+          <spawnChance>0.4</spawnChance>
+        </li>
+      </detritusLeavings>
+    </race>
+    <comps>
+      <li Class="CompProperties_ProjectileInterceptor">
+          <radius>24</radius>
+          <interceptGroundProjectiles>false</interceptGroundProjectiles>
+		      <interceptAirProjectiles>true</interceptAirProjectiles>
+          <color>(0.6, 1, 1)</color>
+          <reactivateEffect>MortarShieldGenerator_Reactivate</reactivateEffect>
+          <activeSound>BulletShield_Ambience</activeSound>
+          <!-- <hitPoints>300</hitPoints>
+          <hitPointsRestoreInstantlyAfterCharge>true</hitPointsRestoreInstantlyAfterCharge>
+          <chargeDurationTicks>0</chargeDurationTicks>
+          <rechargeHitPointsIntervalTicks>120</rechargeHitPointsIntervalTicks>
+          <minIdleAlpha>0.2</minIdleAlpha>  -->
+          <drawWithNoSelection>True</drawWithNoSelection>
+          <disarmedByEmpForTicks>600</disarmedByEmpForTicks>
+          <gizmoTipKey>ProjectileInterceptorTip</gizmoTipKey>
+      </li>
+    </comps>
+    <tools Inherit="False">
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>5.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <butcherProducts>
+      <DMS_ChunkSlag>5</DMS_ChunkSlag>
+      <Tungsteel>60</Tungsteel>
+      <Steel>24</Steel>
+    </butcherProducts>
+    <damageMultipliers>
+      <li>
+        <damageDef>Blunt</damageDef>
+        <multiplier>0.75</multiplier>
+      </li>
+      <li>
+        <damageDef>Stab</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+    </damageMultipliers>
+    <killedLeavingsPlayerHostile>
+      <Neurocomputer>1</Neurocomputer>
+    </killedLeavingsPlayerHostile>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="BaseAutomatroidKind" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Mech_AdvancedGeocheloneBeta</defName>
+    <race>DMS_Mech_AdvancedGeocheloneBeta</race>
+    <label>伞卫</label>
+    <combatPower>800</combatPower>
+    <maxPerGroup>2</maxPerGroup>
+    <destroyGearOnDrop>true</destroyGearOnDrop>
+    <isBoss>true</isBoss>
+    <abilities>
+      <li>DMS_SmokeLauncher</li>
+      <li>DMS_RepairMode</li>
+    </abilities>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/DMS/SkyWard</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>5.5</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/DMS/SkyWard</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>5.5</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags />
+  </PawnKindDef>
+
+  <!--DMS_Mech_AdvancedGeocheloneBeta-->
+  <RecipeDef ParentName="DMS_SuperHeavyMechanoidRecipe" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Mech_AdvancedGeocheloneBeta</defName>
+    <label>组装伞卫</label>
+    <description>组装伞卫</description>
+    <products>
+      <DMS_Mech_AdvancedGeocheloneBeta>1</DMS_Mech_AdvancedGeocheloneBeta>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef MayRequire="ludeon.rimworld.royalty">BroadshieldCore</ThingDef>
+      <ThingDef>Neurocomputer</ThingDef>
+      <ThingDef>DMS_Mech_AdvancedGeochelone</ThingDef>
+    </descriptionHyperlinks>
+    <researchPrerequisite Inherit="False">DMS_PRT_ArrayShieldTechnology</researchPrerequisite>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>500</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>250</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>100</count>
+      </li>
+      <li MayRequire="ludeon.rimworld.royalty"> 
+        <filter>
+          <thingDefs>
+            <li>BroadshieldCore</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>12</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>12</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neurocomputer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <!-- 灵枢 SkyWard-->
+  <ThingDef ParentName="BaseAutomatroidRace" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Mech_QuietusEye</defName>
+    <label>灵枢</label>
+    <description>太约代号“静谧深瞳” (Quietus Eye)。这款履带式综合射频车是合成化机兵营的“神经中枢”，承担着战场侦察、通信管理、敌我识别、电子对抗等多种射频职能。它以其巨大的、具有尖端电磁屏蔽与抗自扰互扰特性的球形天线为核心，如同一座坚固的电磁堡垒在机动中同步支撑战场信息网络。天线内部密集整合的通信中继、雷达侦察、电子对抗等多频谱系统能在严格时序与频率隔离下高效运作，在广阔战线编织起一张既可支撑指挥节点、又可探测威胁信号链并视情实施频谱压制/引导的电磁经纬网。它为机兵部队提供了覆盖全场、贯穿全程的制电磁权，让己方战力在无形的维度上形成代差级优势。\n\n大地图中继距离为120格（距离机械师不能超过多少格），地图内控制范围为100格（受控机械体距离灵枢不能超过多少格）</description>
+    <statBases>
+      <MoveSpeed>3.8</MoveSpeed>
+      <ArmorRating_Sharp>1.5</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>1.3</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.4</ArmorRating_Heat>  <!--能抗-->
+      <IncomingDamageFactor>0.75</IncomingDamageFactor><!--承伤乘数-->
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">10</BandwidthCost>
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge>
+    </statBases>
+    <race>
+      <body>DMS_Caterpillar</body>
+      <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
+      <baseBodySize>3</baseBodySize>
+      <baseHealthScale>5</baseHealthScale>
+      <mechWeightClass>UltraHeavy</mechWeightClass>
+      <detritusLeavings>
+        <li>
+          <def>DMS_ChunkSlag</def>
+          <texOverrideIndex>6</texOverrideIndex>
+          <spawnChance>0.4</spawnChance>
+        </li>
+        <li>
+          <def>DMS_ChunkSlag</def>
+          <texOverrideIndex>1</texOverrideIndex>
+          <spawnChance>0.4</spawnChance>
+        </li>
+      </detritusLeavings>
+    </race>
+    <tools Inherit="False">
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>5.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <butcherProducts>
+      <DMS_ChunkSlag>5</DMS_ChunkSlag>
+      <Tungsteel>60</Tungsteel>
+      <Steel>24</Steel>
+    </butcherProducts>
+    <damageMultipliers>
+      <li>
+        <damageDef>Blunt</damageDef>
+        <multiplier>0.75</multiplier>
+      </li>
+      <li>
+        <damageDef>Stab</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+    </damageMultipliers>
+    <killedLeavingsPlayerHostile>
+      <Neurocomputer>1</Neurocomputer>
+    </killedLeavingsPlayerHostile>
+    <comps>
+      <li Class="PRT_Mod.SatelliteMonitoring.CompProperties_SatelliteMonitoring" />
+      <li Class="Fortified.CompProperties_CommandRelay">
+        <maxWorldMapRadius>120</maxWorldMapRadius>
+        <maxRelayRadius>100</maxRelayRadius>
+        <minRelayRadius>4</minRelayRadius>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="BaseAutomatroidKind" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Mech_QuietusEye</defName>
+    <race>DMS_Mech_QuietusEye</race>
+    <label>灵枢</label>
+    <combatPower>1000</combatPower>
+    <maxPerGroup>1</maxPerGroup>
+    <destroyGearOnDrop>true</destroyGearOnDrop>
+    <isBoss>true</isBoss>
+    <abilities>
+      <li>DMS_FireControlGuidance</li>
+      <li>DMS_IFFConfusionPulse</li>
+      <li>DMS_RepairMode</li>
+    </abilities>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/DMS/QuietusEye</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>5.5</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/DMS/QuietusEye</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>5.5</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags />
+  </PawnKindDef>
+
+  <!--DMS_Mech_QuietusEye-->
+  <RecipeDef ParentName="DMS_SuperHeavyMechanoidRecipe" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Mech_QuietusEye</defName>
+    <label>组装灵枢</label>
+    <description>组装灵枢</description>
+    <products>
+      <DMS_Mech_QuietusEye>1</DMS_Mech_QuietusEye>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>Neurocomputer</ThingDef>
+      <ThingDef>ComponentTransmitter</ThingDef>
+      <ThingDef>PRT_SatelliteNavigationModule</ThingDef>
+      <ThingDef>DMS_Mech_QuietusEye</ThingDef>
+    </descriptionHyperlinks>
+    <researchPrerequisite Inherit="False">DMS_PRT_IntegratedRFManagement</researchPrerequisite>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>400</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>150</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>100</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>15</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neurocomputer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>PRT_SatelliteNavigationModule</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentTransmitter</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <!-- 钳工 Tinker-->
+  <ThingDef ParentName="BaseAutomatroidRace" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Mech_Tinker</defName>
+    <label>钳工</label>
+    <description>太约代号 "焊匠" (Tinker)。 这款履带式装甲抢修车是前线装甲机兵部队的“战地医生”。它以坚固的车体和高效的野战工程系统为保障，能够在弥漫的硝烟中，伴随保障受损的中型、重型和超重型机兵，利用携带的设备实施包括紧急装甲封堵、部件拆换、基础动力抢修在内的关键恢复作业；非战斗状态下也能起到普通工程机械的作用，在抢修战场工事方面优势巨大。其核心价值在于将战场损耗单位重新转化为可用战力，在胶着的攻防中提供着不容忽视的延续力量，成为管制指挥官维系持续进攻压力的可靠依托，在合成化机兵作战保障体系中处于核心地位。</description>
+    <statBases>
+      <MoveSpeed>4.2</MoveSpeed>
+      <ArmorRating_Sharp>1.5</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>1.3</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.5</ArmorRating_Heat>  <!--能抗-->
+      <IncomingDamageFactor>0.75</IncomingDamageFactor><!--承伤乘数-->
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">6</BandwidthCost>
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge>
+    </statBases>
+    <race>
+      <body>DMS_Caterpillar</body>
+      <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
+      <baseBodySize>3</baseBodySize>
+      <baseHealthScale>5</baseHealthScale>
+      <mechWeightClass>UltraHeavy</mechWeightClass>
+      <detritusLeavings>
+        <li>
+          <def>DMS_ChunkSlag</def>
+          <texOverrideIndex>6</texOverrideIndex>
+          <spawnChance>0.4</spawnChance>
+        </li>
+        <li>
+          <def>DMS_ChunkSlag</def>
+          <texOverrideIndex>1</texOverrideIndex>
+          <spawnChance>0.4</spawnChance>
+        </li>
+      </detritusLeavings>
+      <mechEnabledWorkTypes>
+        <li>Construction</li>
+        <li>Smithing</li>
+      </mechEnabledWorkTypes>
+    </race>
+    <tools Inherit="False">
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>5.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <butcherProducts>
+      <DMS_ChunkSlag>5</DMS_ChunkSlag>
+      <Tungsteel>60</Tungsteel>
+      <Steel>24</Steel>
+    </butcherProducts>
+    <damageMultipliers>
+      <li>
+        <damageDef>Blunt</damageDef>
+        <multiplier>0.75</multiplier>
+      </li>
+      <li>
+        <damageDef>Stab</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+    </damageMultipliers>
+    <killedLeavingsPlayerHostile>
+      <Neurocomputer>1</Neurocomputer>
+    </killedLeavingsPlayerHostile>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="BaseAutomatroidKind" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Mech_Tinker</defName>
+    <race>DMS_Mech_Tinker</race>
+    <label>钳工</label>
+    <combatPower>800</combatPower>
+    <maxPerGroup>2</maxPerGroup>
+    <destroyGearOnDrop>true</destroyGearOnDrop>
+    <isBoss>true</isBoss>
+    <abilities>
+      <li>DMS_SmokeLauncher</li>
+      <li>DMS_MechEnergyStabilizer</li>
+      <li>DMS_EmergencyPowerTransfer</li>
+      <li>DMS_BattlefieldRepair</li>
+    </abilities>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/DMS/Tinker</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.8</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/DMS/Tinker</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.8</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags />
+  </PawnKindDef>
+
+  <!--DMS_Mech_Tinker-->
+  <RecipeDef ParentName="DMS_SuperHeavyMechanoidRecipe" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Make_Tinker</defName>
+    <label>组装钳工</label>
+    <description>组装钳工</description>
+    <products>
+      <DMS_Mech_Tinker>1</DMS_Mech_Tinker>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>Neurocomputer</ThingDef>
+      <ThingDef>DMS_Mech_Tinker</ThingDef>
+    </descriptionHyperlinks>
+    <researchPrerequisite Inherit="False">DMS_PRT_BattlefieldEndurance</researchPrerequisite>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>450</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>200</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neurocomputer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <!-- 蒲公英 -->
+  <ThingDef ParentName="BaseAutomatroidRace" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Mech_Dandelion</defName>
+    <label>蒲公英</label>
+    <description>太约代号“鸣神槌” (Narukamizuchi - Thunder God's Mallet)。这款弹匣供弹的81毫米速射自行迫击炮以其连续、迅疾的低沉轰击成为战场上的标志。依靠履带提供的敏捷机动性，它能紧随装甲前锋在复杂地形中灵活跃进，依托掩护瞬息展开。标志性的五连瞬发火力能在极短时间内将多枚炮弹射向天际，落下的密集弹雨覆盖目标区域，制造出一片猝不及防的破片与激爆风暴，有效压制暴露步兵集群、扰乱敌方集结、清扫简易防御工事。它尤其适用于快节奏的遭遇战与推进中的短促支援，凭借战场信息网络的引导，对前沿侦察单元标记的突发或高价值即时目标（如敌方火力点、机动小队、临时弹药点）做出极快响应并施以连续而暴烈的区域覆盖，持续扮演着为前锋撕开障碍、瓦解抵抗意志与提供关键瞬间战场遮断的独特角色。</description>
+    <statBases>
+      <MoveSpeed>2.5</MoveSpeed><!--移動速度-->
+      <ArmorRating_Sharp>1.5</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>1.3</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.2</ArmorRating_Heat>  <!--能抗-->
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">4</BandwidthCost>        <!--帶寬消耗-->
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge><!--充電/培養時產出廢料-->
+    </statBases>
+    <race>
+      <body>DMS_Caterpillar</body>
+      <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
+      <baseBodySize>3</baseBodySize>
+      <baseHealthScale>5</baseHealthScale>
+      <mechWeightClass>UltraHeavy</mechWeightClass>
+    </race>
+    <comps>
+      <li Class="Fortified.CompProperties_VehicleWeapon">
+        <defaultWeapon>DMS_Gun_Vasilek_C</defaultWeapon>
+        <turretRotationFollowPawn>true</turretRotationFollowPawn>
+        <rotationSmoothTime>1</rotationSmoothTime>
+        <drawData>
+          <defaultData>
+            <offset>(0,0,0)</offset>
+          </defaultData>
+        </drawData>
+      </li>
+    </comps>
+    <tools Inherit="False">
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>5.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <butcherProducts>
+      <DMS_ChunkSlag>5</DMS_ChunkSlag>
+      <Tungsteel>60</Tungsteel>
+      <Steel>24</Steel>
+    </butcherProducts>
+    <damageMultipliers>
+      <li>
+        <damageDef>Blunt</damageDef>
+        <multiplier>0.75</multiplier>
+      </li>
+      <li>
+        <damageDef>Stab</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+    </damageMultipliers>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAutomatroidKind" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Mech_Dandelion</defName>
+    <label>蒲公英</label>
+    <race>DMS_Mech_Dandelion</race>
+    <combatPower>350</combatPower>
+    <maxPerGroup>4</maxPerGroup>
+    <isBoss>true</isBoss>
+    <destroyGearOnDrop>true</destroyGearOnDrop>
+    <abilities>
+      <li>DMS_RepairMode</li>
+    </abilities>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/caterpillar</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.5</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/caterpillar</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.5</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags/>
+    <weaponMoney>5000~9999</weaponMoney>
+  </PawnKindDef>
+
+  <RecipeDef ParentName="DMS_SuperHeavyMechanoidRecipe" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Make_CarettaEMP</defName>
+    <label>组装蒲公英</label>
+    <description>组装蒲公英</description>
+    <products>
+      <DMS_Mech_Dandelion>1</DMS_Mech_Dandelion>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>Neurocomputer</ThingDef>
+      <ThingDef>ComponentFireControl</ThingDef>
+      <ThingDef>DMS_Mech_Dandelion</ThingDef>
+    </descriptionHyperlinks>
+    <researchPrerequisite Inherit="False">DMS_PRT_HighIntensityConflict</researchPrerequisite>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>375</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>150</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>12</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neurocomputer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentFireControl</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <!-- 蒲公英 DMS_Gun_Vasilek_C -->
+  <ThingDef ParentName="DMS_AutomatroidTurretGun" MayRequire="Aoba.DeadManSwitch.Core">
+		<defName>DMS_Gun_Vasilek_C</defName>
+		<label>蒲公英</label>
+		<description>可发射高爆弹、EMP弹、烟雾弹、燃烧弹等多弹种的5连发80mm速射迫击炮，采用弹夹供弹，理想的战术支援火力.</description>
+		<graphicData>
+		  <texPath>Things/Turrets/DMS_Vasilek_B</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <drawSize>4.5</drawSize>
+		</graphicData>
+		<statBases>
+			<RangedWeapon_Cooldown>15.0</RangedWeapon_Cooldown>
+		</statBases>
+		<verbs>
+		  <li>
+			<verbClass>Verb_Shoot</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Bullet_Caretta_Shell_HighExplosive</defaultProjectile>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>5</warmupTime>
+			<forcedMissRadius>6</forcedMissRadius>
+			<minRange>14.9</minRange>
+			<range>119.9</range>
+			<ai_AvoidFriendlyFireRadius>9.9</ai_AvoidFriendlyFireRadius>
+			<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+			<burstShotCount>5</burstShotCount>
+			<soundCast>DMS_Shot_VasilekSound</soundCast>
+			<soundCastTail>GunTail_Heavy</soundCastTail>
+			<muzzleFlashScale>10</muzzleFlashScale>
+			<targetParams>
+			  <canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		  </li>
+		</verbs>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(0.5,0.5)</drawSize>
+				<offsets>
+					<li>(0.75,0)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+      <li Class="PRT_Mod.SelectableAmmo.SelectableAmmoExtension">
+        <projectiles>
+          <li>Bullet_Caretta_Shell_HighExplosive</li>
+          <li>Bullet_Shell_EMP</li>
+          <li>Bullet_Shell_Smoke</li>
+          <li>Bullet_Shell_Incendiary</li>
+          <li>DMS_Bullet_BlasterSmoke</li> <!-- 失能机关本体的反电荷烟幕弹 -->
+        </projectiles>
+        <defaultProjectile>Bullet_Caretta_Shell_HighExplosive</defaultProjectile>
+      </li>
+		</modExtensions>
+	</ThingDef>
+
+  <!-- 蠵龟发射的迫击炮弹 -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_Caretta_Shell_HighExplosive</defName>
+    <label>81mm高爆弹</label>
+    <graphicData>
+      <texPath>Things/Projectile/ShellHighExplosive</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <!-- 反粒子defaultArmorPenetration = 1.3 -->
+      <speed>60</speed>
+      <explosionRadius>4.9</explosionRadius>
+      <damageAmountBase>350</damageAmountBase>
+      <armorPenetrationBase>0.4</armorPenetrationBase>
+      <explosionChanceToStartFire>0.22</explosionChanceToStartFire>
+      <explosionDamageFalloff>true</explosionDamageFalloff>
+      <explosionEffect>GiantExplosion</explosionEffect>
+      <flyOverhead>true</flyOverhead>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <soundExplode>Explosion_GiantBomb</soundExplode>
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+      <preExplosionSpawnSingleThingDef>Filth_BlastMark</preExplosionSpawnSingleThingDef>
+    </projectile>
+  </ThingDef>
+
+  <!-- 黑曜石 -->
+  <ThingDef ParentName="BaseAncientAutomatroidRace" Name="BaseObsidianRace">
+    <defName>DMS_Mech_Obsidian</defName>
+    <label>黑曜石</label>
+    <description>黑曜石，太约代号“凿岩者”（Stonebreaker），是一种配备强化正面装甲的重型机兵，专为大规模战争而设计，具备出色的综合性能和低廉的生产成本。得益于其出色的模块化工程架构，该型号的现代化改进型至今仍在多个中寰世界军队中服役。\n黑曜石以其近乎野蛮的战场适应力著称，厚重的复合装甲与简易维护设计，使其能在恶劣环境下长期作战。尽管缺乏机动性较为欠缺，但其先进的火控系统与近乎无解的正面防御，使其成为战场上的名副其实的移动堡垒。</description>
+    <statBases>
+      <MoveSpeed>3.8</MoveSpeed><!--移動速度-->
+      <AimingDelayFactor>0.9</AimingDelayFactor>
+      <ShootingAccuracyPawn>3</ShootingAccuracyPawn>
+      <StaggerDurationFactor>1.25</StaggerDurationFactor>
+      <ArmorRating_Sharp>1.36</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>1.05</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.65</ArmorRating_Heat>  <!--能抗-->
+      <IncomingDamageFactor>0.80</IncomingDamageFactor><!--承伤乘数-->
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">4</BandwidthCost>        <!--帶寬消耗-->
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge><!--充電/培養時產出廢料-->
+    </statBases>
+    <race>
+      <mechFixedSkillLevel>12</mechFixedSkillLevel>
+      <body>DMS_Humanoid_Soldat</body>
+      <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
+      <baseBodySize>2.2</baseBodySize>
+      <baseHealthScale>2.6</baseHealthScale>
+      <mechWeightClass>Heavy</mechWeightClass>
+    </race>
+    <comps>
+		  <li Class="Fortified.CompProperties_VehicleWeapon">
+        <drawData>
+          <dataEast>
+            <offset>(0.2,0,-0.3)</offset>
+          </dataEast>
+          <dataWest>
+            <offset>(-0.2,0,0.6)</offset>
+            <layer>-20</layer>
+          </dataWest>
+          <dataSouth>
+              <offset>(-0.7,0,0.2)</offset>
+          </dataSouth>
+          <dataNorth> 
+              <offset>(0.7,0,0.2)</offset>
+          </dataNorth>
+        </drawData>
+			  <turretRotationFollowPawn>true</turretRotationFollowPawn>			  
+        <rotationSmoothTime>0.12</rotationSmoothTime>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags> 
+          <li>SimpleGun</li>
+          <li MayRequire="vanillaexpanded.vwehw">HeavyGun</li><!--重型武器拓展-->
+          <li>DMS_MechWeaponLongRifle</li>
+          <li>DMS_MechWeaponLight</li>
+          <li>A_BR_LongRifle</li>
+          <li>GrenadeSmoke</li>
+          <li>A_MG_Heavy</li>
+          <li>A_SuppressWeapon</li>
+          <li>ShortShots</li>
+          <li>DMS_MechWeaponHeavy</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+        </UsableTechLevels>
+        <BypassUsableWeapons/>
+      </li>
+    </modExtensions>
+    <tools>
+      <li>
+        <label>Left Leg</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>27</power>
+        <cooldownTime>3.5</cooldownTime>
+        <chanceFactor>0.2</chanceFactor>
+		    <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>16</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>Right Leg</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>27</power>
+        <cooldownTime>3.5</cooldownTime>
+        <chanceFactor>0.2</chanceFactor>
+		    <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>16</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+    </tools>
+    <damageMultipliers>
+      <li>
+        <damageDef>Blunt</damageDef>
+        <multiplier>0.8</multiplier>
+      </li>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>0.8</multiplier>
+      </li>
+    </damageMultipliers>
+    <butcherProducts>
+      <DMS_ChunkSlag>2</DMS_ChunkSlag>
+      <Steel>30</Steel>
+    </butcherProducts>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAncientAutomatroidKind" Name="DMS_BaseZaborKind">
+    <defName>DMS_Mech_Obsidian</defName>
+    <label>黑曜石</label>
+    <race>DMS_Mech_Obsidian</race>
+    <nameMaker>DMS_AncientMechHeavy</nameMaker>
+    <isFighter>true</isFighter>
+    <combatPower>240</combatPower>
+    <maxPerGroup>3</maxPerGroup>
+    <weaponMoney>3265~4000</weaponMoney>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/DMS/Obsidian</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.3</drawSize>
+          <shadowData>
+            <volume>(1.1,1,1.1)</volume>
+            <offset>(0,0,-0.25)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/DMS/Obsidian</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.3</drawSize>
+          <shadowData>
+            <volume>(1.1,1,1.1)</volume>
+            <offset>(0,0,-0.25)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags Inherit="False">
+      <li>AAC_HeavyWeapon</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <RecipeDef ParentName="DMS_HeavyMechanoidRecipe" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Make_Obsidian</defName>
+    <label>组装黑曜石</label>
+    <description>组装黑曜石</description>
+    <products>
+      <DMS_Mech_Obsidian>1</DMS_Mech_Obsidian>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Mech_Obsidian</ThingDef>
+    </descriptionHyperlinks>
+    <researchPrerequisite Inherit="False">DMS_PRT_HeavyArmoredMech</researchPrerequisite>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>250</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>BWA_AramidCloth</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <!-- 游侠 -->
+  <ThingDef ParentName="BaseAutomatroidHumanRace"  Name="BaseRangerRace">
+    <defName>DMS_Mech_Ranger</defName>
+    <label>游侠</label>
+    <description>太约代号“铁皮人”（Iron Man）。 一款高度模块化的1.9米级第三代人形作战单元，完美融合了先锋型与猎兵型的优势，专为敌后渗透与快速反应任务设计。凭借其仿生关节结构与轻量化复合装甲，该机型能在复杂地形中保持近乎无声的机动能力，其战术AI系统可自主规划最优渗透路径，被特种部队称为“会思考的子弹”。\n\n作为中型机兵中的多面手，游侠的双臂配备可折叠高周波刃，这使其在装备远程武器时拥有不凡的近战能力，同时背部接口支持快速换装通信组件、电子战套件或医疗负载。其最突出的特性在于“自适应迷彩系统”——通过微型六边形像素板与环境扫描仪的协同运作，能在3秒内完成光学伪装，使热信号与轮廓完全融入背景杂波。\n\n尽管单机造价相当于一个排的常规装备，但游侠在敌后破坏、高价值目标猎杀与侦察引导任务中展现的性价比，使其成为边境冲突中最抢手的战术资产。当巡逻队报告“发现脚印却看不见敌人”时，往往就意味着游侠已经渗透至防线腹地——而它留下的通常只有弹壳与未冷却的尸骸。\n\n【简单来说，就是高穿甲近战+可以装备太空时代武器】</description>
+    <statBases>
+      <MoveSpeed>6</MoveSpeed>
+      <ArmorRating_Blunt>0.9</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1.1</ArmorRating_Sharp>
+      <ArmorRating_Heat>1.5</ArmorRating_Heat>
+      <ShootingAccuracyPawn>5</ShootingAccuracyPawn>
+      <AimingDelayFactor>0.8</AimingDelayFactor><!--瞄准延迟系数-->
+      <MeleeCooldownFactor>0.8</MeleeCooldownFactor><!--近战冷却系数-->
+      <IncomingDamageFactor>0.90</IncomingDamageFactor><!--承伤乘数-->
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost> 
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge><!--充電/培養時產出廢料-->
+    </statBases>
+    <race>
+      <mechFixedSkillLevel>16</mechFixedSkillLevel>
+      <body>DMS_Humanoid_TypeA</body>
+      <baseBodySize>1.1</baseBodySize>
+      <baseHealthScale>1.25</baseHealthScale>
+      <mechWeightClass>Medium</mechWeightClass>
+      <mechEnabledWorkTypes>
+        <li>Hunting</li>
+      </mechEnabledWorkTypes>
+    </race>
+    <tools Inherit="False">
+      <li>
+        <label>高周波刃</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>24</power>
+        <armorPenetration>0.85</armorPenetration>
+        <cooldownTime>1.2</cooldownTime>
+      </li>
+      <li>
+        <label>高周波刃</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>38</power>
+        <armorPenetration>1.05</armorPenetration>
+        <cooldownTime>2.4</cooldownTime>
+      </li>
+    </tools>
+    <butcherProducts>
+      <DMS_ChunkSlag>1</DMS_ChunkSlag>
+      <Tungsteel>55</Tungsteel>
+    </butcherProducts>
+    <modExtensions>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>false</EnableWeaponFilter>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Spacer</li>
+          <li>Industrial</li>
+        </UsableTechLevels>
+      </li>
+      <li Class="Fortified.TurretMannableExtension"/>
+    </modExtensions>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMS_Mech_Ranger</defName>
+    <label>游侠</label>
+    <race>DMS_Mech_Ranger</race>
+    <isFighter>true</isFighter>
+    <combatPower>180</combatPower>
+    <maxPerGroup>8</maxPerGroup>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/DMS/Ranger</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.3</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/DMS/Ranger</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.3</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>AAC_AssaultRifle</li>
+    </weaponTags>
+    <abilities>
+      <li>DMS_BurstSprint</li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">DMS_Camouflage</li>
+      <li>DMS_LongJump</li>
+    </abilities>
+    <aiAvoidCover>false</aiAvoidCover>
+  </PawnKindDef>
+  
+  <RecipeDef ParentName="DMS_HumanoidMechanoidRecipe" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Make_Ranger</defName>
+    <label>组装游侠</label>
+    <description>组装游侠</description>
+    <products>
+      <DMS_Mech_Ranger>1</DMS_Mech_Ranger>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Mech_Ranger</ThingDef>
+    </descriptionHyperlinks>
+    <researchPrerequisite Inherit="False">DMS_PRT_HighIntensityConflict</researchPrerequisite>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>125</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>6</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <!-- 铁幕 -->
+  <ThingDef ParentName="BaseAncientAutomatroidRace" Name="BaseIronCurtainRace">
+    <defName>DMS_Mech_IronCurtain</defName>
+    <label>铁幕</label>
+    <description>铁幕，太约代号“泰坦猎手” (Titan Breaker)。 这款庞大的双足重装甲主战机兵是合成机兵部队的反装甲主力，在甲弹对抗中为东协一方带来了巨大的优势。凭借其傲然于复杂地形的通过力与重火力的结合，它在崎岖山地或都市废墟环境中开辟出常规车辆无法触及的进攻走廊。巨大的躯体和覆裹的高强度装甲让它敢于承担一线突击任务中的先锋压力点——无论前方是需要拔除的永备据点、阻碍突破的加固掩体抑或集群抵抗的火力集束——它都能以直射炮火与压制火力组合将其强行凿穿、踏碎。其存在不仅在于摧毁目标，更在于撕裂敌方防御部署的关键环节，让对手从战术意志的根源处动摇，迫使精心构筑的抗力链在钢铁巨足的碾压声中崩解离析。\n\n【量产版棱堡，重型机兵的身材，超重型机兵的输出】</description>
+    <statBases>
+      <MoveSpeed>3.4</MoveSpeed>
+      <ArmorRating_Sharp>1.68</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>1.50</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.8</ArmorRating_Heat>  <!--能抗-->
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+      <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+      <IncomingDamageFactor>0.55</IncomingDamageFactor>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">5</BandwidthCost>        <!--帶寬消耗-->
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">6</WastepacksPerRecharge><!--充電/培養時產出廢料-->
+    </statBases>
+    <race>
+      <mechFixedSkillLevel>15</mechFixedSkillLevel>
+      <body>DMS_Bipedal</body>
+      <nameGenerator>DMS_AncientMechHeavy</nameGenerator>
+      <baseBodySize>3.2</baseBodySize>
+      <baseHealthScale>5.5</baseHealthScale>
+      <mechWeightClass>Heavy</mechWeightClass>
+      <detritusLeavings>
+        <li>
+          <def>DMS_ChunkSlag</def>
+          <texOverrideIndex>7</texOverrideIndex>
+          <spawnChance>0.4</spawnChance>
+        </li>
+        <li>
+          <def>DMS_ChunkSlag</def>
+          <texOverrideIndex>4</texOverrideIndex>
+          <spawnChance>0.4</spawnChance>
+        </li>
+      </detritusLeavings>
+    </race>
+    <comps>
+      <li Class="Fortified.CompProperties_VehicleWeapon">
+        <drawData>
+          <dataEast>
+            <offset>(0.6,0,-0.6)</offset>
+          </dataEast>
+          <dataWest>
+            <offset>(-0.4,0,1.1)</offset>
+            <layer>-20</layer>
+          </dataWest>
+          <dataSouth>
+            <offset>(-0.9,0,-0.2)</offset>
+          </dataSouth>
+          <dataNorth>
+            <offset>(0.9,0,0.2)</offset>
+          </dataNorth>
+        </drawData>
+        <turretRotationFollowPawn>true</turretRotationFollowPawn>
+        <rotationSmoothTime>0.12</rotationSmoothTime>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li MayRequire="vanillaexpanded.vwehw">HeavyGun</li><!--重型武器拓展-->
+          <li>DMS_MechWeaponHeavy</li>
+          <li>H_Gatling20mm</li>
+          <li>V_Gatling30mm</li>
+          <li>2A38M</li>
+          <li>DMS_DragoonGun</li>
+          <li>DMS_VladimirovMachineGun</li>
+          <li>AAC_UltraHeavyWeapon</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+        </UsableTechLevels>
+      </li>
+    </modExtensions>
+    <tools Inherit="False">
+      <li>
+        <label>Mechanical Head</label>
+        <capacities>
+          <li>DMS_HeavySweep</li>
+        </capacities>
+        <power>35</power>
+        <cooldownTime>6.5</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.08</chanceFactor>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>20</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>Left Leg</label>
+        <capacities>
+          <li>DMS_HeavySweep</li>
+        </capacities>
+        <power>24</power>
+        <cooldownTime>5</cooldownTime>
+        <linkedBodyPartsGroup>LeftMechanicalLeg</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>16</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>Right Leg</label>
+        <capacities>
+          <li>DMS_HeavySweep</li>
+        </capacities>
+        <power>24</power>
+        <cooldownTime>5</cooldownTime>
+        <linkedBodyPartsGroup>RightMechanicalLeg</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>16</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+    </tools>
+    <damageMultipliers>
+      <li>
+        <damageDef>Blunt</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+    </damageMultipliers>
+    <butcherProducts>
+      <Tungsteel>75</Tungsteel>
+      <DMS_ChunkSlag>4</DMS_ChunkSlag>
+      <ComponentStamped>4</ComponentStamped>
+    </butcherProducts>
+    <castEdgeShadows>false</castEdgeShadows>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAncientAutomatroidKind">
+    <defName>DMS_Mech_IronCurtain</defName>
+    <label>铁幕</label>
+    <race>DMS_Mech_IronCurtain</race>
+    <nameMaker>DMS_AncientMechHeavy</nameMaker>
+    <isFighter>true</isFighter>
+    <combatPower>500</combatPower>                                               <!--威脅點數-->
+    <maxPerGroup>1</maxPerGroup>                                                 <!--單個集群內的數量-->
+    <lifeStages>                                                                 <!--身體圖片-->
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/DMS/IronCurtain</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.5</drawSize>
+          <shadowData>
+            <volume>(1.25,1,1.25)</volume>
+            <offset>(0,0,-0.5)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/DMS/IronCurtain</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.5</drawSize>
+          <shadowData>
+            <volume>(1.25,1,1.25)</volume>
+            <offset>(0,0,-0.5)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags Inherit="False">
+      <li>AAC_UltraHeavyWeapon</li>
+    </weaponTags>
+    <weaponMoney>7500~9999</weaponMoney>
+    <abilities>
+      <li>DMSAC_APS</li>
+    </abilities>
+  </PawnKindDef>
+
+  <RecipeDef ParentName="DMS_HeavyMechanoidRecipe" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Make_IronCurtain</defName>
+    <label>组装铁幕</label>
+    <description>组装铁幕</description>
+    <products>
+      <DMS_Mech_IronCurtain>1</DMS_Mech_IronCurtain>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>DMS_Mech_IronCurtain</ThingDef>
+    </descriptionHyperlinks>
+    <researchPrerequisite Inherit="False">DMS_PRT_HeavyArmoredMech</researchPrerequisite>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>350</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>100</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>14</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>BWA_AramidCloth</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <!-- 碎羽——25mm自行高炮 -->
+  <ThingDef ParentName="BaseAutomatroidRace" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Mech_Skullcracker</defName>
+    <label>碎羽</label>
+    <description>太约代号 “碎颅者” (Skullcracker)。这款履带式伴随高炮系统是合成机兵营最主要的末端防空力量。其设计初衷是紧密伴随高速机动的机兵梯队，以其高射速25mm机炮构筑一道毁灭性的末端空中防线，阻挡太约自杀式无人机群的攻顶袭击。然而，由于太约工业产能不足，投放的自杀式无人机数量远不如联参的战前预估，因此常常被急于立功的管制指挥官用来平射对敌。任何暴露的反装甲班组、隐蔽火力点、掩体观察孔乃至薄皮轻型车辆，都在其狂风暴雨的金属射流前化为纷飞残片与腥膦。它的恐怖并不来自精准点杀，而在于其能在转瞬间清空面前扇区的所有生命与脆弱构造物，将敌方精心构设的阻击线或集结地变成死亡真空。士兵称之为“伴随的死神镰刀”——扫过的地域，唯存硝烟和破碎之痕。\n\n【本模组里就是拿来平射的，防空有护盾了】【目前过热机制还没做完，相当超模】</description>
+    <statBases>
+      <MoveSpeed>3.8</MoveSpeed><!--移動速度-->
+      <ArmorRating_Sharp>1.5</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>1.3</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.6</ArmorRating_Heat>  <!--能抗-->
+      <IncomingDamageFactor>0.60</IncomingDamageFactor><!--承伤乘数-->
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">6</BandwidthCost>        <!--帶寬消耗-->
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge><!--充電/培養時產出廢料-->
+    </statBases>
+    <race>
+      <body>DMS_Caterpillar</body>
+      <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
+      <baseBodySize>4</baseBodySize>
+      <baseHealthScale>6</baseHealthScale>
+      <mechWeightClass>UltraHeavy</mechWeightClass>
+    </race>
+    <comps>
+      <li Class="Fortified.CompProperties_VehicleWeapon">
+        <defaultWeapon>DMS_Gun_Skullcracker</defaultWeapon>
+        <turretRotationFollowPawn>true</turretRotationFollowPawn>
+        <rotationSmoothTime>1</rotationSmoothTime>
+        <drawData>
+          <defaultData>
+            <offset>(0,0,0)</offset>
+          </defaultData>
+        </drawData>
+      </li>
+    </comps>
+    <tools Inherit="False">
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>5.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <butcherProducts>
+      <DMS_ChunkSlag>6</DMS_ChunkSlag>
+      <Tungsteel>80</Tungsteel>
+      <Steel>40</Steel>
+    </butcherProducts>
+    <damageMultipliers>
+      <li>
+        <damageDef>Blunt</damageDef>
+        <multiplier>0.75</multiplier>
+      </li>
+      <li>
+        <damageDef>Stab</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+    </damageMultipliers>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAutomatroidKind" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Mech_Skullcracker</defName>
+    <label>碎羽</label>
+    <race>DMS_Mech_Skullcracker</race>
+    <combatPower>250</combatPower>
+    <maxPerGroup>4</maxPerGroup>
+    <isBoss>true</isBoss>
+    <destroyGearOnDrop>true</destroyGearOnDrop>
+    <abilities>
+      <li>DMS_RepairMode</li>
+    </abilities>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/caterpillar</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.5</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/caterpillar</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.5</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags/>
+    <weaponMoney>5000~9999</weaponMoney>
+  </PawnKindDef>
+
+  <RecipeDef ParentName="DMS_SuperHeavyMechanoidRecipe" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Mech_Skullcracker</defName>
+    <label>组装碎羽</label>
+    <description>组装碎羽</description>
+    <products>
+      <DMS_Mech_Skullcracker>1</DMS_Mech_Skullcracker>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>Neurocomputer</ThingDef>
+      <ThingDef>ComponentFireControl</ThingDef>
+      <ThingDef>DMS_Mech_Skullcracker</ThingDef>
+    </descriptionHyperlinks>
+    <researchPrerequisite Inherit="False">DMS_PRT_HeavyArmoredMech</researchPrerequisite>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>420</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>120</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>15</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neurocomputer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentFireControl</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <!-- 碎羽25mm防空炮 -->
+  <ThingDef ParentName="BaseWeaponTurret">
+		<defName>DMS_Gun_Skullcracker</defName>
+		<label>“碎羽”25mm防空炮</label>
+		<description>末端对空(对地)防御，双联装25mm高射炮，发射穿甲弹药，对轻装甲和步兵有恐怖的火力压制力</description>
+		<graphicData>
+			<texPath>Things/DMS/DMS_Gun_Skullcracker</texPath>
+			<drawSize>3</drawSize>
+		</graphicData>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<statBases>
+			<Mass>260</Mass>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>1</AccuracyMedium>
+      <AccuracyLong>1</AccuracyLong>
+      <RangedWeapon_Cooldown>0.02</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>DMS_Gun_Skullcracker</li>
+			<li>NoSwitch</li>
+		</weaponTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>DMS_Bullet_Skullcracker</defaultProjectile>
+				<warmupTime>0.02</warmupTime>
+				<range>49.9</range>
+				<!-- <forcedMissRadius>0.5</forcedMissRadius>
+				<ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+				<burstShotCount>25</burstShotCount> -->
+				<soundCast>Shot_Autocannon</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>24</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(5,5)</drawSize>
+				<offsets>
+					<li>(2.1,0)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+  <!-- 25mmAP弹药 -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>DMS_Bullet_Skullcracker</defName>
+    <label>25mmAP弹</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>35</damageAmountBase>
+      <armorPenetrationBase>0.8</armorPenetrationBase>
+      <stoppingPower>4</stoppingPower>
+      <speed>110</speed>
+      <shadowSize>0.6</shadowSize>
+    </projectile>
+  </ThingDef>
+
+  <!-- 重锤——155mm自行榴弹炮 -->
+  <ThingDef ParentName="BaseAutomatroidRace" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Mech_CarettaHeavy</defName>
+    <label>重锤</label>
+    <description>太约代号“撼地者” (Ground Shaker)。 这型履带式155mm重型榴弹炮是着机兵合成营曲射支援火力的核心角色。凭借其坚实的机动底盘和强劲的主炮系统，它能快速深入前推部署，迅速占据射击阵地并展开火力。其155毫米口径炮弹能精确且高效地投送至远方战场各处，实施压制、清障或目标区域封锁。通过融入机兵数字网络节点，该炮击机械体能无缝共享前沿侦察机兵的目标标记数据，超短延时响应装甲前锋的火力协同指令，将精准规划的破片风暴送达管制指挥官所标记的坐标之上，持续提供可调、可靠、具决定意义的地面火力覆盖，是合成化机兵攻防体系里不可或缺的火力支柱。\n\n此机械体具备跨地图打击能力，大地图射程24格，跨图打击散布半径4格\n\n此火炮配属三种弹药：\n\n1.155mm高爆榴弹，通用弹药，对建筑、步兵和轻装甲目标都有着不错的毁伤效能；穿甲0.6，爆炸范围8.9，伤害量1000\n\n2.155mm末敏弹，反重装甲集群专攻，母弹飞至目标点后会分裂并释放成多枚制导弹药，智能瞄准索敌范围内的敌方目标，对重装甲集群造成毁灭性打击；子弹数量8，索敌范围16，子弹穿甲2.5，子弹爆炸范围1.9，子弹伤害量360\n\n3.155mm榴霰弹，反人员特攻，母弹抵达目标前会分裂并释放多枚子弹头，对前方目标造成区域杀伤；子弹数量12，扩散范围10，子弹穿甲0.20，子弹爆炸范围3.9，子弹伤害量240</description>
+    <statBases>
+      <MoveSpeed>2.5</MoveSpeed><!--移動速度-->
+      <ArmorRating_Sharp>1.8</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>1.6</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.8</ArmorRating_Heat>  <!--能抗-->
+      <IncomingDamageFactor>0.75</IncomingDamageFactor><!--承伤乘数-->
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">6</BandwidthCost>        <!--帶寬消耗-->
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge><!--充電/培養時產出廢料-->
+    </statBases>
+    <race>
+      <body>DMS_Caterpillar</body>
+      <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
+      <baseBodySize>4</baseBodySize>
+      <baseHealthScale>6</baseHealthScale>
+      <mechWeightClass>UltraHeavy</mechWeightClass>
+    </race>
+    <comps>
+      <li Class="Fortified.CompProperties_VehicleWeapon">
+        <defaultWeapon>DMS_Gun_Sledgehammer</defaultWeapon>
+        <turretRotationFollowPawn>true</turretRotationFollowPawn>
+        <rotationSmoothTime>1.0</rotationSmoothTime>
+        <drawData>
+          <defaultData>
+            <offset>(0,0,0)</offset>
+          </defaultData>
+        </drawData>
+      </li>
+    </comps>
+    <tools Inherit="False">
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>5.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <butcherProducts>
+      <DMS_ChunkSlag>6</DMS_ChunkSlag>
+      <Tungsteel>80</Tungsteel>
+      <Steel>40</Steel>
+    </butcherProducts>
+    <damageMultipliers>
+      <li>
+        <damageDef>Blunt</damageDef>
+        <multiplier>0.75</multiplier>
+      </li>
+      <li>
+        <damageDef>Stab</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+    </damageMultipliers>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAutomatroidKind" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Mech_CarettaHeavy</defName>
+    <label>重锤</label>
+    <race>DMS_Mech_CarettaHeavy</race>
+    <combatPower>250</combatPower>
+    <maxPerGroup>4</maxPerGroup>
+    <isBoss>true</isBoss>
+    <destroyGearOnDrop>true</destroyGearOnDrop>
+    <abilities>
+      <li>DMS_RepairMode</li>
+    </abilities>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/caterpillar</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4.2</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/caterpillar</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4.2</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags/>
+    <weaponMoney>5000~9999</weaponMoney>
+  </PawnKindDef>
+
+  <RecipeDef ParentName="DMS_SuperHeavyMechanoidRecipe" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Make_CarettaHeavy</defName>
+    <label>组装重锤</label>
+    <description>组装重锤</description>
+    <products>
+      <DMS_Mech_CarettaHeavy>1</DMS_Mech_CarettaHeavy>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>Neurocomputer</ThingDef>
+      <ThingDef>ComponentFireControl</ThingDef>
+      <ThingDef>DMS_Mech_CarettaHeavy</ThingDef>
+    </descriptionHyperlinks>
+    <researchPrerequisite Inherit="False">DMS_PRT_IntelligentArtillery</researchPrerequisite>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>600</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>200</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neurocomputer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentFireControl</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <!-- 重锤155mm榴弹炮 -->
+  <ThingDef ParentName="BaseWeaponTurret">
+		<defName>DMS_Gun_Sledgehammer</defName>
+		<label>“重锤”155mm榴弹炮</label>
+		<description>长距离精确打击武器，155mm榴弹炮\n\n此火炮配属三种弹药：\n\n1.155mm高爆榴弹，通用弹药，对建筑、步兵和轻装甲目标都有着不错的毁伤效能；穿甲0.6，爆炸范围8.9，伤害量1000\n\n2.155mm末敏弹，反重装甲集群专攻，母弹飞至目标点后会分裂并释放成多枚制导弹药，智能瞄准索敌范围内的敌方目标，对重装甲集群造成毁灭性打击；子弹数量8，索敌范围16，子弹穿甲2.5，子弹爆炸范围1.9，子弹伤害量360\n\n3.155mm榴霰弹，反人员特攻，母弹抵达目标前会分裂并释放多枚子弹头，对前方目标造成区域杀伤；子弹数量12，扩散范围10，子弹穿甲0.20，子弹爆炸范围3.9，子弹伤害量240</description>
+		<graphicData>
+			<texPath>Things/DMS/DMS_Weapon_Sledgehammer</texPath>
+			<drawSize>6</drawSize>
+		</graphicData>
+		<soundInteract>Artillery_ShellLoaded</soundInteract>
+		<statBases>
+			<RangedWeapon_Cooldown>6.5</RangedWeapon_Cooldown>
+			<Mass>225</Mass>
+		</statBases>
+		<weaponTags>
+			<li>DMS_Gun_Sledgehammer</li>
+			<li>NoSwitch</li>
+		</weaponTags>
+		<verbs>
+			<li>
+				<hasStandardCommand>true</hasStandardCommand>
+				<verbClass>Verb_Shoot</verbClass>
+				<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+				<warmupTime>3.5</warmupTime>
+				<forcedMissRadius>2</forcedMissRadius>
+				<forcedMissRadiusClassicMortars>2</forcedMissRadiusClassicMortars>
+				<defaultProjectile>DMS_Bullet_Sledgehammer</defaultProjectile>
+				<requireLineOfSight>false</requireLineOfSight>
+				<minRange>19.9</minRange>
+				<range>240</range>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>DMS_Shot_JusticeGavel</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>100</muzzleFlashScale>
+				<sprayEffecterDef>DMS_LaunchDust</sprayEffecterDef>
+				<targetParams>
+					<canTargetBuildings>true</canTargetBuildings>
+					<canTargetPawns>true</canTargetPawns>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(5,5)</drawSize>
+				<offsets>
+					<li>(2.1,0)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+      <li Class="PRT_Mod.SelectableAmmo.SelectableAmmoExtension">
+        <projectiles>
+          <li>DMS_Bullet_Sledgehammer</li>
+          <li>DMS_Bullet_Sledgehammer_SADARM</li>
+          <li>DMS_Bullet_Sledgehammer_Shrapnel</li>
+        </projectiles>
+        <defaultProjectile>DMS_Bullet_Sledgehammer</defaultProjectile>
+      </li>
+			<li Class="PRT_Mod.CrossMapArtillery.CrossMapArtilleryExtension">
+				<maxWorldTiles>24</maxWorldTiles> <!-- 大地图射程 -->
+				<spread>4</spread> <!-- 炮弹飞到目的地的散布 -->
+				<ticksPerTile>15</ticksPerTile> <!-- 每跨 1 个世界格需要的tick数 -->
+				<minTravelTicks>60</minTravelTicks> <!-- 最短飞行时间，避免瞬移 -->
+				<worldObjectDefName>PRT_CrossMapShell</worldObjectDefName>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+  <!-- 铁雨——300mm远程火箭炮（计划加入跨地图打击能力） -->
+  <ThingDef ParentName="BaseAutomatroidRace" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Mech_CarettaRocket</defName>
+    <label>铁雨</label>
+    <description>太约代号 "风暴使者" (Thunderstorm Caller)。 这款履带式300mm远程火箭炮是集团军级别的战役打击力量，一轮齐射足以彻底抹平一座拥有大量永备工事的殖民地，齐射时壮观的场景也让它获得了“铁雨”的代号。它能在后方安全区域游走，其管束内装填的致命弹药却足以覆盖敌方深远纵深，无论是整肃前沿防御、撕裂集结地域抑或瘫痪后勤枢纽。凭借模块化设计的火箭巢群，该机械体能够在相对短时间内倾泄出令人胆寒的密集火力风暴，以其难以拦截的暴风火雨重塑战场环境，在作战关键时节瞬间改变战争的天平，将精确规划的地毯式打击送达遥远的目标方格，迫使对手在持续的、无预兆的高压制力下丧失组织度与战斗意志。\n\n此机械体具备跨地图打击能力，大地图射程100格，跨图打击散布半径12格\n\n此火箭炮配属三种弹药：\n\n1.300mm高爆火箭弹，通用弹药，对建筑、步兵和轻装甲目标都有着不错的毁伤效能；穿甲0.5，爆炸范围9.9，伤害量640\n\n2.300mm末敏火箭弹，反重装甲集群专攻，母弹飞至目标点后会分裂并释放成多枚制导弹药，智能瞄准索敌范围内的敌方目标，对重装甲集群造成毁灭性打击；子弹数量16，索敌范围24，子弹穿甲2.5，子弹爆炸范围1.9，子弹伤害量360\n\n3.300mm集束火箭弹，反人员特攻，母弹抵达目标前会分裂并释放多枚子弹头，对前方目标造成区域杀伤；子弹数量16，扩散范围12，子弹穿甲0.35，子弹爆炸范围3.9，子弹伤害量200</description>
+    <statBases>
+      <MoveSpeed>2.5</MoveSpeed><!--移動速度-->
+      <ArmorRating_Sharp>1.8</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>1.6</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.8</ArmorRating_Heat>  <!--能抗-->
+      <IncomingDamageFactor>0.75</IncomingDamageFactor><!--承伤乘数-->
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">8</BandwidthCost>        <!--帶寬消耗-->
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge><!--充電/培養時產出廢料-->
+    </statBases>
+    <race>
+      <body>DMS_Caterpillar</body>
+      <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
+      <baseBodySize>4</baseBodySize>
+      <baseHealthScale>6</baseHealthScale>
+      <mechWeightClass>UltraHeavy</mechWeightClass>
+    </race>
+    <comps>
+      <li Class="Fortified.CompProperties_VehicleWeapon">
+        <defaultWeapon>DMS_Gun_RocketNest</defaultWeapon>
+        <turretRotationFollowPawn>true</turretRotationFollowPawn>
+        <rotationSmoothTime>1.0</rotationSmoothTime>
+        <drawData>
+          <defaultData>
+            <offset>(0,0,0)</offset>
+          </defaultData>
+        </drawData>
+      </li>
+    </comps>
+    <tools Inherit="False">
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>5.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+     </tools>
+    <butcherProducts>
+      <DMS_ChunkSlag>6</DMS_ChunkSlag>
+      <Tungsteel>80</Tungsteel>
+      <Steel>40</Steel>
+    </butcherProducts>
+    <damageMultipliers>
+      <li>
+        <damageDef>Blunt</damageDef>
+        <multiplier>0.75</multiplier>
+      </li>
+      <li>
+        <damageDef>Stab</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+    </damageMultipliers>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAutomatroidKind" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Mech_CarettaRocket</defName>
+    <label>铁雨</label>
+    <race>DMS_Mech_CarettaRocket</race>
+    <combatPower>250</combatPower>
+    <maxPerGroup>4</maxPerGroup>
+    <isBoss>true</isBoss>
+    <destroyGearOnDrop>true</destroyGearOnDrop>
+    <abilities>
+      <li>DMS_RepairMode</li>
+    </abilities>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/DMS/caterpillarRocket</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4.8</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/DMS/caterpillarRocket</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4.8</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags/>
+    <weaponMoney>5000~9999</weaponMoney>
+  </PawnKindDef>
+
+  <RecipeDef ParentName="DMS_SuperHeavyMechanoidRecipe" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Make_CarettaRocket</defName>
+    <label>组装铁雨</label>
+    <description>组装铁雨</description>
+    <products>
+      <DMS_Mech_CarettaRocket>1</DMS_Mech_CarettaRocket>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>Neurocomputer</ThingDef>
+      <ThingDef>ComponentFireControl</ThingDef>
+      <ThingDef>DMS_Mech_CarettaRocket</ThingDef>
+    </descriptionHyperlinks>
+    <researchPrerequisite Inherit="False">DMS_PRT_IntelligentArtillery</researchPrerequisite>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>1000</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>300</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neurocomputer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentFireControl</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <!-- “铁雨”远程火箭发射器 -->
+  <ThingDef ParentName="DMS_AutomatroidTurretGun">
+    <defName>DMS_Gun_RocketNest</defName>
+    <label>“铁雨”远程火箭发射器</label>
+    <description>300mm远程火箭炮，一轮齐射足以彻底抹平一座拥有大量永备工事的殖民地，齐射时壮观的场景也让它获得了“铁雨”的代号\n\n此火箭炮配属三种弹药：\n\n1.300mm高爆火箭弹，通用弹药，对建筑、步兵和轻装甲目标都有着不错的毁伤效能；穿甲0.5，爆炸范围9.9，伤害量640\n\n2.300mm末敏火箭弹，反重装甲集群专攻，母弹飞至目标点后会分裂并释放成多枚制导弹药，智能瞄准索敌范围内的敌方目标，对重装甲集群造成毁灭性打击；子弹数量16，索敌范围24，子弹穿甲2.5，子弹爆炸范围1.9，子弹伤害量360\n\n3.300mm集束火箭弹，反人员特攻，母弹抵达目标前会分裂并释放多枚子弹头，对前方目标造成区域杀伤；子弹数量16，扩散范围12，子弹穿甲0.35，子弹爆炸范围3.9，子弹伤害量200</description>
+    <graphicData>
+      <texPath>Things/DMS/DMS_Weapon_BigRocketNest</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>4.0</drawSize>
+    </graphicData>
+    <statBases>
+      <Mass>180</Mass>
+      <AccuracyTouch>0.7</AccuracyTouch>
+      <AccuracyShort>0.85</AccuracyShort>
+      <AccuracyMedium>0.7</AccuracyMedium>
+      <AccuracyLong>0.45</AccuracyLong>
+      <!--冷却时间-->
+      <RangedWeapon_Cooldown>18</RangedWeapon_Cooldown>
+    </statBases>
+    <!--动作-->
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+        <forcedMissRadius>12.0</forcedMissRadius>
+        <forcedMissRadiusClassicMortars>14.0</forcedMissRadiusClassicMortars>
+        <requireLineOfSight>false</requireLineOfSight>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>DMS_Bullet_HailRocket</defaultProjectile>
+        <warmupTime>2.0</warmupTime>
+        <burstShotCount>12</burstShotCount>
+        <ticksBetweenBurstShots>45</ticksBetweenBurstShots>
+        <range>300</range>
+        <soundCast>RocketswarmLauncher_Fire</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>15</muzzleFlashScale>
+        <targetParams>
+          <canTargetPawns>false</canTargetPawns>
+          <canTargetLocations>true</canTargetLocations>
+          <canTargetBuildings>true</canTargetBuildings>
+        </targetParams>
+      </li>
+    </verbs>
+    <modExtensions>
+      <li Class="PRT_Mod.SelectableAmmo.SelectableAmmoExtension">
+        <projectiles>
+          <li>DMS_Bullet_HailRocket</li>
+          <li>DMS_Bullet_HailRocket_SADARM</li>
+          <li>DMS_Bullet_HailRocket_Shrapnel</li>
+        </projectiles>
+        <defaultProjectile>DMS_Bullet_HailRocket</defaultProjectile>
+      </li>
+			<li Class="PRT_Mod.CrossMapArtillery.CrossMapArtilleryExtension">
+				<maxWorldTiles>100</maxWorldTiles> <!-- 大地图射程 -->
+				<spread>16</spread> <!-- 炮弹飞到目的地的散布 -->
+				<ticksPerTile>20</ticksPerTile> <!-- 每跨 1 个世界格需要的tick数 -->
+				<minTravelTicks>60</minTravelTicks> <!-- 最短飞行时间，避免瞬移 -->
+				<worldObjectDefName>PRT_CrossMapShell</worldObjectDefName>
+			</li>
+		</modExtensions>
+  </ThingDef>
+
+</Defs>

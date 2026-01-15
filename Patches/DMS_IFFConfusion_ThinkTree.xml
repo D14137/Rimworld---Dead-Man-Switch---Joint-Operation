@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- 这一页是必须加入的补丁 -->
+
+  <Operation Class="PatchOperationInsert">
+    <xpath>Defs/ThinkTreeDef[defName="Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalMentalState"][state="BerserkMechanoid"]</xpath>
+    <value>
+      <li Class="ThinkNode_ConditionalMentalState">
+        <state>DMS_IFFConfusionMech</state>
+        <subNodes>
+          <li Class="ThinkNode_Priority">
+            <subNodes>
+              <li Class="PRT_Mod.ThinkNode_ConditionalIFFMode">
+                <wantAttack>true</wantAttack>
+                <subNodes>
+                  <li Class="PRT_Mod.JobGiver_AttackFriendlyRanged" />
+                </subNodes>
+              </li>
+              <li Class="PRT_Mod.ThinkNode_ConditionalIFFMode">
+                <wantAttack>false</wantAttack>
+                <subNodes>
+                  <li Class="JobGiver_WanderAnywhere">
+                    <maxDanger>Deadly</maxDanger>
+                  </li>
+                </subNodes>
+              </li>
+            </subNodes>
+          </li>
+        </subNodes>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

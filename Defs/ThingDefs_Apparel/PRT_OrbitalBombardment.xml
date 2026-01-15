@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>PRT_ChargeSeparationModule</defName>
+    <label>电荷解离模块</label>
+    <description>电荷解离模块是制作重型电荷武器的关键组件。其核心是一种经过特殊处理的晶体阵列，能够在超高电压下稳定地捕获并强行“撕裂”基本电荷，将原本平衡的电子云分离为正负两极的、高度活化的等离子流。</description>
+    <graphicData>
+      <texPath>Things/Item/PRT_ChargeSeparationModule</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+	    <drawSize>0.9</drawSize>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <stackLimit>20</stackLimit>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MarketValue>2000</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>1.5</Mass>
+      <Flammability>0.2</Flammability>
+      <WorkToMake>20000</WorkToMake>
+    </statBases>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <tradeability>Sellable</tradeability>
+    <techLevel>Spacer</techLevel>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <costList>
+		<Plasteel>40</Plasteel>
+		<ComponentSpacer>3</ComponentSpacer>
+	</costList>
+    <recipeMaker>
+      <researchPrerequisite>DMS_PRT_AdvancedHeavyWeaponProject</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>FabricationBench</li>
+      </recipeUsers>
+	</recipeMaker>
+  </ThingDef>
+  
+    <ThingDef ParentName="ResourceBase">
+    <defName>PRT_Communicator_with_ReconSatellite</defName>
+    <label>侦察卫星通信模块</label>
+    <description>高度集成化的轨道侦察卫星通信模块，存储着一颗高轨多模态侦察卫星的数据交换协议，具备信息加解密与信号调频功能，加装卫星天线后可连接至在轨侦察卫星，实时获取卫星的侦察数据。\n\n此模块是高轨侦察卫星控制权的具象化，在边缘世界的市场上能卖出不错的价钱。</description>
+    <descriptionHyperlinks>
+      <ThingDef>PRT_ReconSatellitePod</ThingDef>
+      <ThingDef>PRT_SatelliteNavigationModule</ThingDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/PRT_Communicator_with_ReconSatellite</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+	  <drawSize>1.0</drawSize>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <stackLimit>20</stackLimit>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MarketValue>2500</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>0.3</Mass>
+      <Flammability>0.2</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <tradeability>Sellable</tradeability>
+    <techLevel>Spacer</techLevel>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>PRT_SatelliteNavigationModule</defName>
+    <label>卫星导航模块</label>
+    <description>将三颗高轨侦察卫星组合形成星座，整合其数据交换协议和侦察监视逻辑后编译而成的卫星导航模块，链接后可保持对星球表面特定区域的不间断监视，也可引导制导武器进行跨地图精确打击。</description>
+    <descriptionHyperlinks>
+      <ThingDef>PRT_ReconSatellitePod</ThingDef>
+      <ThingDef>PRT_Communicator_with_ReconSatellite</ThingDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/PRT_SatelliteNavigationModule</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MarketValue>10000</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>1.2</Mass>
+      <Flammability>0.2</Flammability>
+      <WorkToMake>10000</WorkToMake>
+    </statBases>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <drawGUIOverlay>false</drawGUIOverlay>
+    <tradeability>Sellable</tradeability>
+    <techLevel>Spacer</techLevel>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <costList>
+        <PRT_Communicator_with_ReconSatellite>3</PRT_Communicator_with_ReconSatellite>
+		<Steel>30</Steel>
+		<ComponentIndustrial>3</ComponentIndustrial>
+	</costList>
+    <recipeMaker>
+      <researchPrerequisite>DMS_PRT_GlobalPositioningAndStrike</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>FabricationBench</li>
+      </recipeUsers>
+	</recipeMaker>
+  </ThingDef>
+  
+    <!-- 无视野轨道轰炸靶向器（可XML配置发射物/间隔/数量/扩散） -->
+  <ThingDef ParentName="OrbitalUtilityBase">
+    <defName>PRT_OrbitalTargeter_BombardmentNoLOS</defName>
+    <label>轨道轰炸靶向器</label>
+    <description>无视野限制的轨道轰炸靶向器。可在全图任意位置指定轰炸坐标，之后由一次性的轨道轰炸平台投射16枚高威力动能弹。</description>
+    <descriptionHyperlinks>
+      <ThingDef>PRT_KineticBombardmentSatellitePod</ThingDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/PRT_OrbitalTargeter_BombardmentNoLOS</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.9,0.9)</drawSize>
+    </graphicData>
+    <verbs>
+      <li>
+        <verbClass>PRT_Mod.OrbitalBombardment.Verb_PRTOrbitalBombardment</verbClass>
+        <label>引导轨道轰炸</label>
+        <commandIcon>UI/GameComponent/OrbitalTargeterBombardment</commandIcon>
+        <hasStandardCommand>true</hasStandardCommand>
+        <useableInPocketMaps>false</useableInPocketMaps>
+        <warmupTime>3</warmupTime>
+        <onlyManualCast>true</onlyManualCast>
+        <requireLineOfSight>false</requireLineOfSight>
+        <range>9999</range>
+        <burstShotCount>1</burstShotCount>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CompProperties_ApparelReloadable">
+        <maxCharges>1</maxCharges>
+        <destroyOnEmpty>true</destroyOnEmpty>
+        <hotKey>Misc4</hotKey>
+        <chargeNoun>charge</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="PRT_Mod.OrbitalBombardment.PRTOrbitalBombardmentExtension">
+        <projectileDef>DMS_Bullet_Sledgehammer</projectileDef>
+        <skyfallerDef>PRT_Skyfaller_OrbitalShell</skyfallerDef>
+        <controllerDef>PRT_OrbitalBombardmentController</controllerDef>
+        <shotCount>16</shotCount>
+        <intervalTicks>80</intervalTicks>
+        <spreadRadius>24</spreadRadius>
+        <fallTicks>90</fallTicks>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- 轨道轰炸控制器：不可见，仅用于Tick按间隔落弹 -->
+  <ThingDef>
+    <defName>PRT_OrbitalBombardmentController</defName>
+    <label>orbital bombardment controller</label>
+    <thingClass>PRT_Mod.OrbitalBombardment.PRTOrbitalBombardmentController</thingClass>
+    <category>Ethereal</category>
+    <tickerType>Normal</tickerType>
+    <drawerType>None</drawerType>
+    <selectable>false</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <useHitPoints>false</useHitPoints>
+  </ThingDef>
+
+  <!-- 轨道炮弹Skyfaller：落地后根据 projectileDef.projectile 的爆炸参数执行一次爆炸 -->
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>PRT_Skyfaller_OrbitalShell</defName>
+    <label>高威力轨道动能弹</label>
+    <thingClass>PRT_Mod.OrbitalBombardment.Skyfaller_PRTOrbitalShell</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/ShellHighExplosive</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawRotated>true</drawRotated>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <skyfaller>
+      <shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+      <shadowSize>0.75</shadowSize>
+      <ticksToImpactRange>90~90</ticksToImpactRange>
+    </skyfaller>
+  </ThingDef>
+
+</Defs>

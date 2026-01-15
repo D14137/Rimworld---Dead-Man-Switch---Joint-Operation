@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="ApparelNoQualityBase">
+		<defName>AAC_Apparel_CicadaWing</defName>
+		<label>“蝉翼” 思考支持装置</label>
+		<description>“蝉翼”是专为机兵管制指挥官研发的第三代思考支持装置，其本体为约400g的金属颈环，激活展开后将释放大量仿神经纤维，在穿戴者身上编织成覆盖全身的紧身作战服。其采用的仿神经纤维依靠人体生物电流作为运转动力，能直接将穿戴者的脑波信号转化为加密指令，能大幅减轻指挥官的知觉同步负担，提高作战指挥的思考效率。\n\n不过，仿神经纤维不具备维持形体的力量，换言之尽管其与皮肤紧密相贴，但不会支持使用者的身体组织。</description>
+		<techLevel>Spacer</techLevel>
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Machining</soundWorking>
+			<recipeUsers>
+				<li>FabricationBench</li>
+			</recipeUsers>
+			<researchPrerequisite>DMS_PRT_HighIntensityConflict</researchPrerequisite>
+			<unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+			<displayPriority>1000</displayPriority>
+		</recipeMaker>
+		<costList>
+			<Synthread>40</Synthread>
+			<Plasteel>20</Plasteel>
+			<ComponentSpacer>5</ComponentSpacer>
+		</costList>
+		<tradeTags>
+			<li>Armor</li>
+		</tradeTags>
+		<graphicData>
+			<texPath>Things/Apparel/CicadaWing/CicadaWing</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.1</drawSize>
+		</graphicData>
+		<thingCategories>
+			<li>ApparelArmor</li>
+		</thingCategories>
+		<statBases>
+			<MaxHitPoints>400</MaxHitPoints>
+      		<MarketValue>800</MarketValue>
+			<WorkToMake>12000</WorkToMake>
+			<Mass>0.4</Mass>
+			<ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.1</ArmorRating_Heat>
+			<Insulation_Cold>5</Insulation_Cold>
+			<Insulation_Heat>5</Insulation_Heat>
+			<EquipDelay>2</EquipDelay>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Flammability>0</Flammability>
+		</statBases>
+		<useHitPoints>false</useHitPoints>
+		<equippedStatOffsets>
+            <MechControlGroups>4</MechControlGroups>
+            <MechBandwidth>36</MechBandwidth>
+			<VacuumResistance MayRequire="ludeon.rimworld.odyssey">0.60</VacuumResistance>
+		</equippedStatOffsets>
+		<apparel>
+			<bodyPartGroups>
+				<li>Neck</li>
+			</bodyPartGroups>
+			<layers>
+				<li>Belt</li>
+			</layers>
+		</apparel>
+	</ThingDef>
+
+	<ThingDef ParentName="ApparelArmorHelmetMechanitorBase">
+    <defName>AAC_Apparel_CelestialLink</defName>
+    <label>“天链” 战术头显系统</label>
+    <description>“天链”战术头显系统是专为机兵管制指挥官设计的第四代非侵入式战术头显。这套融合了量子加密通信与生物电识别技术的作战系统，允许指挥官通过思维直连同时操控多达12台不同型号的中型作战机兵，其战术数据带宽相当于传统指挥终端的3倍。</description>
+    <graphicData>
+      <texPath>Things/Apparel/CelestialLink/CelestialLink</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+		<MaxHitPoints>400</MaxHitPoints>
+      	<MarketValue>800</MarketValue>
+		<WorkToMake>8000</WorkToMake>
+		<Mass>1.2</Mass>
+		<ArmorRating_Sharp>0.8</ArmorRating_Sharp>
+		<ArmorRating_Blunt>0.6</ArmorRating_Blunt>
+		<ArmorRating_Heat>0.6</ArmorRating_Heat>
+		<EquipDelay>4</EquipDelay>
+		<DeteriorationRate>0</DeteriorationRate>
+		<Flammability>0</Flammability>
+	</statBases>
+    <equippedStatOffsets>
+      <MechBandwidth>24</MechBandwidth>
+      <MechControlGroups>1</MechControlGroups>
+	  <ShootingAccuracyPawn>1</ShootingAccuracyPawn>
+	  <AimingDelayFactor>-0.2</AimingDelayFactor>
+    </equippedStatOffsets>
+    <recipeMaker Inherit="False">
+      <researchPrerequisite>DMS_PRT_HighIntensityConflict</researchPrerequisite>
+      <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <workSkill>Crafting</workSkill>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      <displayPriority>1010</displayPriority>
+    </recipeMaker>
+    <costList Inherit="False">
+      <Plasteel>80</Plasteel>
+      <ComponentSpacer>3</ComponentSpacer>
+	  <PRT_Communicator_with_ReconSatellite>1</PRT_Communicator_with_ReconSatellite>
+    </costList>
+    <apparel>
+	  <bodyPartGroups>
+		<li>UpperHead</li>
+		<li>Eyes</li>
+		<li>HeadClaw</li>
+		<li>FullHead</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <scoreOffset>4</scoreOffset>
+      <mechanitorApparel>true</mechanitorApparel>
+      <wornGraphicPath>Things/Apparel/CelestialLink/CelestialLink</wornGraphicPath>
+    </apparel>
+  </ThingDef>
+
+</Defs>

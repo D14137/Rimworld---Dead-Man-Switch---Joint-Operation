@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  <!-- 灵枢：火控引导 -->
+	<AbilityDef ParentName="DMS_AddHediffSelfBase">
+		<defName>DMS_FireControlGuidance</defName>
+		<label>火控引导</label>
+		<description>通过主动雷达锁定敌方目标，并向周围友方机兵提供火控数据</description>
+		<iconPath>UI/Ability/FireControlGuidance</iconPath>
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>DMS_FireControlGuidance</hediffDef>
+				<onlyBrain>true</onlyBrain>
+				<onlyApplyToSelf>true</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+			</li>
+		</comps>
+		<statBases>
+			<Ability_EffectRadius>7.9</Ability_EffectRadius>
+			<Ability_Duration>60</Ability_Duration>
+		</statBases>
+		<verbProperties>
+			<range>7.9</range>
+		</verbProperties>
+	</AbilityDef>
+
+	<!-- 钳工：无线输电 -->
+	<AbilityDef ParentName="DMS_AddHediffSelfBase">
+		<defName>DMS_MechEnergyStabilizer</defName>
+		<label>无线输电</label>
+		<description>启动无线输电装置，使周围己方机械体的电量稳定上涨</description>
+		<iconPath>UI/Ability/MechEnergyStabilizer</iconPath>
+		<groupDef />
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<cooldownTicksRange>30000</cooldownTicksRange>
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>DMS_MechEnergyStabilizer</hediffDef>
+				<onlyApplyToSelf>true</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+			</li>
+		</comps>
+		<statBases>
+			<Ability_EffectRadius>10</Ability_EffectRadius>
+			<Ability_Duration>60</Ability_Duration>
+		</statBases>
+		<verbProperties>
+			<range>10</range>
+		</verbProperties>
+	</AbilityDef>
+
+	<!-- 钳工：紧急输电 -->
+	<AbilityDef>
+		<defName>DMS_EmergencyPowerTransfer</defName>
+		<label>紧急输电</label>
+		<description>对目标殖民地机械体进行紧急输电，将其电量补满</description>
+		<iconPath>UI/Ability/EmergencyPowerTransfer</iconPath>
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<groupDef />
+		<cooldownTicksRange>30000</cooldownTicksRange>
+		<warmupStartSound>FlickSwitch</warmupStartSound>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<warmupTime>5</warmupTime>
+			<drawAimPie>False</drawAimPie>
+			<requireLineOfSight>False</requireLineOfSight>
+			<range>-1</range>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>false</canTargetHumans>
+				<canTargetMechs>true</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="PRT_Mod.CompProperties_AbilityFillMechEnergy">
+				<onlyColonyMechs>true</onlyColonyMechs>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<!-- 钳工：战地抢修 -->
+	<AbilityDef>
+		<defName>DMS_BattlefieldRepair</defName>
+		<label>战地抢修</label>
+		<description>接触目标机械体残骸并执行战地抢修，复活死亡的己方机械体。</description>
+		<iconPath>UI/Ability/BattlefieldRepair</iconPath>
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<groupDef />
+		<cooldownTicksRange>120000</cooldownTicksRange>
+		<warmupStartSound>FlickSwitch</warmupStartSound>
+		<hostile>false</hostile>
+		<jobDef>CastAbilityGoToThing</jobDef>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>5</warmupTime>
+			<drawAimPie>False</drawAimPie>
+			<requireLineOfSight>False</requireLineOfSight>
+			<range>9.9</range>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetItems>false</canTargetItems>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetCorpses>true</canTargetCorpses>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>false</canTargetHumans>
+				<canTargetMechs>true</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="PRT_Mod.CompProperties_AbilityBattlefieldRepair">
+				<onlyColonyMechs>true</onlyColonyMechs>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef>
+		<defName>DMS_IFFConfusionPulse</defName>
+		<label>敌我识别干扰</label>
+		<description>向目标区域释放高强度干扰信号，使范围内敌对机械体的敌我识别模块错乱，无法锁定我方单位，并间歇性地将敌方机械体判定为攻击目标。</description>
+		<iconPath>UI/Ability/IFFConfusionPulse</iconPath>
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<groupDef />
+		<cooldownTicksRange>60000</cooldownTicksRange>
+		<warmupStartSound>FlickSwitch</warmupStartSound>
+		<hostile>true</hostile>
+		<statBases>
+			<Ability_Duration>50</Ability_Duration>
+			<Ability_EffectRadius>3.9</Ability_EffectRadius>
+		</statBases>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>1</warmupTime>
+			<drawAimPie>False</drawAimPie>
+			<requireLineOfSight>False</requireLineOfSight>
+			<range>79.9</range>
+			<targetParams>
+				<canTargetSelf>True</canTargetSelf>
+				<canTargetLocations>True</canTargetLocations>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>true</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="PRT_Mod.CompProperties_AbilityIFFConfusionPulse">
+				<onlyHostileMechs>true</onlyHostileMechs>
+				<mentalStateDef>DMS_IFFConfusionMech</mentalStateDef>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<MentalStateDef>
+		<defName>DMS_IFFConfusionMech</defName>
+		<label>敌我识别混乱</label>
+		<stateClass>PRT_Mod.MentalState_IFFConfusionMech</stateClass>
+		<baseInspectLine>敌我识别混乱</baseInspectLine>
+		<minTicksBeforeRecovery>999999</minTicksBeforeRecovery>
+		<maxTicksBeforeRecovery>999999</maxTicksBeforeRecovery>
+		<recoveryMtbDays>-1</recoveryMtbDays>
+	</MentalStateDef>
+
+	<HediffDef>
+		<defName>DMS_IFFConfusion</defName>
+		<label>敌我识别混乱</label>
+		<description>敌我识别模块发生紊乱，行为模式不稳定。</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(1, 0.35, 0.35)</defaultLabelColor>
+		<isBad>true</isBad>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>DMS_FireControlGuidance</defName>
+		<label>火控引导</label>
+		<description>这台机械体正在向周围友方单位提供火控数据.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<showRemainingTime>true</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath" />
+			<li Class="HediffCompProperties_GiveHediffsInRange">
+				<compClass>Fortified.HediffComp_GiveHediffsInRangeMech</compClass>
+				<range>7.9</range>
+				<hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+				<onlyPawnsInSameFaction>true</onlyPawnsInSameFaction>
+				<targetingParameters>
+					<canTargetSelf>false</canTargetSelf>
+					<canTargetPawns>true</canTargetPawns>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetHumans>true</canTargetHumans>
+					<canTargetMechs>true</canTargetMechs>
+				</targetingParameters>
+				<hediff>DMS_FireControlGuidanceBuff</hediff>
+			</li>
+		</comps>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<statOffsets>
+					<ShootingAccuracyPawn>-1</ShootingAccuracyPawn>
+				</statOffsets>
+				<statFactors>
+					<MoveSpeed>0.5</MoveSpeed>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>DMS_MechEnergyStabilizer</defName>
+		<label>无线输电模块启动</label>
+		<description>正在向周围殖民地机械体进行无线输电.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<showRemainingTime>true</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath" />
+			<li Class="PRT_Mod.HediffCompProperties_RechargeMechEnergyInRange">
+				<radius>10</radius>
+				<energyPerSecond>0.5</energyPerSecond> <!--每秒补能1点-->
+				<tickInterval>60</tickInterval> <!--多久检查一次范围，数值越小检查越频繁，但越消耗性能-->
+				<includeSelf>false</includeSelf> <!--是否补能自身-->
+			</li>
+		</comps>
+		<isBad>false</isBad>
+	</HediffDef>
+
+	<!-- 施加在友軍上的Buff -->
+	<HediffDef>
+		<defName>DMS_FireControlGuidanceBuff</defName>
+		<label>接受火控引导中</label>
+		<description>正在接受友方单位的火控数据</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<showRemainingTime>false</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath" />
+		</comps>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<statOffsets>
+					<ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+          <AimingDelayFactor>-0.75</AimingDelayFactor>
+					<!-- <RangedCooldownFactor>-0.75</RangedCooldownFactor> -->
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

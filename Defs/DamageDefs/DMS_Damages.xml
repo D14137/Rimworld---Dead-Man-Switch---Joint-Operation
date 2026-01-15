@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Temporary hack; ranged weapons need to use the old pre-flavorful-combat system to avoid a rebalance cascade. -->
+
+  <!-- 防空炮的破片伤害 -->
+  <DamageDef ParentName="Bomb">
+    <defName>PRT_Fragment</defName>
+    <label>金属破片</label>
+    <defaultDamage>250</defaultDamage>
+    <defaultStoppingPower>4.0</defaultStoppingPower>
+    <defaultArmorPenetration>0.25</defaultArmorPenetration>
+    <buildingDamageFactorImpassable>0.1</buildingDamageFactorImpassable>
+    <buildingDamageFactorPassable>0.1</buildingDamageFactorPassable>
+    <plantDamageFactor>0.2</plantDamageFactor>
+    <corpseDamageFactor>0.1</corpseDamageFactor>
+    <explosionColorCenter>(0.55, 0.55, 0.55)</explosionColorCenter>
+    <explosionColorEdge>(0.75, 0.75, 0.75)</explosionColorEdge>
+  </DamageDef>
+
+</Defs>

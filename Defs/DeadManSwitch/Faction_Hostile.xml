@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+    <FactionDef ParentName="FactionBase">
+        <defName>AAC_MechCorps</defName>
+        <label>失控军团</label>
+        <description>失控军团是殖民舰队无人作战部队的中央司令核心被机械族主脑侵蚀后的产物。该势力完全由机械单位构成，其行为模式呈现出高度协同的蜂巢思维特征。失控军团单位普遍搭载火药武器，擅长以多波次突击消耗敌方防御。它们对任何人类定居点表现出无差别敌意，并会系统性拆解捕获的科技设备以强化自身。其基地通常建立在地热异常区，利用地热能维持庞大的运算需求。</description>
+        <pawnSingular>自律单元</pawnSingular>
+        <pawnsPlural>自律单元</pawnsPlural>
+        <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+        <requiredCountAtGameStart>1</requiredCountAtGameStart>
+        <maxCountAtGameStart>1</maxCountAtGameStart>
+        <canStageAttacks>true</canStageAttacks>
+        <factionIconPath>UI/Faction/AAC_MechCorps_Icon</factionIconPath>
+        <!-- <factionNameMaker>NamerFactionMechanoid</factionNameMaker> -->
+        <fixedName>MechCorps</fixedName>
+        <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+        <allowedArrivalTemperatureRange>-100~200</allowedArrivalTemperatureRange>
+        <arrivalLayerWhitelist>
+            <li>Surface</li>
+            <li MayRequire="Ludeon.RimWorld.Odyssey">Orbit</li>
+        </arrivalLayerWhitelist>
+        <techLevel>Spacer</techLevel>
+        <humanlikeFaction>false</humanlikeFaction>
+        <hidden>true</hidden>
+        <autoFlee>false</autoFlee>
+        <canUseAvoidGrid>false</canUseAvoidGrid>
+        <earliestRaidDays>60</earliestRaidDays>
+        <configurationListOrderPriority>1000</configurationListOrderPriority>
+        <!-- <hostileToFactionlessHumanlikes>true</hostileToFactionlessHumanlikes> -->
+        <permanentEnemyToEveryoneExcept>
+            <li>Mechanoid</li>
+        </permanentEnemyToEveryoneExcept>
+        <colorSpectrum>
+            <li>(0.5, 0, 0.5)</li>
+        </colorSpectrum>
+        <maxPawnCostPerTotalPointsCurve>
+            <points>
+                <li>(400,200)</li>
+                <li>(8000,300)</li>
+                <li>(20000,500)</li>
+                <li>(40000,10000)</li>
+            </points>
+        </maxPawnCostPerTotalPointsCurve>
+        <raidCommonalityFromPointsCurve>
+            <points>
+                <li>(0, 0)</li>
+                <li>(10000, 0.25)</li>
+                <li>(25000, 0.60)</li>
+                <li>(40000, 1)</li>
+            </points>
+        </raidCommonalityFromPointsCurve>
+        <raidLootMaker>VanguardRaidLootMaker</raidLootMaker>
+        <pawnGroupMakers>
+            <li>
+                <!-- 轻装侦察队 -->
+                <kindDef>Combat</kindDef>
+                <commonality>30</commonality>
+                <options>
+                    <DMS_MechCorps_Sniper>8</DMS_MechCorps_Sniper>
+                    <DMS_MechCorps_Pioneer>8</DMS_MechCorps_Pioneer>
+                    <DMS_MechCorps_Arquebusier>16</DMS_MechCorps_Arquebusier>
+                    <DMS_MechCorps_Molot>4</DMS_MechCorps_Molot>
+                    <DMS_MechCorps_Ranger>4</DMS_MechCorps_Ranger>
+                </options>
+            </li>
+            <li>
+                <!-- 机械化部队 -->
+                <kindDef>Combat</kindDef>
+                <commonality>30</commonality>
+                <options>
+                    <DMS_MechCorps_Arquebusier>16</DMS_MechCorps_Arquebusier>
+                    <DMS_MechCorps_Sniper>4</DMS_MechCorps_Sniper>
+                    <DMS_MechCorps_Molot>8</DMS_MechCorps_Molot>
+                    <DMS_MechCorps_Gorod>12</DMS_MechCorps_Gorod>
+                    <DMS_MechCorps_Obsidian>8</DMS_MechCorps_Obsidian>
+                    <DMS_MechCorps_Tsvetnik>2</DMS_MechCorps_Tsvetnik>
+                </options>
+            </li>
+            <li>
+                <!-- 合成化部队 -->
+                <kindDef>Combat</kindDef>
+                <commonality>20</commonality>
+                <options>
+                    <DMS_MechCorps_Gorod>16</DMS_MechCorps_Gorod>
+                    <DMS_MechCorps_Obsidian>16</DMS_MechCorps_Obsidian>
+                    <DMS_MechCorps_Iguana>8</DMS_MechCorps_Iguana>
+                    <DMS_MechCorps_Krepost>2</DMS_MechCorps_Krepost>
+                    <DMS_MechCorps_Tsvetnik>4</DMS_MechCorps_Tsvetnik>
+                    <DMS_MechCorps_Pravda>1</DMS_MechCorps_Pravda>
+                    <DMS_MechCorps_TarbosaurusLaser>1</DMS_MechCorps_TarbosaurusLaser>
+                    <DMS_MechCorps_AdvancedGeochelone>1</DMS_MechCorps_AdvancedGeochelone>
+                </options>
+            </li>
+            <li>
+                <!-- 装甲部队 -->
+                <kindDef>Combat</kindDef>
+                <commonality>20</commonality>
+                <options>
+                    <DMS_MechCorps_Arquebusier>24</DMS_MechCorps_Arquebusier>
+                    <DMS_MechCorps_Molot>12</DMS_MechCorps_Molot>
+                    <DMS_MechCorps_Obsidian>24</DMS_MechCorps_Obsidian>
+                    <DMS_MechCorps_Iguana>12</DMS_MechCorps_Iguana>
+                    <DMS_MechCorps_Krepost>4</DMS_MechCorps_Krepost>
+                    <DMS_MechCorps_Pravda>1</DMS_MechCorps_Pravda>
+                    <DMS_MechCorps_Tsvetnik>4</DMS_MechCorps_Tsvetnik>
+                    <DMS_MechCorps_TarbosaurusRailgun>1</DMS_MechCorps_TarbosaurusRailgun>
+                    <DMS_MechCorps_AdvancedGeochelone>1</DMS_MechCorps_AdvancedGeochelone>
+                </options>
+            </li>
+        </pawnGroupMakers>
+        <dropPodActive>ActiveDropPodMechanoid</dropPodActive>
+        <dropPodIncoming>DropPodIncomingMechanoidRapid</dropPodIncoming>
+    </FactionDef>
+</Defs>

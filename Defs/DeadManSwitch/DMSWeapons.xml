@@ -1,0 +1,854 @@
+<Defs>
+
+  <!-- 电磁轨道炮（用于超重型机兵，反装甲专精） -->
+  <ThingDef ParentName="DMS_AutomatroidHeavyGun" MayRequire="Aoba.DeadManSwitch.Core">
+		<defName>DMS_Gun_RailGun</defName>
+		<label>九霄雷罚</label>
+		<description>AHWP-88A(Advanced Heavy Weapon Projects，先进重型武器项目) “九霄雷罚”是一款88mm口径的电磁轨道射弹系统，计划用于下一代超重型机兵的主力直射武器。“九霄雷罚”通过超导储能线圈和分段式轨道加速系统，能将稳定翼磁轨炮弹以6马赫的初速轰出。配备全自动装弹机，再装填时间可压缩至2秒。其紧凑型脉冲电源设计解决了传统电磁武器功率峰值不足的问题，全功率射击时足以贯穿禁卫机械蜈蚣的正面防护装甲。炮身采用液氮冷却系统以抑制轨道热堆积，配合机兵的战术火控计算机，可在2秒内完成从锁定到击发的全过程。特殊设计的反后坐液压机构将开火冲击分散至机兵全身，确保射击稳定性。</description>
+		<weaponTags>
+			<li>DMS_Tarbosaurus_Gun</li>
+			<li>NoSwitch</li>
+			<li>DMS_MechWeaponUltraHeavy</li>
+			<li>AAC_AdvancedHeavyWeapon</li>
+			<li>AAC_Mech_Railgun</li>
+		</weaponTags>
+		<graphicData>
+			<texPath>Things/DMS/DMS_Gun_RailGun</texPath>
+			<drawSize>3.5</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>255</Mass>
+			<WorkToMake>100000</WorkToMake>
+		    <AccuracyTouch>0.89</AccuracyTouch>
+		    <AccuracyShort>1.00</AccuracyShort>
+		    <AccuracyMedium>1.00</AccuracyMedium>
+		    <AccuracyLong>0.99</AccuracyLong>
+		    <RangedWeapon_Cooldown>1.6</RangedWeapon_Cooldown>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>DMS_PRT_AdvancedHeavyWeaponProject</li>
+			</researchPrerequisites>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<Tungsteel>350</Tungsteel>
+			<ComponentStamped>10</ComponentStamped>
+			<ComponentSpacer>8</ComponentSpacer>
+			<ComponentFireControl>1</ComponentFireControl>
+		</costList>
+		<comps Inherit="False">
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Styleable"/>
+		</comps>
+		<verbs>
+			<li>
+				<hasStandardCommand>true</hasStandardCommand>
+				<verbClass>Verb_Shoot</verbClass>
+				<defaultProjectile>DMS_Bullet_RailGun</defaultProjectile>
+				<requireLineOfSight>true</requireLineOfSight>
+				<warmupTime>1.8</warmupTime>
+				<minRange>4.9</minRange>
+				<range>84.9</range>
+				<ai_AvoidFriendlyFireRadius>4.9</ai_AvoidFriendlyFireRadius>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>DMS_Shot_RailGunSound</soundCast><!-- 需要DMS Motorlized -->
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>20</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<forcedMissRadius>0.5</forcedMissRadius>
+			</li>
+		</verbs>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(1.5,1.5)</drawSize>
+				<offsets>
+					<li>(1.0,0)</li>
+					<li>(1.1,-0.1)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+			<li Class="Fortified.HeavyEquippableExtension">
+				<EquippableDef>UltraHeavyAutomatroid</EquippableDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+  <ThingDef ParentName="BaseBullet" MayRequire="Aoba.DeadManSwitch.Core">
+    <defName>DMS_Bullet_RailGun</defName>
+    <label>稳定翼磁轨炮弹</label>
+    <thingClass>Projectile_Explosive</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>360</damageAmountBase>
+      <armorPenetrationBase>1.98</armorPenetrationBase>
+      <speed>240</speed>
+      <explosionRadius>1.9</explosionRadius>
+	  <arcHeightFactor>1.2</arcHeightFactor>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <soundExplode>Explosion_GiantBomb</soundExplode>
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+    </projectile>
+  </ThingDef>
+
+  <!-- 激光器（用于超重型机兵，反人员建筑专精） -->
+  <ThingDef ParentName="DMS_AutomatroidHeavyGun" MayRequire="Aoba.DeadManSwitch.Core">
+		<defName>DMS_Gun_LaserGun</defName>
+		<label>寂灭青虹</label>
+		<description>AHWP-35L(Advanced Heavy Weapon Projects，先进重型武器项目) “寂灭青虹”是一款76mm口径的电磁轨道射弹系统，其通过高能化学激光器与自适应光学镜组的结合，能在瞬息之间用毁灭性的光束横扫指定区域。其独特的波长变频技术可针对不同材质目标自动调节穿透模式，无论是熔穿装甲薄弱处还是引爆关键部件都游刃有余。</description>
+		<weaponTags>
+			<li>DMS_Tarbosaurus_Gun</li>
+			<li>NoSwitch</li>
+			<li>DMS_MechWeaponUltraHeavy</li>
+			<li>AAC_AdvancedHeavyWeapon</li>
+			<li>AAC_Mech_Laser</li>
+		</weaponTags>
+		<graphicData>
+			<texPath>Things/DMS/DMS_Gun_LaserGun</texPath>
+			<drawSize>3.25</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>260</Mass>
+			<WorkToMake>90000</WorkToMake>
+		    <AccuracyTouch>0.86</AccuracyTouch>
+			<AccuracyShort>0.92</AccuracyShort>
+			<AccuracyMedium>0.94</AccuracyMedium>
+			<AccuracyLong>0.78</AccuracyLong>
+		    <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>DMS_PRT_AdvancedHeavyWeaponProject</li>
+			</researchPrerequisites>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<Tungsteel>350</Tungsteel>
+			<ComponentStamped>12</ComponentStamped>
+			<ComponentSpacer>8</ComponentSpacer>
+			<ComponentFireControl>1</ComponentFireControl>
+		</costList>
+		<comps Inherit="False">
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Styleable"/>
+		</comps>
+		<verbs>
+			<li>
+				<verbClass>Verb_ShootBeam</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<warmupTime>0.5</warmupTime>
+				<range>49.9</range>
+				<minRange>2.9</minRange>
+				<beamFullWidthRange>8.9</beamFullWidthRange>
+				<burstShotCount>48</burstShotCount>
+				<showBurstShotStats>false</showBurstShotStats>
+				<beamWidth>12</beamWidth>
+				<ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+				<beamDamageDef>DMS_Beam_LaserGun</beamDamageDef>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>22</muzzleFlashScale>
+				<soundCastBeam>BeamGraser_Shooting</soundCastBeam>
+				<beamGroundFleckDef>Fleck_BeamBurn</beamGroundFleckDef>
+				<beamFleckChancePerTick>0.32</beamFleckChancePerTick>
+				<beamMaxDeviation>0.5</beamMaxDeviation>
+				<beamCurvature>0</beamCurvature>
+				<beamMoteDef>Mote_GraserBeamBase</beamMoteDef>
+				<beamEndEffecterDef>GraserBeam_End</beamEndEffecterDef>
+				<beamChanceToStartFire>0.85</beamChanceToStartFire>
+				<beamChanceToAttachFire>0.85</beamChanceToAttachFire>
+				<beamFireSizeRange>0.55~0.85</beamFireSizeRange>
+				<beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
+				<beamStartOffset>0.8</beamStartOffset>
+				<beamLineFleckChanceCurve>
+				<points>
+					<li>(0, 0)</li>
+					<li>(0.65, 0.4)</li>
+					<li>(1, 0.75)</li>
+				</points>
+				</beamLineFleckChanceCurve>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(1.5,1.5)</drawSize>
+				<offsets>
+					<li>(1.0,0)</li>
+					<li>(1.1,-0.1)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+			<li Class="Fortified.HeavyEquippableExtension">
+				<EquippableDef>UltraHeavyAutomatroid</EquippableDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+  <DamageDef>
+    <defName>DMS_Beam_LaserGun</defName>
+    <label>高能激光</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been beamed to death.</deathMessage>
+    <hediff>BeamWound</hediff>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Bullet</impactSoundType>
+    <armorCategory>Heat</armorCategory>
+    <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+    <defaultDamage>32</defaultDamage>
+    <defaultArmorPenetration>1.2</defaultArmorPenetration>
+    <buildingDamageFactorImpassable>5</buildingDamageFactorImpassable>
+    <buildingDamageFactorPassable>5</buildingDamageFactorPassable>
+  </DamageDef>
+
+  <!--重型机炮（用于重型机兵比如Iguna，小区域AOE）-->
+  <ThingDef ParentName="DMS_AutomatroidHeavyGun">
+		<defName>DMS_Gun_HeavyAutoCannon</defName>
+		<label>金属风暴</label>
+		<description>专为重型机兵设计的全自动压制武器，采用七根旋转炮管交替射击，形成足以撕裂装甲的金属洪流。通过电磁辅助装弹与液压缓冲系统，这套武器能在极短时间内倾泻出毁灭性的火力风暴，有效覆盖中近距离的集群目标或轻型载具。\n其模块化供弹系统支持穿甲弹、高爆弹等多种弹药快速切换，配合稳定炮架与智能火控，即使在全速射击时也能保持惊人精度。炮管表面的散热镀层大幅提升耐久性，确保持续作战能力。</description>
+		<weaponTags>
+			<li>DMS_MechWeaponUltraHeavy</li>
+			<li>H_Gatling30mm</li>
+			<li>AAC_UltraHeavyWeapon</li>
+		</weaponTags>
+		<graphicData>
+			<texPath>Things/DMS/DMS_Gun_HeavyAutoCannon</texPath>
+			<drawSize>2.75</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>180</Mass>
+			<WorkToMake>70000</WorkToMake>
+			<AccuracyTouch>0.78</AccuracyTouch>
+			<AccuracyShort>0.68</AccuracyShort>
+			<AccuracyMedium>0.58</AccuracyMedium>
+			<AccuracyLong>0.48</AccuracyLong>
+			<RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown>
+		</statBases>
+		<recipeMaker>
+			<skillRequirements>
+				<Crafting>10</Crafting>
+			</skillRequirements>
+			<researchPrerequisites>
+				<li>MultibarrelWeapons</li>
+				<li>DMS_PRT_HeavyArmoredMech</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<costList>
+			<Tungsteel>300</Tungsteel>
+			<ComponentStamped>10</ComponentStamped>
+			<ComponentSpacer>2</ComponentSpacer>
+		</costList>
+		<verbs>
+      <li>
+				<verbClass>Fortified.Verb_ArcSprayProjectile</verbClass>
+				<sprayWidth>4</sprayWidth>
+				<sprayArching>2</sprayArching>
+				<sprayThicknessCells>3</sprayThicknessCells>
+				<sprayNumExtraCells>28</sprayNumExtraCells> <!-- 要大於或等於發射次數 -->
+				<consumeFuelPerBurst>1</consumeFuelPerBurst>
+
+				<ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+				<burstShotCount>28</burstShotCount>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>DMS_Bullet_HeavyAutoCannon</defaultProjectile>
+				<warmupTime>2.5</warmupTime>
+				<minRange>7.9</minRange>
+				<range>44.9</range>
+				<soundCast>DMS_Shot_GAU</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>15</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<forcedMissRadius>0.1</forcedMissRadius>
+			</li>
+		</verbs>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(3,1.75)</drawSize>
+				<offsets>
+					<li>(1.36,0)</li>
+				</offsets>
+				<isAlternately>false</isAlternately>
+			</li>
+			<li Class="Fortified.HeavyEquippableExtension">
+				<EquippableDef>HeavyAutomatroid</EquippableDef>
+			</li>
+			<li Class="CombatExtended.GunDrawExtension" MayRequire="ceteam.combatextended">
+				<CasingAngleOffset>110</CasingAngleOffset>
+				<CasingOffset>(-0.5,-0.5)</CasingOffset>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>DMS_Bullet_HeavyAutoCannon</defName>
+    <label>30mm机炮炮弹</label>
+    <thingClass>Projectile_Explosive</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.3</drawSize>
+    </graphicData>
+    <projectile>
+      <speed>110</speed>
+      <damageDef>Bomb</damageDef>
+      <screenShakeFactor>0</screenShakeFactor>
+      <damageAmountBase>48</damageAmountBase>
+      <armorPenetrationBase>1.04</armorPenetrationBase>
+      <stoppingPower>8</stoppingPower>
+      <explosionRadius>1.4</explosionRadius>
+      <ai_IsIncendiary>false</ai_IsIncendiary>
+      <arcHeightFactor>0.9</arcHeightFactor>
+      <shadowSize>0.6</shadowSize>
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+    </projectile>
+    <comps>
+			<li Class="CompProperties_ProjectileEffecter">
+				<effecterDef>DMS_LaunchDust_Grenade</effecterDef>
+			</li>
+    </comps>
+  </ThingDef>
+
+  <!--中型机炮（用于重型机兵，单目标速射）-->
+  <ThingDef ParentName="DMS_AutomatroidHeavyGun" Name="BaseDMSMediumAutoCannon">
+		<defName>DMS_Gun_MediumAutoCannon</defName>
+		<label>撕裂者</label>
+		<description>专为重型机兵设计的平衡型火力平台，采用三根交替射击的速射炮管，在火力密度与机动性之间取得完美平衡。通过轻量化合金炮身与智能后坐补偿系统，这套武器能在高速移动中保持稳定的火力输出，有效压制轻型装甲目标与步兵集群。\n独创的炮管自清洁设计显著降低卡弹风险，配合紧凑型弹链供弹系统，确保在复杂环境下的可靠作战能力。</description>
+		<weaponClasses>
+			<li>RangedHeavy</li>
+			<li>LongShots</li>
+			<li>Ranged</li>
+		</weaponClasses>
+		<weaponTags>
+			<li>DMS_MechWeaponHeavy</li>
+			<li>A_SuppressWeaponHeavy</li>
+			<li>AAC_HeavyWeapon</li>
+		</weaponTags>
+		<graphicData>
+			<texPath>Things/DMS/DMS_Gun_MediumAutoCannon</texPath>
+			<drawSize>2.25</drawSize>
+		</graphicData>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<statBases>
+			<WorkToMake>40000</WorkToMake>
+			<AccuracyTouch>0.68</AccuracyTouch>
+			<AccuracyShort>0.75</AccuracyShort>
+			<AccuracyMedium>0.85</AccuracyMedium>
+			<AccuracyLong>0.72</AccuracyLong>
+			<Mass>120</Mass>
+			<RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
+		</statBases>
+		<recipeMaker>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+			<researchPrerequisites>
+				<li>MultibarrelWeapons</li>
+				<li>DMS_PRT_HighIntensityConflict</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<costList>
+			<Tungsteel>250</Tungsteel>
+			<ComponentStamped>12</ComponentStamped>		
+		</costList>	
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>DMS_Bullet_MediumAutoCannon</defaultProjectile>
+				<warmupTime>1.8</warmupTime>
+				<range>48.9</range>
+				<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+				<burstShotCount>9</burstShotCount>
+				<soundCast>Shot_Autocannon</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>18</muzzleFlashScale>
+			</li>
+		</verbs>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(2.25,1.25)</drawSize>
+				<offsets>
+					<li>(0.75,0)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+			<li Class="Fortified.HeavyEquippableExtension">
+				<EquippableDef>HeavyAutomatroid</EquippableDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>DMS_Bullet_MediumAutoCannon</defName>
+    <label>钨芯穿甲弹</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>48</damageAmountBase>
+      <armorPenetrationBase>1.18</armorPenetrationBase>
+      <stoppingPower>4</stoppingPower>
+      <speed>110</speed>
+      <arcHeightFactor>1.2</arcHeightFactor>
+      <shadowSize>0.6</shadowSize>
+    </projectile>
+  </ThingDef>
+
+  <!--中型速射炮（用于重型机兵，单目标狙击）-->
+  <ThingDef ParentName="DMS_AutomatroidHeavyGun" Name="BaseDMSMediumCannon">
+	<defName>DMS_Gun_MediumCannon</defName>
+		<label>破城锤</label>
+		<description>专为现代装甲对抗研发的57mm口径速射加农炮，采用革命性的液压缓冲与弹匣式装填系统，能在保持传统火炮威力的同时实现惊人的射速。其钨合金穿甲弹可在1500米距离上轻易洞穿重型主战机兵的侧装甲，而编程空爆弹则能对暴露步兵造成毁灭性杀伤。\n通过模块化供弹设计与电控击发装置，该系统在火控系统支持下可实现行进间精准打击。炮管采用复合冷却技术，在持续作战中仍能维持弹道稳定性。</description>
+		<weaponClasses>
+			<li>RangedHeavy</li>
+			<li>LongShots</li>
+			<li>Ranged</li>
+		</weaponClasses>
+		<weaponTags>
+			<li>DMS_MechWeaponHeavy</li>
+			<li>A_SuppressWeaponHeavy</li>
+			<li>AAC_HeavyWeapon</li>
+		</weaponTags>
+		<graphicData>
+			<texPath>Things/DMS/DMS_Gun_MediumCannon</texPath>
+			<drawSize>2.5</drawSize>
+		</graphicData>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<statBases>
+			<WorkToMake>40000</WorkToMake>
+			<AccuracyTouch>0.72</AccuracyTouch>
+			<AccuracyShort>0.85</AccuracyShort>
+			<AccuracyMedium>0.88</AccuracyMedium>
+			<AccuracyLong>0.76</AccuracyLong>
+			<Mass>138</Mass>
+			<RangedWeapon_Cooldown>3.2</RangedWeapon_Cooldown>
+		</statBases>
+		<recipeMaker>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+			<researchPrerequisites>
+				<li>DMS_PRT_HeavyArmoredMech</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<costList>
+			<Tungsteel>225</Tungsteel>
+			<ReinforcedBarrel>1</ReinforcedBarrel>
+			<ComponentStamped>12</ComponentStamped>		
+		</costList>	
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>DMS_Bullet_MediumCannon</defaultProjectile>
+				<warmupTime>1.8</warmupTime>
+				<range>54.9</range>
+				<forcedMissRadius>0.5</forcedMissRadius>
+				<ticksBetweenBurstShots>24</ticksBetweenBurstShots>
+				<burstShotCount>3</burstShotCount>
+				<soundCast>Shot_Autocannon</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>24</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(2.75,1.25)</drawSize>
+				<offsets>
+					<li>(0.75,0)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+			<li Class="Fortified.HeavyEquippableExtension">
+				<EquippableDef>HeavyAutomatroid</EquippableDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>DMS_Bullet_MediumCannon</defName>
+    <label>加农炮炮弹</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+	<thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+	  <speed>110</speed>
+      <screenShakeFactor>0</screenShakeFactor>
+      <damageAmountBase>94</damageAmountBase>
+      <armorPenetrationBase>1.42</armorPenetrationBase>
+      <stoppingPower>8</stoppingPower>
+      <explosionRadius>1.9</explosionRadius>
+      <ai_IsIncendiary>false</ai_IsIncendiary>
+      <arcHeightFactor>1.6</arcHeightFactor>
+      <shadowSize>0.6</shadowSize>
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+    </projectile>
+  </ThingDef>
+
+  <!--高射炮平射（用于重型机兵，单目标速射、反轻装甲）-->
+  <ThingDef ParentName="DMS_AutomatroidHeavyGun">
+	<defName>DMS_Weapon_HeavyAutoCannon</defName>
+		<label>审判之杖</label>
+		<description>本是自行防空炮上携带的35mm防空炮，发射高命中效率与毁伤(AHEAD)弹，在稍作改装后被重型机兵用于对地作战，对步兵有不俗的杀伤效果\n【破片杀伤效果用爆炸代替了】</description>
+		<weaponClasses>
+			<li>RangedHeavy</li>
+			<li>LongShots</li>
+			<li>Ranged</li>
+		</weaponClasses>
+		<weaponTags>
+			<li>DMS_MechWeaponHeavy</li>
+			<li>A_SuppressWeaponHeavy</li>
+			<li>AAC_HeavyWeapon</li>
+		</weaponTags>
+		<graphicData>
+			<texPath>Things/DMS/DMS_Weapon_HeavyAutoCannon</texPath>
+			<drawSize>2.8</drawSize>
+		</graphicData>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<statBases>
+			<WorkToMake>40000</WorkToMake>
+			<AccuracyTouch>0.78</AccuracyTouch>
+			<AccuracyShort>0.88</AccuracyShort>
+			<AccuracyMedium>0.94</AccuracyMedium>
+			<AccuracyLong>0.82</AccuracyLong>
+			<Mass>125</Mass>
+			<RangedWeapon_Cooldown>6.5</RangedWeapon_Cooldown>
+		</statBases>
+		<recipeMaker>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+			<researchPrerequisites>
+				<li>DMS_PRT_HighIntensityConflict</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<costList>
+			<Tungsteel>200</Tungsteel>
+			<ReinforcedBarrel>1</ReinforcedBarrel>
+			<ComponentStamped>10</ComponentStamped>		
+		</costList>	
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>DMS_Bullet_HeavyAutoCannonBig</defaultProjectile>
+				<warmupTime>1.5</warmupTime>
+				<range>51.9</range>
+				<forcedMissRadius>0.25</forcedMissRadius>
+				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+				<burstShotCount>25</burstShotCount>
+				<soundCast>Shot_Autocannon</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>24</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(2.75,1.25)</drawSize>
+				<offsets>
+					<li>(0.75,0)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+			<li Class="Fortified.HeavyEquippableExtension">
+				<EquippableDef>HeavyAutomatroid</EquippableDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>DMS_Bullet_HeavyAutoCannonBig</defName>
+    <label>35mmAHEAD弹</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+	<thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>PRT_Fragment</damageDef>
+	  <speed>110</speed>
+      <screenShakeFactor>0</screenShakeFactor>
+      <damageAmountBase>26</damageAmountBase>
+      <armorPenetrationBase>0.40</armorPenetrationBase>
+      <stoppingPower>8</stoppingPower>
+      <explosionRadius>2.4</explosionRadius>
+      <ai_IsIncendiary>false</ai_IsIncendiary>
+      <shadowSize>0.6</shadowSize>
+      <!-- <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient> -->
+    </projectile>
+  </ThingDef>
+
+  <!-- 电荷自动炮（单目标高威力高穿甲快速射击） -->
+  <ThingDef ParentName="DMS_AutomatroidHeavyGun">
+		<defName>DMS_Gun_ChargeAutoCannon</defName>
+		<label>湮灭天劫</label>
+		<description>AHWP-30A(Advanced Heavy Weapon Projects，先进重型武器项目) “湮灭天劫”是一款30mm口径的电荷武器系统，计划用于下一代重型机兵的主力压制武器。“湮灭天劫”发射的电荷弹可对重型装甲目标造成有效毁伤，有效弥补了现有重型机兵武器穿甲能力不足的问题。</description>
+		<descriptionHyperlinks>
+      	  <ThingDef>PRT_ChargeSeparationModule</ThingDef>
+    	</descriptionHyperlinks>
+		<weaponTags>
+			<li>DMS_MechWeaponUltraHeavy</li>
+			<li>AAC_UltraHeavyWeapon</li>
+		</weaponTags>
+		<graphicData>
+			<texPath>Things/DMS/DMS_Gun_ChargeAutoCannon</texPath>
+			<drawSize>3.2</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>215</Mass>
+			<WorkToMake>70000</WorkToMake>
+		    <AccuracyTouch>0.84</AccuracyTouch>
+		    <AccuracyShort>0.89</AccuracyShort>
+		    <AccuracyMedium>0.94</AccuracyMedium>
+		    <AccuracyLong>0.82</AccuracyLong>
+		    <RangedWeapon_Cooldown>2.8</RangedWeapon_Cooldown>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>DMS_PRT_AdvancedHeavyWeaponProject</li>
+			</researchPrerequisites>
+			<skillRequirements>
+				<Crafting>9</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<Tungsteel>225</Tungsteel>
+			<ComponentStamped>10</ComponentStamped>
+			<Plasteel>60</Plasteel>
+			<ComponentSpacer>3</ComponentSpacer>
+			<PRT_ChargeSeparationModule>1</PRT_ChargeSeparationModule>
+		</costList>
+		<comps Inherit="False">
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Styleable"/>
+		</comps>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>DMS_Bullet_ChargeAutoCannon</defaultProjectile>
+				<warmupTime>1.8</warmupTime>
+				<range>58.9</range>
+				<ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+				<burstShotCount>15</burstShotCount>
+				<soundCast>Shot_ChargeRifle</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>26</muzzleFlashScale>
+			</li>
+		</verbs>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(5,5)</drawSize>
+				<offsets>
+					<li>(2.1,0)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+			<li Class="Fortified.HeavyEquippableExtension">
+				<EquippableDef>HeavyAutomatroid</EquippableDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>DMS_Bullet_ChargeAutoCannon</defName>
+		<label>电荷弹</label>
+		<graphicData>
+			<texPath>Things/Projectile/Charge_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.25</drawSize>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>72</damageAmountBase>
+			<armorPenetrationBase>1.56</armorPenetrationBase>
+			<stoppingPower>8</stoppingPower>
+			<speed>90</speed>
+			<arcHeightFactor>1.2</arcHeightFactor>
+			<shadowSize>0.6</shadowSize>
+		</projectile>
+	</ThingDef>
+
+  <!-- 坦克主炮（100mm，单目标高威力狙击） -->
+  <ThingDef ParentName="DMS_AutomatroidHeavyGun">
+		<defName>DMS_Gun_HeavyCannon</defName>
+		<label>真理之剑</label>
+		<description>由坦克主炮改装而来的100mm半自动线膛炮，以其结构简单可靠著称。该武器广泛装备于各类装甲平台，用于打击坦克、重型机甲编组的重装甲集群。</description>
+		<weaponTags>
+			<li>DMS_MechWeaponUltraHeavy</li>
+			<li>AAC_UltraHeavyWeapon</li>
+		</weaponTags>
+		<graphicData>
+			<texPath>Things/DMS/DMS_Gun_HeavyCannon</texPath>
+			<drawSize>3.5</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>215</Mass>
+			<WorkToMake>70000</WorkToMake>
+		    <AccuracyTouch>0.89</AccuracyTouch>
+		    <AccuracyShort>1.00</AccuracyShort>
+		    <AccuracyMedium>1.00</AccuracyMedium>
+		    <AccuracyLong>0.99</AccuracyLong>
+		    <RangedWeapon_Cooldown>4.5</RangedWeapon_Cooldown>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>DMS_PRT_HeavyArmoredMech</li>
+			</researchPrerequisites>
+			<skillRequirements>
+				<Crafting>10</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<Tungsteel>300</Tungsteel>
+			<ComponentStamped>18</ComponentStamped>
+			<ReinforcedBarrel>1</ReinforcedBarrel>
+			<ComponentSpacer>2</ComponentSpacer>
+		</costList>
+		<comps Inherit="False">
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Styleable"/>
+		</comps>
+		<verbs>
+			<li>
+				<hasStandardCommand>true</hasStandardCommand>
+				<verbClass>Verb_Shoot</verbClass>
+				<defaultProjectile>DMS_Bullet_HeavyCannon</defaultProjectile>
+				<requireLineOfSight>true</requireLineOfSight>
+				<warmupTime>2.8</warmupTime>
+				<minRange>3</minRange>
+				<range>68.9</range>
+				<ai_AvoidFriendlyFireRadius>6.9</ai_AvoidFriendlyFireRadius>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>DMS_Shot_JusticeGavel</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>30</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<forcedMissRadius>0.25</forcedMissRadius>
+			</li>
+		</verbs>
+		<modExtensions>
+			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+				<def>MF_StandardMuzzleFalsh</def>
+				<drawSize>(5,5)</drawSize>
+				<offsets>
+					<li>(2.1,0)</li>
+				</offsets>
+				<isAlternately>true</isAlternately>
+			</li>
+			<li Class="Fortified.HeavyEquippableExtension">
+				<EquippableDef>HeavyAutomatroid</EquippableDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>DMS_Bullet_HeavyCannon</defName>
+		<label>尾翼稳定脱壳穿甲弹</label>
+		<thingClass>Fortified.Projectile_ConeExplosive</thingClass>
+		<graphicData>
+			<texPath>Things/Projectiles/Ammo_3BM60</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.4</drawSize>
+		</graphicData>
+		<projectile>
+			<flyOverhead>true</flyOverhead>
+			<explosionDelay>1</explosionDelay>
+			<soundExplode>Explosion_Rocket</soundExplode>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>275</damageAmountBase>
+			<armorPenetrationBase>1.65</armorPenetrationBase>
+			<stoppingPower>10</stoppingPower>
+			<speed>140</speed>
+			<arcHeightFactor>1.4</arcHeightFactor>
+			<shadowSize>0.6</shadowSize>
+		</projectile>
+		<modExtensions>
+			<li Class="Fortified.ExplosiveExtension">
+				<damage>Bullet</damage>
+				<damageAmount>98</damageAmount>
+				<armorPen>1.1</armorPen>
+				<preExplosionOffset>4</preExplosionOffset>
+				<range>19</range>
+				<swayAngle>8</swayAngle>
+				<doVisualEffects>false</doVisualEffects>
+				<effecterDef>DMS_ConeExplosion</effecterDef>
+			</li>
+		</modExtensions>
+		<comps>
+			<li Class="CompProperties_ProjectileEffecter">
+				<effecterDef>DMS_LaunchDust</effecterDef>
+			</li>
+			<li Class="CompProperties_ProjectileEffecter">
+				<effecterDef>DMSAC_SabotShell</effecterDef>
+			</li>
+			<li Class="CompProperties_Explosive">
+				<explosiveRadius>1.1</explosiveRadius>
+				<explosiveDamageType>Bullet</explosiveDamageType>
+				<armorPenetrationBase>0.4</armorPenetrationBase>
+				<damageAmountBase>150</damageAmountBase>
+				<explodeOnDestroyed>true</explodeOnDestroyed>
+				<explodeOnKilled>true</explodeOnKilled>
+				<doSoundEffects>false</doSoundEffects>
+				<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+			</li>
+		</comps>
+	</ThingDef>
+  
+</Defs>

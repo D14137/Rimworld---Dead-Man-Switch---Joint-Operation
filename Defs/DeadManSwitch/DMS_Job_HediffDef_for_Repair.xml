@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+    <JobDef>
+      <defName>Tinker_RepairAutomatroid</defName>
+      <driverClass>PRT_Mod.Jobs.JobDriver_RepairAutomatroid</driverClass>
+      <reportString>战地维修 TargetA 中</reportString>
+      <casualInterruptible>true</casualInterruptible>
+      <alwaysShowWeapon>false</alwaysShowWeapon>
+      <checkOverrideOnDamage>Always</checkOverrideOnDamage>
+    </JobDef>
+
+    <WorkGiverDef>
+    <defName>Tinker_RepairAutomatroid_Construction</defName>
+    <label>Battle repair damaged mechs.</label>
+    <workType>Construction</workType>
+    <priorityInType>80</priorityInType>
+    <verb>repair</verb>
+    <gerund>repairing</gerund>
+    <giverClass>PRT_Mod.WorkGivers.WorkGiver_RepairAutomatroid_Smithing</giverClass>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <canBeDoneByMechs>true</canBeDoneByMechs>
+    <directOrderable>true</directOrderable>
+    <emergency>false</emergency>
+    <verb>repair</verb>
+    <gerund>repairing</gerund>
+  </WorkGiverDef>
+
+  <HediffDef>
+    <defName>DMS_ImmobilizedByRepair_Tinker</defName>
+    <label>维修锁定</label>
+    <description>暂时固定以进行维护</description>
+    <hediffClass>Hediff</hediffClass>
+    <tendable>false</tendable>
+    <isBad>false</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <maxSeverity>1.0</maxSeverity>
+    <stages>
+      <li>
+        <statFactors>
+          <MoveSpeed>0</MoveSpeed>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

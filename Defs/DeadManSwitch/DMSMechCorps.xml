@@ -1,0 +1,1795 @@
+<Defs>
+  <!-- DMS_MechCorps_Sniper 狙击型 max:6 cp:180-->
+  <ThingDef ParentName="BaseMechRace_Arquebusier">
+    <defName>DMS_MechCorps_Sniper</defName>
+    <label>狙击型</label>
+    <description>狙击型：远程精确猎杀单位。配备高倍率观瞄系统与智能火控，有效射程较远，擅长压制我方指挥人员。</description>
+    <statBases>
+      <ArmorRating_Sharp>0.7</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>0.6</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.05</ArmorRating_Heat>  <!--能抗-->
+      <ShootingAccuracyPawn>8</ShootingAccuracyPawn>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">4</BandwidthCost> 
+    </statBases>
+    <race>
+      <mechFixedSkillLevel>18</mechFixedSkillLevel>
+    </race>
+    <modExtensions>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li>SimpleGun</li>
+          <li>DMS_MechWeaponLight</li>
+          <li>SniperRifle</li>
+          <li>A_SC_LongRifle</li>
+          <li>A_SR_LongRifle</li>
+          <li>A_DMR_LongRifle</li>
+          <li>A_SR_GrenadeLauncher</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+        </UsableTechLevels>
+        <BypassUsableWeapons>
+          <li MayRequire="vanillaexpanded.vwehw">VWE_Gun_UraniumSlugRifle</li><!-- 重武器拓展鈾彈槍 -->
+        </BypassUsableWeapons>
+      </li>
+      <li Class="Fortified.TurretMannableExtension"/>
+    </modExtensions>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMS_MechCorps_Sniper</defName>
+    <label>狙击型</label>
+    <race>DMS_MechCorps_Sniper</race>
+    <nameMaker>DMS_AncientMechStandard</nameMaker>
+    <isFighter>true</isFighter>
+    <combatPower>180</combatPower>
+    <maxPerGroup>6</maxPerGroup>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/Sniper</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.4</drawSize>
+          <shadowData>
+            <volume>(0.35,1,0.35)</volume>
+            <offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/Sniper</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.4</drawSize>
+          <shadowData>
+            <volume>(0.35,1,0.35)</volume>
+            <offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>AAC_SniperRifle</li>
+      <li>A_SR_LongRifle</li>
+    </weaponTags>
+    <weaponMoney>1800~9999</weaponMoney>
+    <abilities>
+      <li>DMS_SharpShooting</li>
+      <li>DMS_RangeFinder</li>
+    </abilities>
+  </PawnKindDef>
+
+  <!-- DMS_MechCorps_Pioneer 斥候型 max:6 cp:130-->
+  <ThingDef ParentName="BaseMechRace_Arquebusier">
+    <defName>DMS_MechCorps_Pioneer</defName>
+    <label>斥候型</label>
+    <description>斥候型：前沿侦察单位。装甲薄弱但移动速度快，常配备射手步枪，擅长侦察与游击作战。</description>
+    <statBases>
+      <ArmorRating_Sharp>0.7</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>0.6</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.05</ArmorRating_Heat>  <!--能抗-->
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost>
+      <MoveSpeed>5.5</MoveSpeed>
+    </statBases>
+    <race>
+      <mechFixedSkillLevel>8</mechFixedSkillLevel>
+    </race>
+    <modExtensions>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li>SimpleGun</li>
+          <li>IndustrialGunAdvanced</li>
+          <li>DMS_MechWeaponLight</li>
+          <li>A_AR_LongRifle</li>
+          <li>A_BR_LongRifle</li>
+          <li>Simple_LongRange</li>
+          <li>A_DMR_LongRifle</li>
+          <li>ElephantGun</li>
+          <li>AssaultRifle</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+        </UsableTechLevels>
+        <BypassUsableWeapons>
+          <li MayRequire="ceteam.combatextended">Gun_BinocularsRadio</li>
+        </BypassUsableWeapons>
+      </li>
+      <li Class="Fortified.TurretMannableExtension"/>
+    </modExtensions>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMS_MechCorps_Pioneer</defName>
+    <label>斥候型</label>
+    <race>DMS_MechCorps_Pioneer</race>
+    <nameMaker>DMS_AncientMechStandard</nameMaker>
+    <isFighter>true</isFighter>
+    <combatPower>130</combatPower>
+    <maxPerGroup>6</maxPerGroup>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/Pioneer</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.4</drawSize>
+          <shadowData>
+            <volume>(0.35,1,0.35)</volume>
+            <offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/Pioneer</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.4</drawSize>
+          <shadowData>
+            <volume>(0.35,1,0.35)</volume>
+            <offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>AAC_AssaultRifle</li>
+      <li>A_DMR_LongRifle</li>
+    </weaponTags>
+    <weaponMoney>1000~9999</weaponMoney>
+    <abilities>
+      <li>DMS_BurstSprint</li>
+    </abilities>
+  </PawnKindDef>
+
+  <!-- DMS_MechCorps_Arquebusier 射手型 max:32 cp:150-->
+  <ThingDef ParentName="BaseMechRace_Arquebusier">
+    <defName>DMS_MechCorps_Arquebusier</defName>
+    <label>射手型</label>
+    <description>射手型：基础步兵单位。配备制式突击步枪与基础装甲，适合野战进攻，钝击抗性薄弱。</description>
+    <statBases>
+      <ArmorRating_Sharp>0.75</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>0.6</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.05</ArmorRating_Heat>  <!--能抗-->
+    </statBases>
+    <modExtensions>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li>SimpleGun</li>
+          <li>DMS_MechWeaponLight</li>
+          <li>A_AR_LongRifle</li>
+          <li>A_SAR_LongRifle</li>
+          <li>A_BR_LongRifle</li>
+          <li>A_MG_Light</li>
+          <li>ElephantGun</li>
+          <li>SniperRifle</li>
+          <li>AssaultRifle</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+        </UsableTechLevels>
+        <BypassUsableWeapons>
+          <!--<li MayRequire="ceteam.combatextended">Gun_BinocularsRadio</li>-->
+          <li MayRequire="vanillaexpanded.vwehw">VWE_Gun_UraniumSlugRifle</li><!-- 重武器拓展鈾彈槍 -->
+          <li MayRequire="oskarpotocki.vfe.pirates">VFEP_WarcasketGun_UraniumSlugRifle</li><!-- 戰棺拓展鈾彈槍 -->
+        </BypassUsableWeapons>
+      </li>
+      <li Class="Fortified.TurretMannableExtension"/>
+    </modExtensions>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMS_MechCorps_Arquebusier</defName>
+    <label>射手型</label>
+    <race>DMS_MechCorps_Arquebusier</race>
+    <nameMaker>DMS_AncientMechStandard</nameMaker>
+    <isFighter>true</isFighter>
+    <combatPower>150</combatPower>
+    <maxPerGroup>32</maxPerGroup>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/arquebusier</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.4</drawSize>
+          <shadowData>
+            <volume>(0.35,1,0.35)</volume>
+            <offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/arquebusier</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.4</drawSize>
+          <shadowData>
+            <volume>(0.35,1,0.35)</volume>
+            <offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>AAC_AssaultRifle</li>
+      <li>A_AR_LongRifle</li>
+    </weaponTags>
+    <weaponMoney>1200~9999</weaponMoney>
+    <abilities>
+      <li>DMS_RepairMode</li>
+    </abilities>
+  </PawnKindDef>
+
+  <!-- DMS_MechCorps_Molot 火力型 max:20 cp:190-->
+  <ThingDef ParentName="BaseAncientAutomatroidRace">
+    <defName>DMS_MechCorps_Molot</defName>
+    <label>火力型</label>
+    <description>火力型：重武器支援单位。单兵操作14.5mm重机枪或反坦克导弹发射器，携弹量达标准步兵3倍。固定部署时构筑环形防御工事，每分钟投射火力密度达120发，但重武器导致转移阵地需耗时90秒以上。</description>
+    <statBases>
+      <StaggerDurationFactor>0.25</StaggerDurationFactor>
+      <ArmorRating_Sharp>0.8</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>0.6</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.05</ArmorRating_Heat>  <!--能抗-->
+      <MoveSpeed>4</MoveSpeed>
+      <ShootingAccuracyPawn>0.85</ShootingAccuracyPawn>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost> 
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge> 
+      <AimingDelayFactor>1.05</AimingDelayFactor>                                            
+    </statBases>
+    <race>
+      <mechFixedSkillLevel>10</mechFixedSkillLevel>
+      <body>DMS_Humanoid_TypeB</body> 
+      <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
+      <baseBodySize>1.6</baseBodySize>
+      <baseHealthScale>1.5</baseHealthScale>
+      <mechWeightClass>Heavy</mechWeightClass>
+    </race>
+    <modExtensions>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li MayRequire="vanillaexpanded.vwehw">HeavyGun</li><!--重型武器拓展-->
+          <li>DMS_MechWeaponLight</li>
+          <li>DMS_MechWeaponMedium</li>
+          <li>DMS_MechWeaponLongRifle</li>
+          <li>A_SuppressWeapon</li>
+          <li>DMS_Gun_Recoilless</li>
+          <li>DMS_PKM</li>
+          <li>DMS_KordMachineGun</li>
+          <li>A_SG_LongRifle</li>
+          <li>A_BR_LongRifle</li>
+			    <li>DMS_AtlantGrenadeLauncher</li>
+        </UsableWeaponTags>
+        <BypassUsableWeapons/>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+        </UsableTechLevels>
+      </li>
+    </modExtensions>
+    <butcherProducts>
+      <DMS_ChunkSlag>1</DMS_ChunkSlag>
+      <Steel>35</Steel>
+    </butcherProducts>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAncientAutomatroidKind">
+    <defName>DMS_MechCorps_Molot</defName>
+    <label>火力型</label>
+    <race>DMS_MechCorps_Molot</race>
+    <nameMaker>DMS_AncientMechStandard</nameMaker>
+    <isFighter>true</isFighter>
+    <combatPower>190</combatPower>
+    <maxPerGroup>20</maxPerGroup>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/molot</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.25</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/molot</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.25</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>AAC_HeavyHandGun</li>
+      <li>A_MG_Heavy</li>
+      <li>A_SR_GrenadeLauncher</li>
+      <li>DMS_Gun_Recoilless</li>
+    </weaponTags>
+    <weaponMoney>2700~9999</weaponMoney>
+  </PawnKindDef>
+
+  <!-- DMS_MechCorps_Ranger 渗透型 max:4 cp:180-->
+  <ThingDef ParentName="BaseRangerRace">
+    <defName>DMS_MechCorps_Ranger</defName>
+    <label>渗透型</label>
+    <description>渗透型：纵深破坏单位。配备光学迷彩与电子破解工具，热信号特征极低，双臂双腿均配备高周波刃，破甲能力极强，对载具和机兵也有较高威胁。</description>
+    <statBases>
+      <ArmorRating_Sharp>0.75</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>0.6</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.05</ArmorRating_Heat>  <!--能抗-->
+    </statBases>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMS_MechCorps_Ranger</defName>
+    <label>渗透型</label>
+    <race>DMS_MechCorps_Ranger</race>
+    <isFighter>true</isFighter>
+    <combatPower>180</combatPower>
+    <maxPerGroup>4</maxPerGroup>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/DMS/Ranger</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.3</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/DMS/Ranger</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.3</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>AAC_AssaultRifle</li>
+      <li>AAC_CQBWeapon</li>
+      <li>A_AP</li>
+      <li>A_AR_LongRifle</li>
+    </weaponTags>
+    <weaponMoney>1200~9999</weaponMoney>
+    <abilities>
+      <li>DMS_BurstSprint</li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">DMS_Camouflage</li>
+    </abilities>
+    <aiAvoidCover>false</aiAvoidCover>
+  </PawnKindDef>
+
+  <!-- DMS_MechCorps_Gorod 轻装甲型 max:24 cp:200-->
+  <ThingDef ParentName="BaseAncientAutomatroidRace">
+    <defName>DMS_MechCorps_Gorod</defName>
+    <label>轻装甲型</label>
+    <description>轻装甲型：机动支援单位。配备轻型装甲，足以抵挡大部分轻武器火力，机动性较好，可伴随步兵作战。</description>
+    <statBases>
+      <MoveSpeed>4.0</MoveSpeed><!--移動速度-->
+      <AimingDelayFactor>1.5</AimingDelayFactor>
+      <StaggerDurationFactor>0.35</StaggerDurationFactor>
+      <ArmorRating_Sharp>1.10</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>0.90</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.25</ArmorRating_Heat>  <!--能抗-->
+      <IncomingDamageFactor>0.90</IncomingDamageFactor><!--承伤乘数-->
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost>
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge>
+    </statBases>
+    <race>
+      <mechFixedSkillLevel>10</mechFixedSkillLevel>
+      <body>DMS_Humanoid_Soldat</body>
+      <nameGenerator>DMS_AncientMechHeavy</nameGenerator>
+      <baseBodySize>2.25</baseBodySize>
+      <baseHealthScale>2</baseHealthScale>
+      <mechWeightClass>Heavy</mechWeightClass>
+    </race>
+    <comps>
+		  <li Class="Fortified.CompProperties_VehicleWeapon">
+        <drawData>
+          <dataEast>
+            <offset>(0.2,0,-0.3)</offset>
+          </dataEast>
+          <dataWest>
+            <offset>(-0.2,0,0.6)</offset>
+            <layer>-20</layer>
+          </dataWest>
+          <dataSouth>
+              <offset>(-0.7,0,0.2)</offset>
+          </dataSouth>
+          <dataNorth> 
+              <offset>(0.7,0,0.2)</offset>
+          </dataNorth>
+        </drawData>
+			  <turretRotationFollowPawn>true</turretRotationFollowPawn>			  
+        <rotationSmoothTime>0.12</rotationSmoothTime>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags> 
+          <li>SimpleGun</li>
+          <li MayRequire="vanillaexpanded.vwehw">HeavyGun</li><!--重型武器拓展-->
+          <li>DMS_MechWeaponLongRifle</li>
+          <li>DMS_MechWeaponLight</li>
+          <li>A_BR_LongRifle</li>
+          <li>GrenadeSmoke</li>
+          <li>A_MG_Heavy</li>
+          <li>A_SuppressWeapon</li>
+          <li>ShortShots</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+        </UsableTechLevels>
+        <BypassUsableWeapons/>
+      </li>
+    </modExtensions>
+    <butcherProducts>
+      <DMS_ChunkSlag>1</DMS_ChunkSlag>
+      <Steel>30</Steel>
+    </butcherProducts>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAncientAutomatroidKind">
+    <defName>DMS_MechCorps_Gorod</defName>
+    <label>轻装甲型</label>
+    <race>DMS_MechCorps_Gorod</race>
+    <nameMaker>DMS_AncientMechHeavy</nameMaker>
+    <isFighter>true</isFighter>
+    <combatPower>200</combatPower>
+    <maxPerGroup>24</maxPerGroup>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/gorod</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.3</drawSize>
+          <shadowData>
+            <volume>(1.25,1,1.25)</volume>
+            <offset>(0,0,-0.5)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/gorod</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.3</drawSize>
+          <shadowData>
+            <volume>(1.25,1,1.25)</volume>
+            <offset>(0,0,-0.5)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags Inherit="False">
+      <li>H_Gatling127mm</li>
+			<li>DMS_AerialAutocannon</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <!-- DMS_MechCorps_Obsidian 装甲型 max:32 cp:270-->
+  <ThingDef ParentName="BaseObsidianRace">
+    <defName>DMS_MechCorps_Obsidian</defName>
+    <label>装甲型</label>
+    <description>装甲型：重型突击单位。失控军团的装甲作战主力，综合性能优秀，较为棘手的作战目标。</description>
+    <statBases>
+      <ArmorRating_Sharp>1.30</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>1.05</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.35</ArmorRating_Heat>  <!--能抗-->
+      <IncomingDamageFactor>0.80</IncomingDamageFactor><!--承伤乘数-->
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseDMSMediumAutoCannon">
+    <defName>DMS_CorpsGun_MediumAutoCannon</defName>
+    <label>中型机炮</label>
+    <description>军团装甲单位统一装备的三联装30mm机炮</description>
+    <weaponTags Inherit ="False">
+			<li>AAC_Corps_HeavyWeapon</li>
+		</weaponTags>
+    <verbs Inherit ="False">
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>DMS_Bullet_MediumAutoCannon</defaultProjectile>
+				<warmupTime>2.0</warmupTime>
+				<range>39.9</range>
+				<ticksBetweenBurstShots>9</ticksBetweenBurstShots>
+				<burstShotCount>6</burstShotCount>
+				<soundCast>Shot_Autocannon</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>18</muzzleFlashScale>
+			</li>
+		</verbs>
+    <recipeMaker Inherit ="False"/>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseDMSMediumCannon">
+    <defName>DMS_CorpsGun_MediumCannon</defName>
+    <label>轻型加农炮</label>
+    <description>军团装甲单位统一装备的57mm加农炮</description>
+    <weaponTags Inherit ="False">
+			<li>AAC_Corps_HeavyWeapon</li>
+		</weaponTags>
+    <verbs Inherit ="False">
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>DMS_Bullet_MediumCannon</defaultProjectile>
+				<warmupTime>1.8</warmupTime>
+				<range>47.9</range>
+				<forcedMissRadius>1.0</forcedMissRadius>
+				<soundCast>Shot_Autocannon</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>24</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+    <recipeMaker Inherit ="False"/>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="BaseAncientAutomatroidKind">
+    <defName>DMS_MechCorps_Obsidian</defName>
+    <label>装甲型</label>
+    <race>DMS_MechCorps_Obsidian</race>
+    <nameMaker>DMS_AncientMechHeavy</nameMaker>
+    <isFighter>true</isFighter>
+    <combatPower>270</combatPower>
+    <maxPerGroup>32</maxPerGroup>
+    <weaponMoney>3265~4000</weaponMoney>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/DMS/Obsidian</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.3</drawSize>
+          <shadowData>
+            <volume>(1.1,1,1.1)</volume>
+            <offset>(0,0,-0.25)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/DMS/Obsidian</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.3</drawSize>
+          <shadowData>
+            <volume>(1.1,1,1.1)</volume>
+            <offset>(0,0,-0.25)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags Inherit="False">
+      <li>AAC_Corps_HeavyWeapon</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <!-- DMS_MechCorps_Iguana 战车型 max:16 cp:350-->
+  <ThingDef ParentName="BaseAutomatroidRace">
+    <defName>DMS_MechCorps_Iguana</defName>
+    <label>战车型</label>
+    <description>战车型：装甲矛头单位。装甲型的上位同类品，防护性能优于装甲型，机动性稍逊，常作为装甲集群指挥单位使用。</description>
+    <statBases>
+      <MoveSpeed>3.6</MoveSpeed>
+      <ArmorRating_Sharp>1.45</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>1.25</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.45</ArmorRating_Heat>  <!--能抗-->
+      <IncomingDamageFactor>0.70</IncomingDamageFactor><!--承伤乘数-->
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">4</BandwidthCost>
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge>
+    </statBases>
+    <race>
+      <body>DMS_Bipedal</body>
+      <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
+      <baseBodySize>2.5</baseBodySize>
+      <baseHealthScale>2.75</baseHealthScale>
+      <mechWeightClass>Heavy</mechWeightClass>
+      <detritusLeavings>
+        <li>
+          <def>DMS_ChunkSlag</def>
+          <texOverrideIndex>12</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+        <li>
+          <def>DMS_ChunkSlag</def>
+          <texOverrideIndex>13</texOverrideIndex>
+          <spawnChance>0.1</spawnChance>
+        </li>
+      </detritusLeavings>
+    </race>
+    <comps>
+      <li Class="Fortified.CompProperties_VehicleWeapon">
+        <drawData>
+          <dataEast>
+            <offset>(0,0,-0.15)</offset>
+          </dataEast>
+          <dataWest>
+            <offset>(0,0,0.85)</offset>
+            <layer>-21</layer>
+          </dataWest>
+          <dataSouth>
+            <offset>(-0.8,0,0)</offset>
+          </dataSouth>
+          <dataNorth>
+            <offset>(0.8,0,0)</offset>
+          </dataNorth>
+        </drawData>
+        <turretRotationFollowPawn>true</turretRotationFollowPawn>
+        <rotationSmoothTime>0.1</rotationSmoothTime>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li MayRequire="vanillaexpanded.vwehw">HeavyGun</li><!--重型武器拓展-->
+          <li>A_MG_GrenadeLauncher</li>
+          <li>A_SR_GrenadeLauncher</li>
+          <li>DMS_MechWeaponHeavy</li>
+          <li>H_Gatling20mm</li>
+          <li>V_Gatling556mm</li>
+          <li>DMS_Gun_Recoilless</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+        </UsableTechLevels>
+        <BypassUsableWeapons />
+      </li>
+    </modExtensions>
+    <!--need
+    new melee tools based on their legs, not arms(those "arms" are supporting mechnical arms)-->
+    <tools Inherit="False">
+      <li>
+        <label>Mechanical Head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>32</power>
+        <cooldownTime>5.5</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.08</chanceFactor>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>20</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>Left Leg</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>21</power>
+        <cooldownTime>3.5</cooldownTime>
+        <linkedBodyPartsGroup>LeftMechanicalLeg</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>16</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>Right Leg</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>21</power>
+        <cooldownTime>3.5</cooldownTime>
+        <linkedBodyPartsGroup>RightMechanicalLeg</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>16</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+    </tools>
+    <butcherProducts>
+      <DMS_ChunkSlag>2</DMS_ChunkSlag>
+      <Steel>55</Steel>
+    </butcherProducts>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMS_MechCorps_Iguana</defName>
+    <label>战车型</label>
+    <race>DMS_MechCorps_Iguana</race>
+    <nameMaker>DMS_AncientMechHeavy</nameMaker>
+    <isFighter>true</isFighter>
+    <combatPower>350</combatPower>
+    <maxPerGroup>16</maxPerGroup>
+    <abilities>
+      <li>DMS_SmokeLauncher</li>
+      <li>DMS_RepairMode</li>
+    </abilities>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/Iguana</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.75</drawSize>
+          <shadowData>
+            <volume>(1,1,1)</volume>
+            <offset>(0,0,-0.25)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/Iguana</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.75</drawSize>
+          <shadowData>
+            <volume>(1,1,1)</volume>
+            <offset>(0,0,-0.25)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>AAC_Corps_HeavyWeapon</li>                                                                     <!--武器-->
+      <li>DMS_VehicleWeapon</li>
+      <li>DMS_DragoonGun</li>
+    </weaponTags>
+    <weaponMoney>3000~9999</weaponMoney>
+  </PawnKindDef>
+
+  <!-- DMS_MechCorps_Krepost 重战车型 max:8 cp:500-->
+  <ThingDef ParentName="BaseAncientAutomatroidRace">
+    <defName>DMS_MechCorps_Krepost</defName>
+    <label>重战车型</label>
+    <description>重战车型：要塞攻坚单位。防御能力出色，在甲弹对抗中占据优势地位。</description>
+    <statBases>
+      <MoveSpeed>2.7</MoveSpeed>
+      <ArmorRating_Sharp>1.65</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>1.4</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.65</ArmorRating_Heat>  <!--能抗-->
+      <IncomingDamageFactor>0.45</IncomingDamageFactor><!--承伤乘数-->
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+      <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">6</BandwidthCost>        <!--帶寬消耗-->
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">6</WastepacksPerRecharge><!--充電/培養時產出廢料-->
+    </statBases>
+    <race>
+      <mechFixedSkillLevel>12</mechFixedSkillLevel>
+      <body>DMS_Bipedal</body>
+      <nameGenerator>DMS_AncientMechHeavy</nameGenerator>
+      <baseBodySize>3.25</baseBodySize>
+      <baseHealthScale>5.5</baseHealthScale>
+      <mechWeightClass>UltraHeavy</mechWeightClass>
+      <detritusLeavings>
+        <li>
+          <def>DMS_ChunkSlag</def>
+          <texOverrideIndex>7</texOverrideIndex>
+          <spawnChance>0.4</spawnChance>
+        </li>
+        <li>
+          <def>DMS_ChunkSlag</def>
+          <texOverrideIndex>4</texOverrideIndex>
+          <spawnChance>0.4</spawnChance>
+        </li>
+      </detritusLeavings>
+    </race>
+    <comps>
+      <li Class="Fortified.CompProperties_VehicleWeapon">
+        <drawData>
+          <dataEast>
+            <offset>(0.6,0,-0.6)</offset>
+          </dataEast>
+          <dataWest>
+            <offset>(-0.4,0,1.1)</offset>
+            <layer>-20</layer>
+          </dataWest>
+          <dataSouth>
+            <offset>(-1.1,0,-0.2)</offset>
+          </dataSouth>
+          <dataNorth>
+            <offset>(1.1,0,0.2)</offset>
+          </dataNorth>
+        </drawData>
+        <turretRotationFollowPawn>true</turretRotationFollowPawn>
+        <rotationSmoothTime>0.12</rotationSmoothTime>
+      </li>
+      <li Class="Fortified.CompPropertiesMultipleTurretGun">
+        <subTurrets>
+          <li>
+            <ID>forward machinegun</ID>
+            <turret>DMS_HeavyMachineGunMounted</turret>
+            <autoAttack>true</autoAttack>
+            <warmingTime>5</warmingTime>
+            <angleOffset>-90</angleOffset>
+            <renderNodeProperties>
+              <li>
+                <nodeClass>Fortified.PawnRenderNode_SubTurretGun</nodeClass>
+                <workerClass>Fortified.PawnRenderNodeWorker_SubTurretGun</workerClass>
+                <parentTagDef>Body</parentTagDef>
+                <drawSize>1.75</drawSize>
+                <baseLayer>-5</baseLayer>
+                <pawnType>Any</pawnType>
+                <drawData>
+                  <dataEast>
+                    <offset>(1.4,0,-0.05)</offset>
+                  </dataEast>
+                  <dataWest>
+                    <offset>(-1.4,0,-0.05)</offset>
+                    <rotationOffset>180</rotationOffset>
+                  </dataWest>
+                  <dataSouth>
+                    <offset>(0.15,0,-1.30)</offset>
+                  </dataSouth>
+                  <dataNorth>
+                    <offset>(-0.15,0,0.65)</offset>
+                  </dataNorth>
+                </drawData>
+              </li>
+            </renderNodeProperties>
+          </li>
+          <li>
+            <ID>top machinegun</ID>
+            <turret>DMS_Gun_KordTurret</turret>
+            <autoAttack>true</autoAttack>
+            <warmingTime>8</warmingTime>
+            <angleOffset>-90</angleOffset>
+            <renderNodeProperties>
+              <li>
+                <nodeClass>Fortified.PawnRenderNode_SubTurretGun</nodeClass>
+                <workerClass>Fortified.PawnRenderNodeWorker_SubTurretGun</workerClass>
+                <parentTagDef>Body</parentTagDef>
+                <drawSize>2</drawSize>
+                <baseLayer>20</baseLayer>
+                <pawnType>Any</pawnType>
+                <drawData>
+                  <dataEast>
+                    <offset>(-0.25,0,1)</offset>
+                  </dataEast>
+                  <dataWest>
+                    <offset>(0.3,0,0.1)</offset>
+                    <rotationOffset>180</rotationOffset>
+                  </dataWest>
+                  <dataSouth>
+                    <offset>(0.45,0,0.5)</offset>
+                    <rotationOffset>0</rotationOffset>
+                  </dataSouth>
+                  <dataNorth>
+                    <offset>(-0.45,0,-0.5)</offset>
+                    <rotationOffset>0</rotationOffset>
+                  </dataNorth>
+                </drawData>
+              </li>
+            </renderNodeProperties>
+          </li>
+          <li>
+            <ID>ECM</ID>
+            <turret>DMS_Gun_ECMSystem</turret>
+            <autoAttack>true</autoAttack>
+            <warmingTime>5</warmingTime>
+            <angleOffset>-90</angleOffset>
+            <IdleAngleOffset>-51</IdleAngleOffset>
+            <renderNodeProperties>
+              <li>
+                <nodeClass>Fortified.PawnRenderNode_SubTurretGun</nodeClass>
+                <workerClass>Fortified.PawnRenderNodeWorker_SubTurretGun</workerClass>
+                <parentTagDef>Body</parentTagDef>
+                <drawSize>0.75</drawSize>
+                <baseLayer>20</baseLayer>
+                <pawnType>Any</pawnType>
+                <drawData>
+                  <dataEast>
+                    <offset>(1.2,0,1)</offset>
+                    <layer>-1</layer>
+                  </dataEast>
+                  <dataWest>
+                    <offset>(-1.15,0,-0.55)</offset>
+                    <rotationOffset>180</rotationOffset>
+                  </dataWest>
+                  <dataSouth>
+                    <offset>(0.85,0,-1.1)</offset>
+                  </dataSouth>
+                  <dataNorth>
+                    <offset>(-0.85,0,0.7)</offset>
+                    <layer>-1</layer>
+                  </dataNorth>
+                </drawData>
+              </li>
+            </renderNodeProperties>
+          </li>
+        </subTurrets>
+      </li>
+      <li Class="Fortified.CompProperties_MeleeSweep">
+        <damageDef>Blunt</damageDef>
+        <damage>40</damage>
+        <armorPenetration>0.5</armorPenetration>
+        <radius>3</radius>
+        <angle>120</angle>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li MayRequire="vanillaexpanded.vwehw">HeavyGun</li><!--重型武器拓展-->
+          <li>DMS_Tarbosaurus_Gun</li>
+          <li>DMS_MechWeaponUltraHeavy</li>
+          <li>DMS_MechWeaponHeavy</li>
+          <li>H_Gatling20mm</li>
+          <li>V_Gatling30mm</li>
+          <li>2A38M</li>
+          <li>DMS_DragoonGun</li>
+          <li>DMS_VladimirovMachineGun</li>
+          <li>DMS_MechWeaponTankGun</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+        </UsableTechLevels>
+      </li>
+    </modExtensions>
+    <tools Inherit="False">
+      <li>
+        <label>Mechanical Head</label>
+        <capacities>
+          <li>DMS_HeavySweep</li>
+        </capacities>
+        <power>35</power>
+        <cooldownTime>6.5</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.08</chanceFactor>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>20</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>Left Leg</label>
+        <capacities>
+          <li>DMS_HeavySweep</li>
+        </capacities>
+        <power>24</power>
+        <cooldownTime>5</cooldownTime>
+        <linkedBodyPartsGroup>LeftMechanicalLeg</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>16</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>Right Leg</label>
+        <capacities>
+          <li>DMS_HeavySweep</li>
+        </capacities>
+        <power>24</power>
+        <cooldownTime>5</cooldownTime>
+        <linkedBodyPartsGroup>RightMechanicalLeg</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>16</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+    </tools>
+    <damageMultipliers>
+      <li>
+        <damageDef>Blunt</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+    </damageMultipliers>
+    <butcherProducts>
+      <Tungsteel>100</Tungsteel>
+      <DMS_ChunkSlag>6</DMS_ChunkSlag>
+      <ComponentStamped>4</ComponentStamped>
+    </butcherProducts>
+    <killedLeavingsPlayerHostile>
+      <DMSAC_FacilityIntel>1</DMSAC_FacilityIntel>
+    </killedLeavingsPlayerHostile>
+    <castEdgeShadows>false</castEdgeShadows>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAncientAutomatroidKind">
+    <defName>DMS_MechCorps_Krepost</defName>
+    <label>重战车型</label>
+    <race>DMS_MechCorps_Krepost</race>
+    <nameMaker>DMS_AncientMechHeavy</nameMaker>
+    <isFighter>true</isFighter>
+    <combatPower>500</combatPower>                                               <!--威脅點數-->
+    <maxPerGroup>8</maxPerGroup>                                                 <!--單個集群內的數量-->
+    <isBoss>true</isBoss>
+    <lifeStages>                                                                 <!--身體圖片-->
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/krepost</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4.2</drawSize>
+          <shadowData>
+            <volume>(1.25,1,1.25)</volume>
+            <offset>(0,0,-0.5)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/krepost</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4.2</drawSize>
+          <shadowData>
+            <volume>(1.25,1,1.25)</volume>
+            <offset>(0,0,-0.5)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags Inherit="False">
+      <li>DMS_MechWeaponTankGun</li>
+    </weaponTags>
+    <weaponMoney>7230~9999</weaponMoney>
+    <abilities>
+      <li>DMSAC_APS</li>
+      <li>DMS_SmokeLauncher</li>
+    </abilities>
+  </PawnKindDef>
+
+  <ThingDef ParentName="BaseAutomatroidRace">
+    <defName>DMS_MechCorps_Tarbosaurus</defName>
+    <label>霸王型</label>
+    <description>原型试验机，分为电磁炮型和激光型两类改型\n\n电磁炮型：实验型突破单位。配备120mm电磁轨道主炮，其恐怖的动能能贯穿一切护甲。\n\n激光型：反工事特化单位。搭载兆瓦级激光发射器，可快速瘫痪我方防御工事。</description>
+    <statBases>
+      <ArmorRating_Sharp>1.9</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>1.75</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>2</ArmorRating_Heat>  <!--能抗-->
+      <IncomingDamageFactor>0.2</IncomingDamageFactor><!--承伤乘数-->
+    </statBases>
+    <statBases>
+      <MoveSpeed>4</MoveSpeed>
+      <ArmorRating_Sharp>1.8</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>1.2</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>2</ArmorRating_Heat>  <!--能抗-->
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+      <ShootingAccuracyPawn>4</ShootingAccuracyPawn>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">8</BandwidthCost>        <!--帶寬消耗-->
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge><!--充電/培養時產出廢料-->
+    </statBases>
+    <race>
+      <body>DMS_Bipedal</body>
+      <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
+      <baseBodySize>3.5</baseBodySize>
+      <baseHealthScale>5.7</baseHealthScale>
+      <mechWeightClass>UltraHeavy</mechWeightClass>
+      <detritusLeavings>
+        <li>
+          <def>DMS_ChunkSlag</def>
+          <texOverrideIndex>7</texOverrideIndex>
+          <spawnChance>0.4</spawnChance>
+        </li>
+        <li>
+          <def>DMS_ChunkSlag</def>
+          <texOverrideIndex>4</texOverrideIndex>
+          <spawnChance>0.4</spawnChance>
+        </li>
+      </detritusLeavings>
+    </race>
+    <comps>
+		  <li Class="Fortified.CompProperties_VehicleWeapon">
+        <drawData>
+          <dataEast>
+            <offset>(0.2,0,-0.3)</offset>
+          </dataEast>
+          <dataWest>
+            <offset>(-0.2,0,0.6)</offset>
+            <layer>-20</layer>
+          </dataWest>
+          <dataSouth>
+              <offset>(-0.9,0,0)</offset>
+          </dataSouth>
+          <dataNorth>
+              <offset>(0.9,0,0)</offset>
+          </dataNorth>
+        </drawData>
+			  <turretRotationFollowPawn>true</turretRotationFollowPawn>			  
+        <rotationSmoothTime>0.12</rotationSmoothTime>
+      </li>
+		  <li Class="Fortified.CompPropertiesMultipleTurretGun">
+          <subTurrets>
+            <li>
+              <ID>General-purpose machine gun</ID>
+              <turret>DMS_HeavyMachineGunMounted</turret>
+              <autoAttack>true</autoAttack>
+              <warmingTime>5</warmingTime>
+              <angleOffset>-90</angleOffset>
+              <renderNodeProperties>
+                <li>
+                  <nodeClass>Fortified.PawnRenderNode_SubTurretGun</nodeClass>
+                  <workerClass>Fortified.PawnRenderNodeWorker_SubTurretGun</workerClass>
+                  <parentTagDef>Body</parentTagDef>
+                  <drawSize>1.75</drawSize>
+                  <baseLayer>-21</baseLayer>
+                  <pawnType>Any</pawnType>
+                  <drawData>
+                    <dataEast>
+                        <offset>(1,0,-0.35)</offset>
+                    </dataEast>
+                    <dataWest>
+                        <offset>(-1.0,0,-0.35)</offset>
+                        <rotationOffset>180</rotationOffset>
+                    </dataWest>
+                    <dataSouth>
+                        <offset>(0,0,-1.2)</offset>
+                    </dataSouth>
+                    <dataNorth>
+                        <offset>(0,0,0.5)</offset>
+                    </dataNorth>
+                  </drawData>
+                </li>
+              </renderNodeProperties>
+            </li>
+            <li>
+              <ID>close inbound system</ID>
+              <turret>DMS_ShotgunGunMounted</turret>
+              <autoAttack>true</autoAttack>
+              <warmingTime>2</warmingTime>
+              <angleOffset>-90</angleOffset>
+              <renderNodeProperties>
+                <li>
+                  <nodeClass>Fortified.PawnRenderNode_SubTurretGun</nodeClass>
+                  <workerClass>Fortified.PawnRenderNodeWorker_SubTurretGun</workerClass>
+                  <parentTagDef>Body</parentTagDef>
+                  <drawSize>0.5</drawSize>
+                  <baseLayer>20</baseLayer>
+                  <pawnType>Any</pawnType>
+                  <drawData>
+                    <dataEast>
+                      <offset>(0.15,0,0.5)</offset>
+                      <layer>-22</layer>
+                    </dataEast>
+                    <dataWest>
+                      <offset>(-0.15,0,-0.75)</offset>
+                      <rotationOffset>180</rotationOffset>
+                    </dataWest>
+                    <dataSouth>
+                      <offset>(1,0,-0.25)</offset>
+                      <rotationOffset>-10</rotationOffset>
+                    </dataSouth>
+                    <dataNorth>
+                      <offset>(-1,0,-0.25)</offset> 
+                      <rotationOffset>-10</rotationOffset>
+                    </dataNorth>
+                  </drawData>
+                </li>
+              </renderNodeProperties>
+            </li>
+          </subTurrets>
+      </li>
+      <li Class="Fortified.CompProperties_MeleeSweep">
+        <damageDef>Blunt</damageDef>
+        <damage>40</damage>
+        <armorPenetration>0.5</armorPenetration>
+        <radius>3</radius>
+        <angle>120</angle>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li MayRequire="vanillaexpanded.vwehw">HeavyGun</li><!--重型武器拓展-->
+          <li>DMS_Tarbosaurus_Gun</li>
+          <li>DMS_MechWeaponUltraHeavy</li>
+          <li>DMS_MechWeaponHeavy</li>
+          <li>H_Gatling20mm</li>
+          <li>V_Gatling30mm</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+        </UsableTechLevels>
+      </li>
+    </modExtensions>
+    <tools Inherit="False">
+      <li>
+        <label>Mechanical Head</label>
+        <capacities>
+          <li>DMS_HeavySweep</li>
+        </capacities>
+        <power>35</power>
+        <cooldownTime>5.5</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.08</chanceFactor>
+		    <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>20</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>Left Leg</label>
+        <capacities>
+          <li>DMS_HeavySweep</li>
+        </capacities>
+        <power>24</power>
+        <cooldownTime>3.5</cooldownTime>
+        <linkedBodyPartsGroup>LeftMechanicalLeg</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+		    <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>16</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>Right Leg</label>
+        <capacities>
+          <li>DMS_HeavySweep</li>
+        </capacities>
+        <power>24</power>
+        <cooldownTime>3.5</cooldownTime>
+        <linkedBodyPartsGroup>RightMechanicalLeg</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>16</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+    </tools>
+    <damageMultipliers>
+      <li>
+        <damageDef>Blunt</damageDef>
+        <multiplier>0.3</multiplier>
+      </li>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>0.3</multiplier>
+      </li>
+    </damageMultipliers>
+    <butcherProducts>
+      <Steel>100</Steel>
+      <DMS_ChunkSlag>3</DMS_ChunkSlag>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </butcherProducts>
+    <killedLeavingsPlayerHostile>
+      <ComponentFireControl>1</ComponentFireControl>
+    </killedLeavingsPlayerHostile>
+    <castEdgeShadows>false</castEdgeShadows>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+  </ThingDef>
+
+  <!-- DMS_MechCorps_TarbosaurusRailgun 电磁炮型 max:1 cp:750-->
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMS_MechCorps_TarbosaurusRailgun</defName>
+    <label>电磁炮型</label>
+    <race>DMS_MechCorps_Tarbosaurus</race>
+    <nameMaker>DMS_AncientMechHeavy</nameMaker>
+    <isFighter>true</isFighter>
+    <combatPower>750</combatPower>                                               <!--威脅點數-->
+    <maxPerGroup>1</maxPerGroup>                                                 <!--單個集群內的數量-->
+    <isBoss>true</isBoss>
+    <lifeStages>                                                                 <!--身體圖片-->
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/tarbosaurus</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4</drawSize>
+          <shadowData>
+            <volume>(1.25,1,1.25)</volume>
+            <offset>(0,0,-0.5)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/tarbosaurus</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4</drawSize>
+          <shadowData>
+            <volume>(1.25,1,1.25)</volume>
+            <offset>(0,0,-0.5)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>AAC_Mech_Railgun</li>
+    </weaponTags>
+    <weaponMoney>5860~19999</weaponMoney>
+    <abilities>
+      <li>DMS_TarbosaurusJump</li>
+      <li>DMS_RepairMode</li>
+    </abilities>
+  </PawnKindDef>
+
+  <!-- DMS_MechCorps_TarbosaurusLaser 激光型 max:1 cp:750-->
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMS_MechCorps_TarbosaurusLaser</defName>
+    <label>激光型</label>
+    <race>DMS_MechCorps_Tarbosaurus</race>
+    <nameMaker>DMS_AncientMechHeavy</nameMaker>
+    <isFighter>true</isFighter>
+    <combatPower>750</combatPower>                                               <!--威脅點數-->
+    <maxPerGroup>1</maxPerGroup>                                                 <!--單個集群內的數量-->
+    <isBoss>true</isBoss>
+    <lifeStages>                                                                 <!--身體圖片-->
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/tarbosaurus</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4</drawSize>
+          <shadowData>
+            <volume>(1.25,1,1.25)</volume>
+            <offset>(0,0,-0.5)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/tarbosaurus</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4</drawSize>
+          <shadowData>
+            <volume>(1.25,1,1.25)</volume>
+            <offset>(0,0,-0.5)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>AAC_Mech_Laser</li>
+    </weaponTags>
+    <weaponMoney>5945~19999</weaponMoney>
+    <abilities>
+      <li>DMS_TarbosaurusJump</li>
+      <li>DMS_RepairMode</li>
+    </abilities>
+  </PawnKindDef>
+
+  <!-- DMS_MechCorps_Tsvetnik 炮击型 max:12-->
+  <ThingDef ParentName="BaseAncientAutomatroidRace">
+    <defName>DMS_MechCorps_Tsvetnik</defName>
+    <label>炮击型</label>
+    <description>炮击型：曲射火力单位。配备单发迫击炮，提供伴随火力支援。</description>
+    <statBases>
+      <MoveSpeed>2.8</MoveSpeed>                                                            <!--移動速度-->
+      <ArmorRating_Sharp>1.0</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>0.8</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>0.8</ArmorRating_Heat>  <!--能抗-->
+      <IncomingDamageFactor>0.9</IncomingDamageFactor><!--承伤乘数-->
+      <ShootingAccuracyPawn>1.25</ShootingAccuracyPawn>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost>                 <!--帶寬消耗-->
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">3</WastepacksPerRecharge> <!--充電/培養時產出廢料-->
+      <AimingDelayFactor>1.5</AimingDelayFactor>                                            <!--瞄準延遲-->
+    </statBases>
+    <race>
+      <mechFixedSkillLevel>13</mechFixedSkillLevel>
+      <body>DMS_Humanoid_TypeB</body>                                                       <!--身體(另外的def)-->
+      <baseBodySize>1.4</baseBodySize>
+      <baseHealthScale>1.25</baseHealthScale>
+      <mechWeightClass>Heavy</mechWeightClass>
+    </race>
+    <comps>
+      <li Class="Fortified.CompProperties_VehicleWeapon">
+        <defaultWeapon>DMS_Gun_MobileMortar</defaultWeapon>
+        <turretRotationFollowPawn>true</turretRotationFollowPawn>
+        <rotationSmoothTime>0.5</rotationSmoothTime>
+        <drawData>
+          <dataEast>
+            <offset>(-0.5,0,0.5)</offset>
+            <rotationOffset>-30</rotationOffset>
+          </dataEast>
+          <dataWest>
+            <offset>(0.5,0,0.5)</offset>
+            <rotationOffset>30</rotationOffset>
+          </dataWest>
+          <dataSouth>
+            <offset>(0,0,0.75)</offset>
+          </dataSouth>
+        </drawData>
+      </li>
+    </comps>
+    <butcherProducts>
+      <DMS_ChunkSlag>1</DMS_ChunkSlag>
+      <Steel>35</Steel>
+    </butcherProducts>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAncientAutomatroidKind">
+    <defName>DMS_MechCorps_Tsvetnik</defName>
+    <label>炮击型</label>
+    <race>DMS_MechCorps_Tsvetnik</race>
+    <nameMaker>DMS_AncientMechStandard</nameMaker>
+    <destroyGearOnDrop>true</destroyGearOnDrop>
+    <combatPower>300</combatPower>
+    <maxPerGroup>12</maxPerGroup>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/tsvetnik</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.3</drawSize>
+          <shadowData>
+            <volume>(1.25,1,1.25)</volume>
+            <offset>(0,0,-0.5)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/tsvetnik</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.3</drawSize>
+          <shadowData>
+            <volume>(1.25,1,1.25)</volume>
+            <offset>(0,0,-0.5)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>2000~9999</weaponMoney>
+    <weaponTags>
+      <li>DMS_Gun_MobileMortar</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <!-- DMS_MechCorps_Pravda 长距离炮击型 max:1 cp:800-->
+  <ThingDef ParentName="BaseAncientAutomatroidRace" Name="BasePravdaRace">
+    <defName>DMS_MechCorps_Pravda</defName>
+    <label>长距离炮击型</label>
+    <description>长距离炮击型：战役打击单位。配备大口径榴弹炮，可行进间展开部署，火力强劲，弹种单一，但装填时间短。</description>
+    <statBases>
+      <MoveSpeed>2.5</MoveSpeed>
+      <ArmorRating_Sharp>1.45</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>1.5</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.8</ArmorRating_Heat>  <!--能抗-->
+      <IncomingDamageFactor>0.6</IncomingDamageFactor><!--承伤乘数-->
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+      <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">6</BandwidthCost>        <!--帶寬消耗-->
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">6</WastepacksPerRecharge><!--充電/培養時產出廢料-->
+    </statBases>
+    <thingClass>Pawn</thingClass>
+    <race>
+      <mechFixedSkillLevel>12</mechFixedSkillLevel>
+      <body>DMS_LandCrab</body>
+      <nameGenerator>DMS_AncientMechHeavy</nameGenerator>
+      <baseBodySize>3.5</baseBodySize>
+      <baseHealthScale>6</baseHealthScale>
+      <mechWeightClass>UltraHeavy</mechWeightClass>
+      <detritusLeavings>
+        <li>
+          <def>DMS_ChunkSlag</def>
+          <texOverrideIndex>7</texOverrideIndex>
+          <spawnChance>0.4</spawnChance>
+        </li>
+        <li>
+          <def>DMS_ChunkSlag</def>
+          <texOverrideIndex>4</texOverrideIndex>
+          <spawnChance>0.4</spawnChance>
+        </li>
+      </detritusLeavings>
+    </race>
+    <comps>
+      <li Class="Fortified.CompProperties_VehicleWeapon">
+        <drawData>
+          <dataEast>
+            <offset>(-0.25,0,1)</offset>
+            <rotationOffset>-30</rotationOffset>
+            <layer>40</layer>
+          </dataEast>
+          <dataWest>
+            <offset>(0.25,0,1)</offset>
+            <rotationOffset>30</rotationOffset>
+            <layer>40</layer>
+          </dataWest>
+          <dataSouth>
+            <offset>(0,0,0.75)</offset>
+            <layer>40</layer>
+          </dataSouth>
+          <dataNorth>
+            <offset>(0,0,-0.15)</offset>
+            <layer>40</layer>
+          </dataNorth>
+        </drawData>
+        <defaultWeapon>DMS_Gun_Empero</defaultWeapon>
+        <turretRotationFollowPawn>true</turretRotationFollowPawn>
+        <rotationSmoothTime>0.25</rotationSmoothTime>
+      </li>
+      <li Class="Fortified.CompPropertiesMultipleTurretGun">
+        <subTurrets>
+          <li>
+            <ID>forward machinegun</ID>
+            <turret>DMS_HeavyMachineGunMounted</turret>
+            <autoAttack>true</autoAttack>
+            <warmingTime>5</warmingTime>
+            <angleOffset>-90</angleOffset>
+            <IdleAngleOffset>180</IdleAngleOffset>
+            <renderNodeProperties>
+              <li>
+                <nodeClass>Fortified.PawnRenderNode_SubTurretGun</nodeClass>
+                <workerClass>Fortified.PawnRenderNodeWorker_SubTurretGun</workerClass>
+                <parentTagDef>Body</parentTagDef>
+                <drawSize>1.75</drawSize>
+                <baseLayer>-5</baseLayer>
+                <pawnType>Any</pawnType>
+                <drawData>
+                  <dataEast>
+                    <offset>(-1.5,0,0.5)</offset>
+                  </dataEast>
+                  <dataWest>
+                    <offset>(1.5,0,0)</offset>
+                    <rotationOffset>180</rotationOffset>
+                  </dataWest>
+                  <dataSouth>
+                    <offset>(0.5,0,1.4)</offset>
+                    <layer>-10</layer>
+                  </dataSouth>
+                  <dataNorth>
+                    <offset>(-0.5,0,-1.2)</offset>
+                    <layer>10</layer>
+                  </dataNorth>
+                </drawData>
+              </li>
+            </renderNodeProperties>
+          </li>
+        </subTurrets>
+      </li>
+    </comps>
+    <tools Inherit="False">
+      <li>
+        <label>Left Leg</label>
+        <capacities>
+          <li>DMS_HeavySweep</li>
+        </capacities>
+        <power>24</power>
+        <cooldownTime>5</cooldownTime>
+        <linkedBodyPartsGroup>LeftMechanicalLeg</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>16</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>Right Leg</label>
+        <capacities>
+          <li>DMS_HeavySweep</li>
+        </capacities>
+        <power>24</power>
+        <cooldownTime>5</cooldownTime>
+        <linkedBodyPartsGroup>RightMechanicalLeg</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>16</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+    </tools>
+    <damageMultipliers>
+      <li>
+        <damageDef>Blunt</damageDef>
+        <multiplier>0.75</multiplier>
+      </li>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>0.75</multiplier>
+      </li>
+    </damageMultipliers>
+    <butcherProducts>
+      <Tungsteel>100</Tungsteel>
+      <DMS_ChunkSlag>6</DMS_ChunkSlag>
+      <ComponentStamped>4</ComponentStamped>
+    </butcherProducts>
+    <castEdgeShadows>false</castEdgeShadows>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAncientAutomatroidKind">
+    <defName>DMS_MechCorps_Pravda</defName>
+    <label>长距离炮击型</label>
+    <race>DMS_MechCorps_Pravda</race>
+    <nameMaker>DMS_AncientMechHeavy</nameMaker>
+    <isFighter>true</isFighter>
+    <combatPower>800</combatPower>                                               <!--威脅點數-->
+    <maxPerGroup>1</maxPerGroup>                                                 <!--單個集群內的數量-->
+    <isBoss>true</isBoss>
+    <lifeStages>                                                                 <!--身體圖片-->
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/pravda</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.6</drawSize>
+          <shadowData>
+            <volume>(1.8,1,1.8)</volume>
+            <offset>(0,0,-0.5)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/pravda</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.6</drawSize>
+          <shadowData>
+            <volume>(1.8,1,1.8)</volume>
+            <offset>(0,0,-0.5)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags Inherit="False">
+      <li>DMS_Gun_Empero</li>
+    </weaponTags>
+    <weaponMoney>6730~9999</weaponMoney>
+    <abilities>
+      <li>DMSAC_APS</li>
+    </abilities>
+  </PawnKindDef>
+
+  <!-- DMS_MechCorps_AdvancedGeochelone 护盾型 max:2 cp:700-->
+  <ThingDef ParentName="BaseAdvancedGeocheloneRace">
+    <defName>DMS_MechCorps_AdvancedGeochelone</defName>
+    <label>护盾型</label>
+    <description>护盾型：区域防御单位。能量护盾覆盖半径15米，充能周期15秒/点，被EMP瘫痪后15秒即可重启。</description>
+    <statBases>
+      <ArmorRating_Sharp>1.8</ArmorRating_Sharp><!--銳抗-->
+      <ArmorRating_Blunt>1.5</ArmorRating_Blunt><!--鈍抗-->
+      <ArmorRating_Heat>1.5</ArmorRating_Heat>  <!--能抗-->
+      <IncomingDamageFactor>0.70</IncomingDamageFactor><!--承伤乘数-->
+    </statBases>
+    <comps Inherit="False">
+      <li Class="CompProperties_ProjectileInterceptor">
+        <radius>15</radius>
+        <interceptGroundProjectiles>true</interceptGroundProjectiles>
+        <color>(0.4, 0.4, 0.6)</color>
+        <reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
+        <activeSound>BulletShield_Ambience</activeSound>
+        <hitPoints>3000</hitPoints>
+        <hitPointsRestoreInstantlyAfterCharge>true</hitPointsRestoreInstantlyAfterCharge>
+        <chargeDurationTicks>900</chargeDurationTicks>
+        <rechargeHitPointsIntervalTicks>6</rechargeHitPointsIntervalTicks> <!--护盾充能1点所需时间:6/60s-->
+        <minIdleAlpha>0.5</minIdleAlpha>
+        <drawWithNoSelection>True</drawWithNoSelection>
+        <disarmedByEmpForTicks>900</disarmedByEmpForTicks>   <!--被EMP瘫痪后重启所需时间:15s-->
+        <gizmoTipKey>ProjectileInterceptorTip</gizmoTipKey>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMS_MechCorps_AdvancedGeochelone</defName>
+    <race>DMS_MechCorps_AdvancedGeochelone</race>
+    <label>护盾型</label>
+    <combatPower>700</combatPower>
+    <maxPerGroup>2</maxPerGroup>
+    <destroyGearOnDrop>true</destroyGearOnDrop>
+    <isBoss>true</isBoss>
+    <abilities>
+      <li>DMS_SmokeLauncher</li>
+      <li>DMS_RepairMode</li>
+    </abilities>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/geochelone</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.75</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/geochelone</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.75</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags />
+  </PawnKindDef>
+</Defs>

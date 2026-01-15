@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>PRT_KineticBombardmentSatellitePod</defName>
+    <label>轨道轰炸卫星舱</label>
+    <description>装载着一次性轨道打击平台的发射舱。此卫星携带16枚高威力动能弹，可从轨道上投射至指定坐标。</description>
+    <descriptionHyperlinks>
+      <ThingDef>PRT_OrbitalTargeter_BombardmentNoLOS</ThingDef>
+    </descriptionHyperlinks>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/PRT_KineticBombardmentSatellitePod</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <designationCategory>Misc</designationCategory>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <costList>
+      <Plasteel>50</Plasteel>
+      <Uranium>10</Uranium>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="PRT_Mod.CompProperties_OrbitalLaunchPRT">
+        <spawnThingDef>PRT_OrbitalTargeter_BombardmentNoLOS</spawnThingDef>
+        <!-- OrbitalTargeterBombardment -->
+        <leavingThingDef>PRT_KineticBombardmentSatellitePodLeaving</leavingThingDef>
+        <fuelCost>150</fuelCost>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_NeedsFuelingPort</li>
+      <li>PlaceWorker_NotUnderRoof</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>DMS_PRT_GlobalPositioningAndStrike</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <uiIconScale>0.65</uiIconScale>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>PRT_ReconSatellitePod</defName>
+    <label>侦察卫星舱</label>
+    <description>装载着多模态侦察卫星的发射舱。发射后会留下1个轨道侦察卫星通信模块，可用于组装卫星导航模块。</description>
+    <descriptionHyperlinks>
+      <ThingDef>PRT_Communicator_with_ReconSatellite</ThingDef>
+      <ThingDef>PRT_SatelliteNavigationModule</ThingDef>
+    </descriptionHyperlinks>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/PRT_ReconSatellitePod</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <designationCategory>Misc</designationCategory>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <costList>
+      <Plasteel>50</Plasteel>
+      <Uranium>10</Uranium>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="PRT_Mod.CompProperties_OrbitalLaunchPRT">
+        <spawnThingDef>PRT_Communicator_with_ReconSatellite</spawnThingDef>
+        <!-- OrbitalTargeterBombardment -->
+        <leavingThingDef>PRT_ReconSatellitePodLeaving</leavingThingDef>
+        <fuelCost>150</fuelCost>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_NeedsFuelingPort</li>
+      <li>PlaceWorker_NotUnderRoof</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>DMS_PRT_MilitaryAerospaceTechnology</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <uiIconScale>0.65</uiIconScale>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>PRT_GarbageBombardmentSatellitePod</defName>
+    <label>电磁捕捉网卫星舱</label>
+    <description>装载着一次性轨道垃圾清理卫星的发射舱。此卫星使用电磁捕捉网捕捉太空中的中小型陨石、废弃卫星、飞船残骸甚至巨大的废弃轨道设施，然后一并从轨道上扔下，使轨道垃圾精准坠毁到指定地点。\n\n发射后会生成一个轨道轰炸靶向器。需要连接运输舱燃料口且燃料充足，并且必须放置在露天。</description>
+    <descriptionHyperlinks>
+      <ThingDef>PRT_OrbitalTargeter_GarbageRainNoLOS</ThingDef>
+    </descriptionHyperlinks>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/PRT_GarbageBombardmentSatellitePod</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <designationCategory>Misc</designationCategory>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <costList>
+      <Plasteel>50</Plasteel>
+      <Uranium>10</Uranium>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="PRT_Mod.CompProperties_OrbitalLaunchPRT">
+        <spawnThingDef>PRT_OrbitalTargeter_GarbageRainNoLOS</spawnThingDef>
+        <leavingThingDef>PRT_GarbageBombardmentSatellitePodLeaving</leavingThingDef>
+        <fuelCost>150</fuelCost>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_NeedsFuelingPort</li>
+      <li>PlaceWorker_NotUnderRoof</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>DMS_PRT_GlobalPositioningAndStrike</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <uiIconScale>0.65</uiIconScale>
+  </ThingDef>
+
+  <ThingDef Name="PRT_SkyfallerBase" Abstract="True">
+    <category>Ethereal</category>
+    <thingClass>Skyfaller</thingClass>
+    <useHitPoints>false</useHitPoints>
+    <drawOffscreen>true</drawOffscreen>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Skyfaller</altitudeLayer>
+    <drawerType>RealtimeOnly</drawerType>
+    <skyfaller />
+  </ThingDef>
+
+  <!-- 离开的卫星舱 -->
+  <ThingDef ParentName="PRT_SkyfallerBase">
+    <defName>PRT_KineticBombardmentSatellitePodLeaving</defName>
+    <label>轨道轰炸卫星舱 (离开)</label>
+    <graphicData>
+      <texPath>Things/Building/PRT_KineticBombardmentSatellitePod</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutFlying</shaderType>
+      <drawSize>1.9</drawSize>
+    </graphicData>
+    <skyfaller>
+      <movementType>Decelerate</movementType>
+      <reversed>true</reversed>
+      <shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+      <shadowSize>(2, 2)</shadowSize>
+      <anticipationSound>DropPod_Leaving</anticipationSound>
+      <anticipationSoundTicks>-10</anticipationSoundTicks>
+      <ticksToImpactRange><min>-40</min><max>-15</max></ticksToImpactRange>
+    </skyfaller>
+  </ThingDef>
+
+  <ThingDef ParentName="PRT_SkyfallerBase">
+    <defName>PRT_ReconSatellitePodLeaving</defName>
+    <label>侦察卫星舱 (离开)</label>
+    <graphicData>
+      <texPath>Things/Building/PRT_ReconSatellitePod</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutFlying</shaderType>
+      <drawSize>1.9</drawSize>
+    </graphicData>
+    <skyfaller>
+      <movementType>Decelerate</movementType>
+      <reversed>true</reversed>
+      <shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+      <shadowSize>(2, 2)</shadowSize>
+      <anticipationSound>DropPod_Leaving</anticipationSound>
+      <anticipationSoundTicks>-10</anticipationSoundTicks>
+      <ticksToImpactRange><min>-40</min><max>-15</max></ticksToImpactRange>
+    </skyfaller>
+  </ThingDef>
+
+  <ThingDef ParentName="PRT_SkyfallerBase">
+    <defName>PRT_GarbageBombardmentSatellitePodLeaving</defName>
+    <label>电磁捕捉网卫星舱 (离开)</label>
+    <graphicData>
+      <texPath>Things/Building/PRT_GarbageBombardmentSatellitePod</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutFlying</shaderType>
+      <drawSize>1.9</drawSize>
+    </graphicData>
+    <skyfaller>
+      <movementType>Decelerate</movementType>
+      <reversed>true</reversed>
+      <shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+      <shadowSize>(2, 2)</shadowSize>
+      <anticipationSound>DropPod_Leaving</anticipationSound>
+      <anticipationSoundTicks>-10</anticipationSoundTicks>
+      <ticksToImpactRange><min>-40</min><max>-15</max></ticksToImpactRange>
+    </skyfaller>
+  </ThingDef>
+
+</Defs>

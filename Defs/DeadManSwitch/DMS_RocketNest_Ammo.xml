@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 铁雨300mm火箭炮弹药 -->
+
+  <!-- 300mm火箭弹 -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>DMS_Bullet_HailRocket</defName>
+    <label>300mm高爆火箭弹</label>
+    <graphicData>
+      <texPath>Things/DMS/Rocket_Shot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2.4</drawSize>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <flyOverhead>true</flyOverhead>
+      <damageDef>Bomb</damageDef>
+      <speed>100</speed>
+      <explosionRadius>9.9</explosionRadius>
+      <damageAmountBase>640</damageAmountBase>
+      <armorPenetrationBase>0.5</armorPenetrationBase>
+      <preExplosionSpawnSingleThingDef>CraterMedium</preExplosionSpawnSingleThingDef>
+    </projectile>
+    <comps>
+      <li Class="PRT_Mod.ProjectileTrail.CompProperties_PRTProjectileTrailSmoke">
+        <enableReverseFlame>true</enableReverseFlame>   
+        <reverseFlameOffset>(0,0,1)</reverseFlameOffset>   
+        <smokeSize>2.6</smokeSize>    <!--绘制全局烟雾大小-->
+        <emitUntilProgress>0.7</emitUntilProgress>    <!--飞行路程前70%发烟，后段不发烟（0~1）-->
+        <spawnIntervalTicks>1</spawnIntervalTicks>    <!--生成烟雾的时间间隔，越小烟雾越密-->
+        <smokePerSpawn>3</smokePerSpawn>    <!--每次喷几团烟-->
+        <smokeChance>1</smokeChance>    <!--烟雾生成概率，想稀疏就调小-->
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>DMS_Bullet_HailRocket_Shrapnel</defName>
+    <label>300mm集束火箭弹</label>
+    <graphicData>
+      <texPath>Things/DMS/Rocket_Shot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2.4</drawSize>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>PRT_Mod.Shrapnel.Projectile_ShrapnelCarrier</thingClass>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <speed>100</speed>
+      <damageAmountBase>0</damageAmountBase>
+      <explosionRadius>0</explosionRadius>
+      <armorPenetrationBase>0</armorPenetrationBase>
+      <flyOverhead>true</flyOverhead>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <soundExplode>Explosion_GiantBomb</soundExplode>
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+    </projectile>
+    <comps>
+      <li Class="PRT_Mod.ProjectileTrail.CompProperties_PRTProjectileTrailSmoke">
+        <enableReverseFlame>true</enableReverseFlame>    <!--启用反向尾焰-->
+        <reverseFlameOffset>(0,0,1)</reverseFlameOffset>    <!--反向尾焰的偏移位置（基准为小人攻击正北方向）-->
+        <smokeSize>2.6</smokeSize>    <!--绘制全局烟雾大小-->
+        <emitUntilProgress>0.7</emitUntilProgress>    <!--飞行路程前70%发烟，后段不发烟（0~1）-->
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="PRT_Mod.Shrapnel.ShrapnelCarrierExtension">
+        <subProjectileCount>16</subProjectileCount> <!--榴霰弹子弹数量-->
+        <spreadRadius>12</spreadRadius> <!--榴霰弹散布范围-->
+        <splitProgress>0.7</splitProgress> <!--母弹分散进程，在飞过总路程的70%时分散-->
+        <subProjectileDef>DMS_Bullet_HailRocket_Shrapnel_SubProjectile</subProjectileDef>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>DMS_Bullet_HailRocket_Shrapnel_SubProjectile</defName>
+    <label>集束火箭弹子弹头</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <speed>140</speed>
+      <damageAmountBase>200</damageAmountBase>
+      <explosionRadius>3.9</explosionRadius>
+      <armorPenetrationBase>0.35</armorPenetrationBase>
+      <explosionChanceToStartFire>0.05</explosionChanceToStartFire>
+      <explosionDamageFalloff>true</explosionDamageFalloff>
+      <flyOverhead>true</flyOverhead>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <soundExplode>Explosion_Small</soundExplode>
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+      <preExplosionSpawnSingleThingDef>Filth_BlastMark</preExplosionSpawnSingleThingDef>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>DMS_Bullet_HailRocket_SADARM</defName>
+    <label>300mm末敏火箭弹</label>
+    <graphicData>
+      <texPath>Things/DMS/Rocket_Shot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2.4</drawSize>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>PRT_Mod.SADARM.Projectile_SADARMCarrier</thingClass>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <speed>80</speed>
+      <damageAmountBase>0</damageAmountBase>
+      <explosionRadius>0</explosionRadius>
+      <armorPenetrationBase>0</armorPenetrationBase>
+      <flyOverhead>true</flyOverhead>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <soundExplode>Explosion_GiantBomb</soundExplode>
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+    </projectile>
+    <comps>
+      <li Class="PRT_Mod.ProjectileTrail.CompProperties_PRTProjectileTrailSmoke">
+        <enableReverseFlame>true</enableReverseFlame>    <!--启用反向尾焰-->
+        <reverseFlameOffset>(0,0,1)</reverseFlameOffset>    <!--反向尾焰的偏移位置（基准为小人攻击正北方向）-->
+        <smokeSize>2.6</smokeSize>    <!--绘制全局烟雾大小-->
+        <emitUntilProgress>0.7</emitUntilProgress>    <!--飞行路程前70%发烟，后段不发烟（0~1）-->
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="PRT_Mod.SADARM.SADARMCarrierExtension">
+        <submunitionCount>16</submunitionCount> <!--末敏弹子弹数量-->
+        <spreadRadius>24</spreadRadius> <!--末敏弹索敌范围-->
+        <submunitionSkyfallerDef>DMS_Skyfaller_SADARM_Submunition</submunitionSkyfallerDef>
+        <submunitionProjectileDef>DMS_Bullet_SADARM_Submunition</submunitionProjectileDef>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- 末敏子弹和末敏弹战斗部在155榴的文件里 -->
+
+</Defs>

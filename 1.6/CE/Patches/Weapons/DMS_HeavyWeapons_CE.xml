@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[defName="DMS_Gun_HeavyAutoCannon"]/verbs</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[defName="DMS_Gun_Skullcracker"]/verbs</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[defName="DMS_Gun_RailGun"]/verbs</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[defName="DMS_Gun_MediumAutoCannon"]/verbs</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[defName="DMS_Gun_MediumCannon"]/verbs</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[defName="DMS_Weapon_HeavyAutoCannon"]/verbs</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[defName="DMS_Gun_ChargeAutoCannon"]/verbs</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[defName="DMS_Gun_HeavyCannon"]/verbs</xpath>
+			</li>
+
+			<!-- 九霄雷罚 -->
+			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+				<defName>DMS_Gun_RailGun</defName>
+				<statBases>
+					<Mass>360</Mass>
+					<Bulk>104.5</Bulk>
+					<SwayFactor>2.2</SwayFactor>
+					<ShotSpread>0.02</ShotSpread>
+					<SightsEfficiency>1.6</SightsEfficiency>
+					<RangedWeapon_Cooldown>1.6</RangedWeapon_Cooldown>
+				</statBases> 
+				<Properties>
+					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+					<hasStandardCommand>true</hasStandardCommand>
+					<defaultProjectile>Bullet_88mmRailGun_AP</defaultProjectile>
+					<warmupTime>1.8</warmupTime>
+					<minRange>4.9</minRange>
+					<range>84.9</range>
+					<ai_AvoidFriendlyFireRadius>4.9</ai_AvoidFriendlyFireRadius>
+					<burstShotCount>1</burstShotCount>
+					<soundCast>DMS_Shot_RailGunSound</soundCast>
+					<soundCastTail>GunTail_Heavy</soundCastTail>
+					<muzzleFlashScale>20</muzzleFlashScale>
+					<targetParams>
+						<canTargetLocations>true</canTargetLocations>
+					</targetParams>
+					<recoilAmount>1.5</recoilAmount>
+					<recoilPattern>Mounted</recoilPattern>
+				</Properties>
+				<AmmoUser>
+					<magazineSize>5</magazineSize>
+					<reloadTime>4</reloadTime>
+					<ammoSet>AmmoSet_88mmRailGun</ammoSet>
+				</AmmoUser>
+				<FireModes>
+                    <aiUseBurstMode>true</aiUseBurstMode>
+                    <aiAimMode>AimedShot</aiAimMode>
+                </FireModes>
+			</li>
+
+			<!-- 金属风暴 -->
+			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+				<defName>DMS_Gun_HeavyAutoCannon</defName>
+				<statBases>
+					<Mass>260</Mass>
+					<Bulk>82</Bulk>
+					<SwayFactor>2.2</SwayFactor>
+					<ShotSpread>0.015</ShotSpread>
+					<SightsEfficiency>1.2</SightsEfficiency>
+					<RangedWeapon_Cooldown>1.75</RangedWeapon_Cooldown>
+				</statBases>
+				<Properties>
+					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+					<hasStandardCommand>true</hasStandardCommand>
+					<defaultProjectile>Bullet_30x173mmNATO_AP</defaultProjectile>
+					<warmupTime>1.2</warmupTime>
+					<minRange>7.9</minRange>
+					<range>80</range>
+					<burstShotCount>30</burstShotCount>
+					<ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+					<soundCast>DMS_Shot_GAU</soundCast>
+					<soundCastTail>GunTail_Heavy</soundCastTail>
+					<muzzleFlashScale>25</muzzleFlashScale>
+					<targetParams>
+						<canTargetLocations>true</canTargetLocations>
+					</targetParams>
+					<recoilAmount>1.20</recoilAmount>
+					<recoilPattern>Mounted</recoilPattern>
+				</Properties>
+				<AmmoUser>
+					<magazineSize>90</magazineSize>
+					<reloadTime>6</reloadTime>
+					<ammoSet>AmmoSet_30x173mmNATO</ammoSet>
+				</AmmoUser>
+				<FireModes>
+                    <aiUseBurstMode>false</aiUseBurstMode>
+                    <noSingleShot>true</noSingleShot>
+                    <aiAimMode>SuppressFire</aiAimMode>
+                    <aimedBurstShotCount>10</aimedBurstShotCount>
+                </FireModes>
+			</li>
+
+			<!-- 撕裂者 -->
+			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+				<defName>DMS_Gun_MediumAutoCannon</defName>
+				<statBases>
+					<Mass>180</Mass>
+					<Bulk>34</Bulk>
+					<SwayFactor>2.0</SwayFactor>
+					<ShotSpread>0.02</ShotSpread>
+					<SightsEfficiency>1.0</SightsEfficiency>
+					<RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
+				</statBases>
+				<Properties>
+					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+					<hasStandardCommand>true</hasStandardCommand>
+					<defaultProjectile>Bullet_30x165mm_AP</defaultProjectile>
+					<warmupTime>1.8</warmupTime>
+					<range>75</range>
+					<burstShotCount>9</burstShotCount>
+					<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+					<soundCast>Shot_Autocannon</soundCast>
+					<soundCastTail>GunTail_Heavy</soundCastTail>
+					<muzzleFlashScale>18</muzzleFlashScale>
+					<recoilAmount>1.5</recoilAmount>
+					<recoilPattern>Mounted</recoilPattern>
+				</Properties>
+				<AmmoUser>
+					<magazineSize>30</magazineSize>
+					<reloadTime>2.6</reloadTime>
+					<ammoSet>AmmoSet_30x165mm</ammoSet>
+				</AmmoUser>
+				<FireModes>
+          <aiUseBurstMode>true</aiUseBurstMode>
+          <aiAimMode>AimedShot</aiAimMode>
+          <aimedBurstShotCount>9</aimedBurstShotCount>
+        </FireModes>
+			</li>
+
+			<!-- 破城锤 -->
+			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+				<defName>DMS_Gun_MediumCannon</defName>
+				<statBases>
+					<Mass>196</Mass>
+					<Bulk>36</Bulk>
+					<SwayFactor>2.1</SwayFactor>
+					<ShotSpread>0.02</ShotSpread>
+					<SightsEfficiency>1.0</SightsEfficiency>
+					<RangedWeapon_Cooldown>3.2</RangedWeapon_Cooldown>
+				</statBases>
+				<Properties>
+					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+					<hasStandardCommand>true</hasStandardCommand>
+					<defaultProjectile>Bullet_57x438mmBofors_AP</defaultProjectile>
+					<warmupTime>1.8</warmupTime>
+					<range>90</range>
+					<burstShotCount>3</burstShotCount>
+					<ticksBetweenBurstShots>24</ticksBetweenBurstShots>
+					<soundCast>Shot_Autocannon</soundCast>
+					<soundCastTail>GunTail_Heavy</soundCastTail>
+					<muzzleFlashScale>24</muzzleFlashScale>
+					<recoilAmount>1.8</recoilAmount>
+					<targetParams>
+						<canTargetLocations>true</canTargetLocations>
+					</targetParams>
+				</Properties>
+				<AmmoUser>
+					<magazineSize>6</magazineSize>
+					<reloadTime>3.8</reloadTime>
+					<ammoSet>AmmoSet_57x438mmBofors</ammoSet>
+				</AmmoUser>
+				<FireModes>
+                    <aiUseBurstMode>true</aiUseBurstMode>
+                    <aiAimMode>AimedShot</aiAimMode>
+                    <aimedBurstShotCount>3</aimedBurstShotCount>
+                </FireModes>
+			</li>
+
+			<!-- 审判之杖 -->
+			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+				<defName>DMS_Weapon_HeavyAutoCannon</defName>
+				<statBases>
+					<Mass>125</Mass>
+					<Bulk>26</Bulk>
+					<SwayFactor>2.1</SwayFactor>
+					<ShotSpread>0.02</ShotSpread>
+					<SightsEfficiency>1.1</SightsEfficiency>
+					<RangedWeapon_Cooldown>2.6</RangedWeapon_Cooldown>
+				</statBases>
+				<Properties>
+					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+					<hasStandardCommand>true</hasStandardCommand>
+					<defaultProjectile>Bullet_35x228mmNATO_HE</defaultProjectile>
+					<warmupTime>1.5</warmupTime>
+					<range>80</range>
+					<burstShotCount>25</burstShotCount>
+					<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+					<soundCast>Shot_Autocannon</soundCast>
+					<soundCastTail>GunTail_Heavy</soundCastTail>
+					<muzzleFlashScale>24</muzzleFlashScale>
+					<targetParams>
+						<canTargetLocations>true</canTargetLocations>
+					</targetParams>
+					<recoilAmount>1.6</recoilAmount>
+					<recoilPattern>Mounted</recoilPattern>
+				</Properties>
+				<AmmoUser>
+					<magazineSize>100</magazineSize>
+					<reloadTime>6</reloadTime>
+					<ammoSet>AmmoSet_35x228mm</ammoSet>
+				</AmmoUser>
+				<FireModes>
+                    <aiUseBurstMode>false</aiUseBurstMode>
+                    <noSingleShot>true</noSingleShot>
+                    <aiAimMode>SuppressFire</aiAimMode>
+                    <aimedBurstShotCount>25</aimedBurstShotCount>
+                </FireModes>
+			</li>
+
+			<!-- 湮灭天劫 -->
+			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+				<defName>DMS_Gun_ChargeAutoCannon</defName>
+				<statBases>
+					<Mass>215</Mass>
+					<Bulk>34</Bulk>
+					<SwayFactor>1.8</SwayFactor>
+					<ShotSpread>0.01</ShotSpread>
+					<SightsEfficiency>1.2</SightsEfficiency>
+					<RangedWeapon_Cooldown>2.8</RangedWeapon_Cooldown>
+				</statBases>
+				<Properties>
+					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+					<hasStandardCommand>true</hasStandardCommand>
+					<defaultProjectile>Bullet_30x165mmCharged</defaultProjectile>
+					<warmupTime>1.8</warmupTime>
+					<range>88.9</range>
+					<burstShotCount>15</burstShotCount>
+					<ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+					<soundCast>Shot_ChargeRifle</soundCast>
+					<soundCastTail>GunTail_Heavy</soundCastTail>
+					<muzzleFlashScale>26</muzzleFlashScale>
+					<recoilAmount>1.2</recoilAmount>
+					<recoilPattern>Mounted</recoilPattern>
+				</Properties>
+				<AmmoUser>
+					<magazineSize>45</magazineSize>
+					<reloadTime>4</reloadTime>
+					<ammoSet>AmmoSet_30x165mmCharged</ammoSet>
+				</AmmoUser>
+				<FireModes>
+                    <aiUseBurstMode>true</aiUseBurstMode>
+                    <aiAimMode>AimedShot</aiAimMode>
+                </FireModes>
+			</li>
+
+			<!-- 真理之剑 -->
+			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+				<defName>DMS_Gun_HeavyCannon</defName>
+				<statBases>
+					<Mass>215</Mass>
+					<Bulk>72</Bulk>
+					<SwayFactor>2.75</SwayFactor>
+					<ShotSpread>0.02</ShotSpread>
+					<SightsEfficiency>1.45</SightsEfficiency>
+					<RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+				</statBases>
+				<Properties>
+					<recoilAmount>2.10</recoilAmount>
+					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+					<hasStandardCommand>true</hasStandardCommand>
+					<defaultProjectile>Bullet_105mmTC_HE</defaultProjectile>
+					<warmupTime>1.9</warmupTime>
+					<minRange>6.9</minRange>
+					<range>100</range>
+					<burstShotCount>1</burstShotCount>
+					<soundCast>DMS_AC_Shot_MBTCannonSound</soundCast>
+					<soundCastTail>GunTail_Heavy</soundCastTail>
+					<muzzleFlashScale>30</muzzleFlashScale>
+					<targetParams>
+						<canTargetLocations>true</canTargetLocations>
+					</targetParams>
+					<recoilPattern>Mounted</recoilPattern>
+				</Properties>
+				<AmmoUser>
+					<magazineSize>1</magazineSize>
+					<reloadTime>4.6</reloadTime>
+					<ammoSet>AmmoSet_105mmTC</ammoSet>
+				</AmmoUser>
+				<FireModes>
+                    <aiUseBurstMode>true</aiUseBurstMode>
+                    <aiAimMode>AimedShot</aiAimMode>
+                </FireModes>
+			</li>
+			<li Class="PatchOperationAddModExtension">
+                <xpath>Defs/ThingDef[defName="DMS_Gun_HeavyCannon"]</xpath>
+                <value>
+                    <li Class="CombatExtended.GunDrawExtension">
+                        <DropCasingWhenReload>true</DropCasingWhenReload>
+                        <AdvancedCasingVariables>true</AdvancedCasingVariables>
+                        <CasingRotationRandomRange>0</CasingRotationRandomRange>
+                        <CasingOffset>-1,0</CasingOffset>
+                        <CasingSpeedOverrideRange>3~4</CasingSpeedOverrideRange>
+                        <CasingAngleOffset>-135</CasingAngleOffset>
+                        <CasingLifeTimeMultiplier>2</CasingLifeTimeMultiplier>
+                    </li>
+                </value>
+            </li>
+
+			<!-- 碎羽25mm防空炮 -->
+			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+				<defName>DMS_Gun_Skullcracker</defName>
+				<statBases>
+					<Mass>260</Mass>
+					<Bulk>60</Bulk>
+					<SwayFactor>2.2</SwayFactor>
+					<ShotSpread>0.03</ShotSpread>
+					<SightsEfficiency>1.8</SightsEfficiency>
+					<RangedWeapon_Cooldown>4</RangedWeapon_Cooldown>
+				</statBases>
+				<Properties>
+					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+					<hasStandardCommand>true</hasStandardCommand>
+					<defaultProjectile>Bullet_25x137mmNATO_AP</defaultProjectile>
+					<warmupTime>1.0</warmupTime>
+					<range>89.9</range>
+					<burstShotCount>40</burstShotCount>
+					<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+					<soundCast>Shot_Autocannon</soundCast>
+					<soundCastTail>GunTail_Heavy</soundCastTail>
+					<muzzleFlashScale>24</muzzleFlashScale>
+					<targetParams>
+						<canTargetLocations>true</canTargetLocations>
+					</targetParams>
+					<recoilAmount>1.6</recoilAmount>
+					<recoilPattern>Mounted</recoilPattern>
+				</Properties>
+				<AmmoUser>
+					<magazineSize>160</magazineSize>
+					<reloadTime>6</reloadTime>
+					<ammoSet>AmmoSet_25x137mmNATO</ammoSet>
+				</AmmoUser>
+				<FireModes>
+					<aiUseBurstMode>false</aiUseBurstMode>
+					<noSingleShot>true</noSingleShot>
+					<aiAimMode>SuppressFire</aiAimMode>
+					<aimedBurstShotCount>40</aimedBurstShotCount>
+				</FireModes>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

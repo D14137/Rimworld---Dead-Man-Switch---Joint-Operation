@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="OrbitalUtilityBase">
+    <defName>PRT_OrbitalTargeter_GarbageRainNoLOS</defName>
+    <label>轨道垃圾雨靶向器</label>
+    <description>无视野限制的轨道垃圾雨靶向器。可在全图任意位置指定坐标引导轨道垃圾雨投放。</description>
+    <descriptionHyperlinks>
+      <ThingDef>PRT_GarbageBombardmentSatellitePod</ThingDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/PRT_OrbitalTargeter_GarbageRainNoLOS</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.9,0.9)</drawSize>
+    </graphicData>
+    <verbs>
+      <li>
+        <verbClass>PRT_Mod.OrbitalGarbageRain.Verb_PRTOrbitalGarbageRain</verbClass>
+        <label>引导轨道垃圾雨</label>
+        <commandIcon>UI/GameComponent/OrbitalTargeterGarbageRain</commandIcon>
+        <hasStandardCommand>true</hasStandardCommand>
+        <useableInPocketMaps>false</useableInPocketMaps>
+        <warmupTime>3</warmupTime>
+        <onlyManualCast>true</onlyManualCast>
+        <requireLineOfSight>false</requireLineOfSight>
+        <range>9999</range>
+        <burstShotCount>1</burstShotCount>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CompProperties_ApparelReloadable">
+        <maxCharges>1</maxCharges>
+        <destroyOnEmpty>true</destroyOnEmpty>
+        <hotKey>Misc4</hotKey>
+        <chargeNoun>charge</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="PRT_Mod.OrbitalGarbageRain.PRTOrbitalGarbageRainExtension">
+        <!-- controllerDef：控制器ThingDef。施放技能后会在目标格生成该Thing，并由它按Tick驱动整个垃圾雨流程 -->
+        <controllerDef>PRT_OrbitalGarbageRainController</controllerDef>
+
+        <!-- phase1SmallMeteorSkyfallerDef：第一阶段小陨石Skyfaller Def -->
+        <phase1SmallMeteorSkyfallerDef>PRT_Skyfaller_GarbageRain_SmallMeteor</phase1SmallMeteorSkyfallerDef>
+
+        <!-- phase2FinalShipSkyfallerDef：第二阶段“大型坠落物”Skyfaller Def（落地触发大爆炸+震屏） -->
+        <phase2FinalShipSkyfallerDef>PRT_Skyfaller_GarbageRain_FinalShip</phase2FinalShipSkyfallerDef>
+
+        <!-- phase3MeteorSkyfallerDef：第三阶段（混合坠落阶段）陨石Skyfaller Def -->
+        <phase3MeteorSkyfallerDef>PRT_Skyfaller_GarbageRain_Meteor</phase3MeteorSkyfallerDef>
+        <!-- phase3ShipChunkSkyfallerDef：第三阶段（混合坠落阶段）飞船残骸块Skyfaller Def -->
+        <phase3ShipChunkSkyfallerDef>PRT_Skyfaller_GarbageRain_ShipChunk</phase3ShipChunkSkyfallerDef>
+        <!-- phase3SatelliteWreckSkyfallerDef：第三阶段（混合坠落阶段）卫星残骸Skyfaller Def（落地生成卫星残骸建筑） -->
+        <phase3SatelliteWreckSkyfallerDef>PRT_Skyfaller_GarbageRain_SatelliteWreck</phase3SatelliteWreckSkyfallerDef>
+        <!-- phase3SatelliteWreckBuildingDef：卫星残骸Skyfaller落地后生成的建筑Def -->
+        <phase3SatelliteWreckBuildingDef>PRT_Building_SatelliteWreck</phase3SatelliteWreckBuildingDef>
+
+        <!-- phase1SmallMeteorCountRange：第一阶段小陨石数量范围 -->
+        <phase1SmallMeteorCountRange>30~40</phase1SmallMeteorCountRange>
+
+        <!-- phase3MeteorCountRange：第三阶段陨石数量范围 -->
+        <phase3MeteorCountRange>3~6</phase3MeteorCountRange>
+        <!-- phase3ShipChunkCountRange：第三阶段飞船残骸块数量范围 -->
+        <phase3ShipChunkCountRange>2~4</phase3ShipChunkCountRange>
+        <!-- phase3SatelliteWreckCountRange：第三阶段卫星残骸数量范围 -->
+        <phase3SatelliteWreckCountRange>4~8</phase3SatelliteWreckCountRange>
+
+        <!-- dropIntervalTicks：第一/第三阶段每次投放间隔（tick） -->
+        <dropIntervalTicks>20</dropIntervalTicks>
+        <!-- stageTransitionTicks：阶段切换等待时间（tick） -->
+        <stageTransitionTicks>120</stageTransitionTicks>
+        <!-- spreadRadius：落点扩散半径（围绕施放目标格随机） -->
+        <spreadRadius>24</spreadRadius>
+
+        <!-- phase1StartOffsetX/Z：第一阶段坠落起始位移（用于表现从地图右上方向斜向坠落） -->
+        <phase1StartOffsetX>40</phase1StartOffsetX>
+        <phase1StartOffsetZ>40</phase1StartOffsetZ>
+
+        <!-- phase3StartOffsetX/Z：第三阶段（混合坠落阶段）坠落起始位移（用于表现从地图右上方向斜向坠落） -->
+        <phase3StartOffsetX>40</phase3StartOffsetX>
+        <phase3StartOffsetZ>40</phase3StartOffsetZ>
+
+        <!-- phase1ExplosionRadius/phase1DamageAmount：第一阶段小爆炸半径与伤害 -->
+        <phase1ExplosionRadius>3.5</phase1ExplosionRadius>
+        <phase1DamageAmount>120</phase1DamageAmount>
+
+        <!-- phase3ExplosionRadius/phase3DamageAmount：第三阶段（混合坠落）每个小坠落物的爆炸半径与伤害 -->
+        <phase3ExplosionRadius>4.8</phase3ExplosionRadius>
+        <phase3DamageAmount>40</phase3DamageAmount>
+
+        <!-- phase2ExplosionRadius/phase2DamageAmount：第二阶段大爆炸半径与伤害 -->
+        <phase2ExplosionRadius>24</phase2ExplosionRadius>
+        <phase2DamageAmount>1600</phase2DamageAmount>
+
+        <!-- phase2StartOffsetX/Z：第二阶段大坠落物起始位移（右上方向） -->
+        <phase2StartOffsetX>40</phase2StartOffsetX>
+        <phase2StartOffsetZ>40</phase2StartOffsetZ>
+        <!-- phase2FallTicks：第二阶段大坠落物坠落时长（tick） -->
+        <phase2FallTicks>300</phase2FallTicks>
+        <!-- phase2ExtraRotationDeg：第二阶段大坠落物额外旋转角度（度，负值为逆时针） -->
+        <phase2ExtraRotationDeg>-15</phase2ExtraRotationDeg>
+        <!-- phase2ArmorPenetration：第二阶段大爆炸穿甲 -->
+        <phase2ArmorPenetration>0.5</phase2ArmorPenetration>
+        <!-- phase2ScreenShakeFactor：第二阶段爆炸屏幕震动强度 -->
+        <phase2ScreenShakeFactor>2</phase2ScreenShakeFactor>
+
+        <!-- phase3AllowedShipChunkDefs：第三阶段允许投放的残骸块ThingDef列表（随机抽取） -->
+        <phase3AllowedShipChunkDefs>
+          <li>ShipChunk</li>
+        </phase3AllowedShipChunkDefs>
+
+        <!-- phase3AllowedMeteorMineables：第三阶段陨石落地后生成的可开采矿物ThingDef列表（为空则自动回退钢/银） -->
+        <phase3AllowedMeteorMineables />
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>PRT_OrbitalGarbageRainController</defName>
+    <label>orbital garbage rain controller</label>
+    <thingClass>PRT_Mod.OrbitalGarbageRain.PRTOrbitalGarbageRainController</thingClass>
+    <category>Ethereal</category>
+    <tickerType>Normal</tickerType>
+    <drawerType>None</drawerType>
+    <selectable>false</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <useHitPoints>false</useHitPoints>
+  </ThingDef>
+
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>PRT_Skyfaller_GarbageRain_SmallMeteor</defName>
+    <label>小型陨石（坠落中）</label>
+    <thingClass>PRT_Mod.OrbitalGarbageRain.Skyfaller_PRTGarbageRain_SmallMeteor</thingClass>
+    <graphicData>
+      <texPath>Things/Building/PRT_CrashingSmallMeteor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawRotated>true</drawRotated>
+      <drawSize>1.5</drawSize>
+    </graphicData>
+    <skyfaller>
+      <shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+      <shadowSize>0.7</shadowSize>
+      <ticksToImpactRange>90~90</ticksToImpactRange>
+    </skyfaller>
+  </ThingDef>
+
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>PRT_Skyfaller_GarbageRain_Meteor</defName>
+    <label>陨石（坠落中）</label>
+    <thingClass>PRT_Mod.OrbitalGarbageRain.Skyfaller_PRTGarbageRain_Meteor</thingClass>
+    <graphicData>
+      <texPath>Things/Building/PRT_CrashingMeteor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawRotated>true</drawRotated>
+      <drawSize>2.4</drawSize>
+    </graphicData>
+    <skyfaller>
+      <shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+      <shadowSize>0.85</shadowSize>
+      <ticksToImpactRange>120~120</ticksToImpactRange>
+    </skyfaller>
+  </ThingDef>
+
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>PRT_Skyfaller_GarbageRain_SatelliteWreck</defName>
+    <label>卫星残骸（坠落中）</label>
+    <thingClass>PRT_Mod.OrbitalGarbageRain.Skyfaller_PRTGarbageRain_SatelliteWreck</thingClass>
+    <graphicData>
+      <texPath>Things/Building/PRT_CrashingSatellite</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawRotated>true</drawRotated>
+      <drawSize>(2.0,2.0)</drawSize>
+    </graphicData>
+    <skyfaller>
+      <shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+      <shadowSize>1.2</shadowSize>
+      <ticksToImpactRange>140~140</ticksToImpactRange>
+    </skyfaller>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>PRT_Building_SatelliteWreck</defName>
+    <label>卫星残骸</label>
+    <description>坠毁在地面的卫星残骸。可以拆除回收其中的钢铁与零部件。</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <useHitPoints>true</useHitPoints>
+    <size>(1,1)</size>
+    <statBases>
+      <MaxHitPoints>280</MaxHitPoints>
+      <Flammability>0.2</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Building/PRT_CrashedSatellite</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.5,1.5)</drawSize>
+    </graphicData>
+    <costList>
+      <Steel>60</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <resourcesFractionWhenDeconstructed>1</resourcesFractionWhenDeconstructed>
+    <building>
+      <deconstructible>true</deconstructible>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>PRT_Skyfaller_GarbageRain_ShipChunk</defName>
+    <label>飞船残骸（坠落中）</label>
+    <thingClass>PRT_Mod.OrbitalGarbageRain.Skyfaller_PRTGarbageRain_ShipChunk</thingClass>
+    <graphicData>
+      <texPath>Things/Building/PRT_CrashingShipPart</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawRotated>true</drawRotated>
+      <drawSize>2.4</drawSize>
+    </graphicData>
+    <skyfaller>
+      <shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+      <shadowSize>0.85</shadowSize>
+      <ticksToImpactRange>160~160</ticksToImpactRange>
+    </skyfaller>
+  </ThingDef>
+
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>PRT_Skyfaller_GarbageRain_FinalShip</defName>
+    <label>废弃轨道设施（坠落中）</label>
+    <thingClass>PRT_Mod.OrbitalGarbageRain.Skyfaller_PRTGarbageRain_FinalShip</thingClass>
+    <graphicData>
+      <texPath>Things/Building/PRT_CrashingSpaceStation</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawRotated>true</drawRotated>
+      <drawSize>(15.0,15.0)</drawSize>
+    </graphicData>
+    <skyfaller>
+      <shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+      <shadowSize>(15.0, 15.0)</shadowSize>
+      <ticksToImpactRange>400~400</ticksToImpactRange>
+    </skyfaller>
+  </ThingDef>
+
+</Defs>
