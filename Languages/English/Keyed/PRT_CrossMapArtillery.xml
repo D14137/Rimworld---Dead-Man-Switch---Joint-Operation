@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <PRT_CrossMapArtillery.Gizmo.Label>Cross-map Fire</PRT_CrossMapArtillery.Gizmo.Label>
+  <PRT_CrossMapArtillery.Gizmo.Disabled.Cooldown>On cooldown: {0}</PRT_CrossMapArtillery.Gizmo.Disabled.Cooldown>
+  <PRT_CrossMapArtillery.Gizmo.Disabled.Targeting>Selecting target...</PRT_CrossMapArtillery.Gizmo.Disabled.Targeting>
+  <PRT_CrossMapArtillery.Gizmo.Desc>Current ammo: {0}
+Max world range (tiles): {1}
+Spread: {2}
+Burst count: {3}</PRT_CrossMapArtillery.Gizmo.Desc>
+
+  <PRT_CrossMapArtillery.Error.LauncherNoMap>Cannot fire across maps: launcher is not on a map.</PRT_CrossMapArtillery.Error.LauncherNoMap>
+  <PRT_CrossMapArtillery.Error.MissingExtension>Cannot fire across maps: missing CrossMapArtilleryExtension.</PRT_CrossMapArtillery.Error.MissingExtension>
+  <PRT_CrossMapArtillery.Error.ProjectileDefNotFound>Cannot fire across maps: projectile definition not found.</PRT_CrossMapArtillery.Error.ProjectileDefNotFound>
+  <PRT_CrossMapArtillery.Error.OnlyLoadedMaps>Only loaded maps can be targeted.</PRT_CrossMapArtillery.Error.OnlyLoadedMaps>
+  <PRT_CrossMapArtillery.Error.BeginWorldTargetingFailed>Cannot fire across maps: failed to begin world targeting.</PRT_CrossMapArtillery.Error.BeginWorldTargetingFailed>
+  <PRT_CrossMapArtillery.Error.TargeterBeginTargetingNotFound>Cannot fire across maps: Targeter.BeginTargeting not found.</PRT_CrossMapArtillery.Error.TargeterBeginTargetingNotFound>
+  <PRT_CrossMapArtillery.Error.VerbNotFound>Cannot fire across maps: no usable verb found.</PRT_CrossMapArtillery.Error.VerbNotFound>
+  <PRT_CrossMapArtillery.Error.TryStartCastFailed>Cannot fire across maps: fire failed (cooldown or unable to shoot).</PRT_CrossMapArtillery.Error.TryStartCastFailed>
+  <PRT_CrossMapArtillery.Error.WorldObjectDefNotFound>Cannot fire across maps: WorldObjectDef not found: {0}</PRT_CrossMapArtillery.Error.WorldObjectDefNotFound>
+
+  <PRT_CrossMapArtillery.WorldTarget.OutOfRange>Out of range</PRT_CrossMapArtillery.WorldTarget.OutOfRange>
+  <PRT_CrossMapArtillery.WorldTarget.Distance>Distance: {0}/{1}</PRT_CrossMapArtillery.WorldTarget.Distance>
+
+  <PRT_CrossMapArtillery.Shell.TargetMapNotLoaded>Cross-map shell: target map not loaded, shell removed.</PRT_CrossMapArtillery.Shell.TargetMapNotLoaded>
+  <PRT_CrossMapArtillery.Shell.ProjectileDefMissing>Cross-map shell: projectile definition missing.</PRT_CrossMapArtillery.Shell.ProjectileDefMissing>
+</LanguageData>

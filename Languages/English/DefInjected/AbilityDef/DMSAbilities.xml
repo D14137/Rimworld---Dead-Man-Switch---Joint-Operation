@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_FireControlGuidance.label>fire-control guidance</DMS_FireControlGuidance.label>
+  <DMS_FireControlGuidance.description>Actively locks hostile targets with radar and shares fire-control data with nearby friendly automatroids.</DMS_FireControlGuidance.description>
+
+  <DMS_MechEnergyStabilizer.label>wireless power transfer</DMS_MechEnergyStabilizer.label>
+  <DMS_MechEnergyStabilizer.description>Activates a wireless power system that steadily replenishes the energy of nearby friendly mechanoids.</DMS_MechEnergyStabilizer.description>
+
+  <DMS_EmergencyPowerTransfer.label>emergency power transfer</DMS_EmergencyPowerTransfer.label>
+  <DMS_EmergencyPowerTransfer.description>Performs an emergency energy transfer to a colony mechanoid, fully recharging its battery.</DMS_EmergencyPowerTransfer.description>
+
+  <DMS_BattlefieldRepair.label>battlefield repair</DMS_BattlefieldRepair.label>
+  <DMS_BattlefieldRepair.description>Touch a mechanoid corpse and conduct field repairs, reviving a fallen friendly mechanoid.</DMS_BattlefieldRepair.description>
+
+  <DMS_IFFConfusionPulse.label>IFF disruption pulse</DMS_IFFConfusionPulse.label>
+  <DMS_IFFConfusionPulse.description>Emits an intense jamming pulse that scrambles hostile mechanoids' identification systems. They fail to lock onto your units and will intermittently misidentify their own allies as targets.</DMS_IFFConfusionPulse.description>
+</LanguageData>

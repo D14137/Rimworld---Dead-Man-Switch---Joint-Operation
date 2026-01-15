@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <PRT_CrossMapArtillery.Gizmo.Label>跨图射击</PRT_CrossMapArtillery.Gizmo.Label>
+  <PRT_CrossMapArtillery.Gizmo.Disabled.Cooldown>冷却中: {0}</PRT_CrossMapArtillery.Gizmo.Disabled.Cooldown>
+  <PRT_CrossMapArtillery.Gizmo.Disabled.Targeting>正在选择目标</PRT_CrossMapArtillery.Gizmo.Disabled.Targeting>
+  <PRT_CrossMapArtillery.Gizmo.Desc>当前弹种: {0}
+最大世界射程(Tile): {1}
+散布: {2}
+齐射数量: {3}</PRT_CrossMapArtillery.Gizmo.Desc>
+
+  <PRT_CrossMapArtillery.Error.LauncherNoMap>无法跨图射击：发射者不在地图上</PRT_CrossMapArtillery.Error.LauncherNoMap>
+  <PRT_CrossMapArtillery.Error.MissingExtension>无法跨图射击：缺少参数(CrossMapArtilleryExtension)</PRT_CrossMapArtillery.Error.MissingExtension>
+  <PRT_CrossMapArtillery.Error.ProjectileDefNotFound>无法跨图射击：未找到投射物定义</PRT_CrossMapArtillery.Error.ProjectileDefNotFound>
+  <PRT_CrossMapArtillery.Error.OnlyLoadedMaps>只能选择已加载地图</PRT_CrossMapArtillery.Error.OnlyLoadedMaps>
+  <PRT_CrossMapArtillery.Error.BeginWorldTargetingFailed>无法跨图射击：世界地图选点初始化失败</PRT_CrossMapArtillery.Error.BeginWorldTargetingFailed>
+  <PRT_CrossMapArtillery.Error.TargeterBeginTargetingNotFound>无法跨图射击：Targeter.BeginTargeting未找到</PRT_CrossMapArtillery.Error.TargeterBeginTargetingNotFound>
+  <PRT_CrossMapArtillery.Error.VerbNotFound>无法跨图射击：未找到可用的Verb</PRT_CrossMapArtillery.Error.VerbNotFound>
+  <PRT_CrossMapArtillery.Error.TryStartCastFailed>无法跨图射击：发射失败（可能在冷却或无法开火）</PRT_CrossMapArtillery.Error.TryStartCastFailed>
+  <PRT_CrossMapArtillery.Error.WorldObjectDefNotFound>无法跨图射击：WorldObjectDef 未找到：{0}</PRT_CrossMapArtillery.Error.WorldObjectDefNotFound>
+
+  <PRT_CrossMapArtillery.WorldTarget.OutOfRange>超出射程</PRT_CrossMapArtillery.WorldTarget.OutOfRange>
+  <PRT_CrossMapArtillery.WorldTarget.Distance>距离: {0}/{1}</PRT_CrossMapArtillery.WorldTarget.Distance>
+
+  <PRT_CrossMapArtillery.Shell.TargetMapNotLoaded>跨图炮击：目标地图未加载，弹药消失</PRT_CrossMapArtillery.Shell.TargetMapNotLoaded>
+  <PRT_CrossMapArtillery.Shell.ProjectileDefMissing>跨图炮击：没有投射物定义</PRT_CrossMapArtillery.Shell.ProjectileDefMissing>
+</LanguageData>

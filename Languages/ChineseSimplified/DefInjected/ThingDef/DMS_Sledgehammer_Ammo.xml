@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_Bullet_Sledgehammer.label>155mm高爆榴弹</DMS_Bullet_Sledgehammer.label>
+  <DMS_Bullet_Sledgehammer_Shrapnel.label>155mm榴霰弹</DMS_Bullet_Sledgehammer_Shrapnel.label>
+  <DMS_Bullet_Shrapnel_SubProjectile.label>榴霰弹子弹</DMS_Bullet_Shrapnel_SubProjectile.label>
+  <DMS_Bullet_Sledgehammer_SADARM.label>155mm末敏弹</DMS_Bullet_Sledgehammer_SADARM.label>
+  <DMS_Skyfaller_SADARM_Submunition.label>末敏子弹</DMS_Skyfaller_SADARM_Submunition.label>
+  <DMS_Bullet_SADARM_Submunition.label>末敏弹战斗部</DMS_Bullet_SADARM_Submunition.label>
+</LanguageData>

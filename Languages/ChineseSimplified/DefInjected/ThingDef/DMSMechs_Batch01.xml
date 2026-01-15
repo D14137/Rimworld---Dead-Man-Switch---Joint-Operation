@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_Mech_AdvancedGeochelone.label>磐卫</DMS_Mech_AdvancedGeochelone.label>
+  <DMS_Mech_AdvancedGeochelone.description>太约代号“盾卫” (Bastion - 堡垒/屏障)。这款履带式伴随护盾发生车是机械化矛头的忠实守护者，凭借其坚固的车体和澎湃的护盾投射能力驰骋于前沿战场。它被设计用于与主战装甲集群同步推进，在行进间瞬间撑开抵御各种定向能或动能火力的能量屏障，为攻击梯队提供至关重要的动态掩体和喘息窗口。在激烈的正面突击和城市攻坚中，它的身影往往是攻势能够持续展开的关键节点，强大的持续作战能力与战场韧性使其深受一线管制指挥官倚重。</DMS_Mech_AdvancedGeochelone.description>
+
+  <DMS_Mech_AdvancedGeocheloneBeta.label>伞卫</DMS_Mech_AdvancedGeocheloneBeta.label>
+  <DMS_Mech_AdvancedGeocheloneBeta.description>太约代号“天穹守卫” (Sky Ward)。这款履带式伴随防空护盾系统是装甲矛头的“无形保护伞”。它能同步伴随装甲机动部队，快速展开强大的高角能量场护盾，编织一张足以有效迟滞或击毁来袭空袭兵刃（导弹、火箭弹、精确滑翔弹及部分低空无人机）的动态防御网。其存在的意义并非全空域防御，而在于为珍贵的进攻核心提供关键性的防空缓冲区，将敌方曲射火力和远程打击的威胁大幅削减，保障攻击力量得以专注于前出打击与机动突破。在高强度的多维立体威胁下，它成为了维系装甲突击集群生存能力不可替代的存在。</DMS_Mech_AdvancedGeocheloneBeta.description>
+
+  <DMS_Mech_QuietusEye.label>灵枢</DMS_Mech_QuietusEye.label>
+  <DMS_Mech_QuietusEye.description>太约代号“静谧深瞳” (Quietus Eye)。这款履带式综合射频车是合成化机兵营的“神经中枢”，承担着战场侦察、通信管理、敌我识别、电子对抗等多种射频职能。它以其巨大的、具有尖端电磁屏蔽与抗自扰互扰特性的球形天线为核心，如同一座坚固的电磁堡垒在机动中同步支撑战场信息网络。天线内部密集整合的通信中继、雷达侦察、电子对抗等多频谱系统能在严格时序与频率隔离下高效运作，在广阔战线编织起一张既可支撑指挥节点、又可探测威胁信号链并视情实施频谱压制/引导的电磁经纬网。它为机兵部队提供了覆盖全场、贯穿全程的制电磁权，让己方战力在无形的维度上形成代差级优势。</DMS_Mech_QuietusEye.description>
+</LanguageData>

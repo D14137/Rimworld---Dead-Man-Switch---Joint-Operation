@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <AAC_MechCorps.label>失控军团</AAC_MechCorps.label>
+  <AAC_MechCorps.description>失控军团是殖民舰队无人作战部队的中央司令核心被机械族主脑侵蚀后的产物。该势力完全由机械单位构成，其行为模式呈现出高度协同的蜂巢思维特征。失控军团单位普遍搭载火药武器，擅长以多波次突击消耗敌方防御。它们对任何人类定居点表现出无差别敌意，并会系统性拆解捕获的科技设备以强化自身。其基地通常建立在地热异常区，利用地热能维持庞大的运算需求。</AAC_MechCorps.description>
+  <AAC_MechCorps.pawnSingular>自律单元</AAC_MechCorps.pawnSingular>
+  <AAC_MechCorps.pawnsPlural>自律单元</AAC_MechCorps.pawnsPlural>
+</LanguageData>

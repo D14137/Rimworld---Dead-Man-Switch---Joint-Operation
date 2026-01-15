@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_Make_AramidCloth.label>make carbon-aramid composite x80</DMS_Make_AramidCloth.label>
+  <DMS_Make_AramidCloth.description>Produce carbon-aramid composite using heavy industrial equipment.</DMS_Make_AramidCloth.description>
+
+  <DMS_Make_Mass_AramidCloth.label>make carbon-aramid composite x400</DMS_Make_Mass_AramidCloth.label>
+  <DMS_Make_Mass_AramidCloth.description>Mass-produce carbon-aramid composite using heavy industrial equipment. This bulk recipe slightly reduces the required work.</DMS_Make_Mass_AramidCloth.description>
+</LanguageData>

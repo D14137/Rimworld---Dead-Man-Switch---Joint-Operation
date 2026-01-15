@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_Make_Tinker.label>assemble Tinker</DMS_Make_Tinker.label>
+  <DMS_Make_Tinker.description>Assemble a Tinker.</DMS_Make_Tinker.description>
+
+  <DMS_Make_CarettaEMP.label>assemble Dandelion</DMS_Make_CarettaEMP.label>
+  <DMS_Make_CarettaEMP.description>Assemble a Dandelion.</DMS_Make_CarettaEMP.description>
+
+  <DMS_Make_Obsidian.label>assemble Obsidian</DMS_Make_Obsidian.label>
+  <DMS_Make_Obsidian.description>Assemble an Obsidian.</DMS_Make_Obsidian.description>
+
+  <DMS_Make_Ranger.label>assemble Ranger</DMS_Make_Ranger.label>
+  <DMS_Make_Ranger.description>Assemble a Ranger.</DMS_Make_Ranger.description>
+
+  <DMS_Make_IronCurtain.label>assemble Iron Curtain</DMS_Make_IronCurtain.label>
+  <DMS_Make_IronCurtain.description>Assemble an Iron Curtain.</DMS_Make_IronCurtain.description>
+
+  <DMS_Mech_Skullcracker.label>assemble Skullcracker</DMS_Mech_Skullcracker.label>
+  <DMS_Mech_Skullcracker.description>Assemble a Skullcracker.</DMS_Mech_Skullcracker.description>
+
+  <DMS_Make_CarettaHeavy.label>assemble Sledgehammer</DMS_Make_CarettaHeavy.label>
+  <DMS_Make_CarettaHeavy.description>Assemble a Sledgehammer.</DMS_Make_CarettaHeavy.description>
+
+  <DMS_Make_CarettaRocket.label>assemble Steel Rain</DMS_Make_CarettaRocket.label>
+  <DMS_Make_CarettaRocket.description>Assemble a Steel Rain.</DMS_Make_CarettaRocket.description>
+</LanguageData>

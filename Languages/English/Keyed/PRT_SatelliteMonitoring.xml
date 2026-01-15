@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <PRT_SatelliteMonitoring.StartMonitoring.Label>Satellite Monitoring</PRT_SatelliteMonitoring.StartMonitoring.Label>
+  <PRT_SatelliteMonitoring.StartMonitoring.Desc>Select a settlement/site on the world map to generate and monitor its map.</PRT_SatelliteMonitoring.StartMonitoring.Desc>
+
+  <PRT_SatelliteMonitoring.StopMonitoring.Label>Stop Monitoring</PRT_SatelliteMonitoring.StopMonitoring.Label>
+  <PRT_SatelliteMonitoring.StopMonitoring.Desc>Stop satellite monitoring and return to the previous map.</PRT_SatelliteMonitoring.StopMonitoring.Desc>
+
+  <PRT_SatelliteMonitoring.JumpToObserver.Label>Jump to Observer</PRT_SatelliteMonitoring.JumpToObserver.Label>
+  <PRT_SatelliteMonitoring.JumpToObserver.Desc>Quickly jump back to the observer's map and select them.</PRT_SatelliteMonitoring.JumpToObserver.Desc>
+
+  <PRT_SatelliteMonitoring.CannotStart.ObserverInvalid>Cannot start monitoring: observer is invalid.</PRT_SatelliteMonitoring.CannotStart.ObserverInvalid>
+  <PRT_SatelliteMonitoring.InvalidTarget>Invalid target.</PRT_SatelliteMonitoring.InvalidTarget>
+  <PRT_SatelliteMonitoring.NoMonitorableMapParent>No settlement/site to monitor at this location.</PRT_SatelliteMonitoring.NoMonitorableMapParent>
+  <PRT_SatelliteMonitoring.UnsupportedTarget>This target cannot be monitored.</PRT_SatelliteMonitoring.UnsupportedTarget>
+  <PRT_SatelliteMonitoring.BeginTargetingFailed>Failed to start world targeting.</PRT_SatelliteMonitoring.BeginTargetingFailed>
+  <PRT_SatelliteMonitoring.GenerateMapFailed>Failed to generate the target map.</PRT_SatelliteMonitoring.GenerateMapFailed>
+
+  <PRT_SatelliteMonitoring.MonitoringStarted>Monitoring started: {0}</PRT_SatelliteMonitoring.MonitoringStarted>
+  <PRT_SatelliteMonitoring.TargetCleared>Target cleared: {0}</PRT_SatelliteMonitoring.TargetCleared>
+  <PRT_SatelliteMonitoring.SiteDestroyed>Site {0} has been destroyed!</PRT_SatelliteMonitoring.SiteDestroyed>
+  <PRT_SatelliteMonitoring.TargetDestroyed>{0} has been destroyed!</PRT_SatelliteMonitoring.TargetDestroyed>
+</LanguageData>

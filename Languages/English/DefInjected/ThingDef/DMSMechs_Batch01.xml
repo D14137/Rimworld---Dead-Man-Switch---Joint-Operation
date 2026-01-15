@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_Mech_AdvancedGeochelone.label>Bastion</DMS_Mech_AdvancedGeochelone.label>
+  <DMS_Mech_AdvancedGeochelone.description>Codename “Bastion.” A tracked escort shield vehicle built to advance with armored spearheads.
+
+It projects a powerful directional barrier on the move, turning open ground into momentary cover and buying the assault echelon precious seconds. In frontal breakthroughs and urban assaults, its sustained shielding often decides whether an offensive can keep moving.</DMS_Mech_AdvancedGeochelone.description>
+
+  <DMS_Mech_AdvancedGeocheloneBeta.label>Sky Ward</DMS_Mech_AdvancedGeocheloneBeta.label>
+  <DMS_Mech_AdvancedGeocheloneBeta.description>Codename “Sky Ward.” A tracked escort air-defense shield system—an invisible umbrella for armored pushes.
+
+It deploys a high-angle energy field that can delay or destroy incoming aerial munitions such as missiles, rockets, guided bombs, and some low-flying drones. Its purpose is not total air superiority, but a vital protective buffer that lets the strike core stay focused on breaking through.</DMS_Mech_AdvancedGeocheloneBeta.description>
+
+  <DMS_Mech_QuietusEye.label>Quietus Eye</DMS_Mech_QuietusEye.label>
+  <DMS_Mech_QuietusEye.description>Codename “Quietus Eye.” A tracked integrated RF platform—the nerve center of a combined-arms automatroid battalion.
+
+Its massive spherical antenna houses relay, radar, identification, and electronic-warfare systems, sustaining the battlefield network while on the move. It provides the force with persistent reconnaissance, robust comms, and decisive electromagnetic dominance.
+
+Tips:
+1.Satellite comms module can be obtained by launching special transport pods.
+2.The relay range on the world map is 120 tiles (the distance from the Mechanitor cannot exceed how many tiles), and the control range within the map is 100 tiles (the distance of controlled mechanoids from the cryptosleep casket cannot exceed how many tiles).</DMS_Mech_QuietusEye.description>
+</LanguageData>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <PRT_SelectableAmmo.SwitchAmmo.Label>Switch Ammo</PRT_SelectableAmmo.SwitchAmmo.Label>
+  <PRT_SelectableAmmo.CurrentAmmo.Desc>Current ammo: {0}</PRT_SelectableAmmo.CurrentAmmo.Desc>
+</LanguageData>

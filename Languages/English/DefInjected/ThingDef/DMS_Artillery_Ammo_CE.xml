@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Ammo_300mmRocket_HE.label>300mm high-explosive rocket (HE)</Ammo_300mmRocket_HE.label>
+  <Ammo_300mmRocket_SADARM.label>300mm sensor-fuzed rocket</Ammo_300mmRocket_SADARM.label>
+
+  <Bullet_300mmRocket_HE.label>300mm high-explosive rocket (HE)</Bullet_300mmRocket_HE.label>
+  <Bullet_300mmRocket_SADARM.label>300mm sensor-fuzed rocket</Bullet_300mmRocket_SADARM.label>
+
+  <Ammo_155mmHowitzerShell_SADARM.label>155mm howitzer shell (sensor-fuzed)</Ammo_155mmHowitzerShell_SADARM.label>
+  <Bullet_155mmHowitzerShell_SADARM.label>155mm howitzer shell (sensor-fuzed)</Bullet_155mmHowitzerShell_SADARM.label>
+
+  <DMS_Bullet_SADARM_Submunition_CE.label>sensor-fuzed warhead</DMS_Bullet_SADARM_Submunition_CE.label>
+</LanguageData>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <PRT_ChargeSeparationModule.label>电荷解离模块</PRT_ChargeSeparationModule.label>
+  <PRT_ChargeSeparationModule.description>电荷解离模块是制作重型电荷武器的关键组件。其核心是一种经过特殊处理的晶体阵列，能够在超高电压下稳定地捕获并强行“撕裂”基本电荷，将原本平衡的电子云分离为正负两极的、高度活化的等离子流。</PRT_ChargeSeparationModule.description>
+
+  <PRT_Communicator_with_ReconSatellite.label>侦察卫星通信模块</PRT_Communicator_with_ReconSatellite.label>
+  <PRT_Communicator_with_ReconSatellite.description>高度集成化的轨道侦察卫星通信模块，存储着一颗高轨多模态侦察卫星的数据交换协议，具备信息加解密与信号调频功能，加装卫星天线后可连接至在轨侦察卫星，实时获取卫星的侦察数据。\n\n此模块是高轨侦察卫星控制权的具象化，在边缘世界的市场上能卖出不错的价钱。</PRT_Communicator_with_ReconSatellite.description>
+
+  <PRT_SatelliteNavigationModule.label>卫星导航模块</PRT_SatelliteNavigationModule.label>
+  <PRT_SatelliteNavigationModule.description>将三颗高轨侦察卫星组合形成星座，整合其数据交换协议和侦察监视逻辑后编译而成的卫星导航模块，链接后可保持对星球表面特定区域的不间断监视，也可引导制导武器进行跨地图精确打击。</PRT_SatelliteNavigationModule.description>
+
+  <PRT_OrbitalTargeter_BombardmentNoLOS.label>轨道轰炸靶向器</PRT_OrbitalTargeter_BombardmentNoLOS.label>
+  <PRT_OrbitalTargeter_BombardmentNoLOS.description>无视野限制的轨道轰炸靶向器。可在全图任意位置指定轰炸坐标，之后由一次性的轨道轰炸平台投射16枚高威力动能弹。</PRT_OrbitalTargeter_BombardmentNoLOS.description>
+  <PRT_OrbitalTargeter_BombardmentNoLOS.verbs.0.label>引导轨道轰炸</PRT_OrbitalTargeter_BombardmentNoLOS.verbs.0.label>
+
+  <PRT_OrbitalBombardmentController.label>orbital bombardment controller</PRT_OrbitalBombardmentController.label>
+
+  <PRT_Skyfaller_OrbitalShell.label>高威力轨道动能弹</PRT_Skyfaller_OrbitalShell.label>
+</LanguageData>

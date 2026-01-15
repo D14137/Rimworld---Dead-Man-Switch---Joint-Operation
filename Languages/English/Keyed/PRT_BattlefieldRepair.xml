@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <PRT_BattlefieldRepair.SelectCorpse>Field repair: select a mechanoid corpse.</PRT_BattlefieldRepair.SelectCorpse>
+  <PRT_BattlefieldRepair.TargetNotDead>Field repair: target is not dead.</PRT_BattlefieldRepair.TargetNotDead>
+  <PRT_BattlefieldRepair.OnlyMechCorpse>Field repair: can only be used on mechanoid corpses.</PRT_BattlefieldRepair.OnlyMechCorpse>
+  <PRT_BattlefieldRepair.OnlyFriendlyMechs>Field repair: can only repair friendly mechanoids.</PRT_BattlefieldRepair.OnlyFriendlyMechs>
+  <PRT_BattlefieldRepair.NotSameMap>Field repair: target is not on the same map.</PRT_BattlefieldRepair.NotSameMap>
+  <PRT_BattlefieldRepair.NeedTouchCorpse>Field repair: must touch the target corpse.</PRT_BattlefieldRepair.NeedTouchCorpse>
+  <PRT_BattlefieldRepair.ResurrectFailed>Field repair failed: cannot resurrect the target.</PRT_BattlefieldRepair.ResurrectFailed>
+  <PRT_BattlefieldRepair.ResurrectSuccess>Field repair complete: resurrected.</PRT_BattlefieldRepair.ResurrectSuccess>
+</LanguageData>

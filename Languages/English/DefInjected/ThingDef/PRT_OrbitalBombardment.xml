@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <PRT_ChargeSeparationModule.label>charge dissociation module</PRT_ChargeSeparationModule.label>
+  <PRT_ChargeSeparationModule.description>A critical component for heavy charge weapons. At its core is a specially treated crystal array that remains stable under extreme voltage, capturing and forcibly "tearing" fundamental charges apart—splitting an otherwise balanced electron cloud into two highly activated plasma streams of opposite polarity.</PRT_ChargeSeparationModule.description>
+
+  <PRT_Communicator_with_ReconSatellite.label>recon satellite comms module</PRT_Communicator_with_ReconSatellite.label>
+  <PRT_Communicator_with_ReconSatellite.description>A highly integrated orbital recon satellite communications module containing the data-link protocol of a high-orbit multimodal reconnaissance satellite. It provides encryption/decryption and signal tuning; once fitted with a satellite antenna, it can link to the satellite in orbit and stream reconnaissance data in real time.
+
+This module is a tangible token of control over a high-orbit recon satellite—and it sells well on the Rim.</PRT_Communicator_with_ReconSatellite.description>
+
+  <PRT_SatelliteNavigationModule.label>satellite navigation module</PRT_SatelliteNavigationModule.label>
+  <PRT_SatelliteNavigationModule.description>Compiled from the combined protocols and surveillance logic of a three-satellite high-orbit constellation. When linked, it enables uninterrupted monitoring of a designated region of the planet—and can also guide precision weapons for cross-map strikes.</PRT_SatelliteNavigationModule.description>
+
+  <PRT_OrbitalTargeter_BombardmentNoLOS.label>orbital bombardment targeter</PRT_OrbitalTargeter_BombardmentNoLOS.label>
+  <PRT_OrbitalTargeter_BombardmentNoLOS.description>An orbital bombardment targeter that ignores line of sight. Designate coordinates anywhere on the map; a one-shot orbital platform will then deliver 16 high-energy kinetic penetrators.</PRT_OrbitalTargeter_BombardmentNoLOS.description>
+  <PRT_OrbitalTargeter_BombardmentNoLOS.verbs.0.label>call orbital bombardment</PRT_OrbitalTargeter_BombardmentNoLOS.verbs.0.label>
+
+  <PRT_OrbitalBombardmentController.label>orbital bombardment controller</PRT_OrbitalBombardmentController.label>
+
+  <PRT_Skyfaller_OrbitalShell.label>high-energy orbital kinetic penetrator</PRT_Skyfaller_OrbitalShell.label>
+</LanguageData>

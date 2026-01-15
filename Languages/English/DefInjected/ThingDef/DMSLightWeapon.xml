@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_RapidRPG.label>Rapid Response Rocket Launcher</DMS_RapidRPG.label>
+  <DMS_RapidRPG.description>Once-fired anti-tank rocket launcher, with simple optical sights for quick aiming, but with limited range. Simple structure, most basic soldier mechs can equip it. If you encounter difficult heavy armor enemies, consider using street combat and rocket launchers to send it flying!</DMS_RapidRPG.description>
+  <Bullet_DMS_RapidRPG.label>RPG-7</Bullet_DMS_RapidRPG.label>
+</LanguageData>

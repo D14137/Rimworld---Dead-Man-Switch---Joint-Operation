@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Ammo_105mmTC_HE.label>105mm high-explosive shell (HE)</Ammo_105mmTC_HE.label>
+  <Ammo_105mmTC_HEAT.label>105mm anti-armor shell (HEAT)</Ammo_105mmTC_HEAT.label>
+  <Ammo_105mmTC_Sabot.label>105mm APFSDS shell</Ammo_105mmTC_Sabot.label>
+
+  <Bullet_105mmTC_HE.label>105mm high-explosive shell (HE)</Bullet_105mmTC_HE.label>
+  <Bullet_105mmTC_HEAT.label>105mm anti-armor shell (HEAT)</Bullet_105mmTC_HEAT.label>
+  <Bullet_105mmTC_Sabot.label>105mm APFSDS shell</Bullet_105mmTC_Sabot.label>
+</LanguageData>

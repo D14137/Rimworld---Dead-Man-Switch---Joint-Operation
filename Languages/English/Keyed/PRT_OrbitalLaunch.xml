@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <PRT_OrbitalLaunch.LaunchSatellite.Label>Launch Satellite</PRT_OrbitalLaunch.LaunchSatellite.Label>
+  <PRT_OrbitalLaunch.LaunchSatellite.Desc>Launch the satellite into orbit and spawn the orbital targeter. Requires a fueling port with enough fuel.</PRT_OrbitalLaunch.LaunchSatellite.Desc>
+</LanguageData>

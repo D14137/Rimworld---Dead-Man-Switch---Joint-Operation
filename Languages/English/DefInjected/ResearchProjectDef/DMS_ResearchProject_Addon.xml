@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_PRT_HighIntensityConflict.label>high-intensity conflict</DMS_PRT_HighIntensityConflict.label>
+  <DMS_PRT_HighIntensityConflict.description>To endure the brutality of high-intensity warfare, a new generation of automatroids has emerged.
+
+Built around the deep integration of survivability, firepower, mobility, and networked battlefield awareness, they are designed to fight effectively under complex electronic conditions, sustained engagements, and harsh terrain—becoming the core assault and support strength of combined arms formations, and markedly improving battlefield adaptability and operational endurance.
+
+Unlocks content from Dead Man's Switch: Joint Operations.</DMS_PRT_HighIntensityConflict.description>
+
+  <DMS_PRT_ImprovedProductionProcess.label>improved production processes</DMS_PRT_ImprovedProductionProcess.label>
+  <DMS_PRT_ImprovedProductionProcess.description>High-intensity conflict drives heavy losses in automatroids and weapons alike, forcing production to overhaul the manufacturing processes of key assembly materials such as tungsteel and stamped parts—dramatically improving industrial throughput.</DMS_PRT_ImprovedProductionProcess.description>
+
+  <DMS_PRT_AdvancedLiningMaterial.label>advanced lining materials</DMS_PRT_AdvancedLiningMaterial.label>
+  <DMS_PRT_AdvancedLiningMaterial.description>A new core-layer material for armor protection systems: carbon-aramid composite.
+
+Under kinetic or shaped-charge impacts, its unique deformation, fracture, and reaction mechanisms efficiently absorb, diffuse, and blunt incoming penetration—greatly improving the survivability of vehicles, automatroids, and personal protective gear. It stands as a critical barrier against an increasingly lethal battlefield.</DMS_PRT_AdvancedLiningMaterial.description>
+
+  <DMS_PRT_MilitaryAerospaceTechnology.label>military aerospace technology</DMS_PRT_MilitaryAerospaceTechnology.label>
+  <DMS_PRT_MilitaryAerospaceTechnology.description>Antigrav technology can lift immense payloads into space at minimal cost—but it remains an arcane marvel we cannot truly master. Its rarity and nonrenewable nature make it an unreliable foundation for colonies facing high-intensity conflict.
+
+With transport pod launchers, however, we can still deploy orbital assets. A dense web of inexpensive reconnaissance and communications satellites can be woven across the sky, providing space-based intelligence support for combined-arms automatroid warfare.</DMS_PRT_MilitaryAerospaceTechnology.description>
+
+  <DMS_PRT_GlobalPositioningAndStrike.label>global positioning and strike</DMS_PRT_GlobalPositioningAndStrike.label>
+  <DMS_PRT_GlobalPositioningAndStrike.description>With advances in orbital military technology, high-orbit multimodal reconnaissance satellite constellations can now provide global positioning and persistent surveillance.
+
+This enables cross-map precision strikes, intelligence support for strategic deployment, and early warning against missiles and counter-battery threats.
+
+As the Rim grows ever more volatile, developing space-based strike capability—deploying orbital assets able to engage ground targets—has become an indispensable means to secure the colony, protect its interests, and deter would-be aggressors.</DMS_PRT_GlobalPositioningAndStrike.description>
+
+  <DMS_PRT_HeavyArmoredMech.label>heavy armored automatroids</DMS_PRT_HeavyArmoredMech.label>
+  <DMS_PRT_HeavyArmoredMech.description>As high-intensity conflict escalates, heavy automatroids clad in advanced composite armor become the mainstay of combined arms forces.
+
+With thick multilayer protection and the ability to field formidable heavy weapons, they trade advantageously against mechanoid and armored opposition alike—serving as indispensable pillars in base assaults, mobile breakthroughs, and holding the line.</DMS_PRT_HeavyArmoredMech.description>
+
+  <DMS_PRT_ArrayShieldTechnology.label>array shield technology</DMS_PRT_ArrayShieldTechnology.label>
+  <DMS_PRT_ArrayShieldTechnology.description>Array shield technology arranges shield cores in a tuned resonant sequence, greatly enhancing protective performance.
+
+By shifting waveform phase, the shield's defensive angles can be adjusted—making it widely adopted by second-generation shield automatroids tasked with combat support.</DMS_PRT_ArrayShieldTechnology.description>
+
+  <DMS_PRT_BattlefieldEndurance.label>battlefield endurance</DMS_PRT_BattlefieldEndurance.label>
+  <DMS_PRT_BattlefieldEndurance.description>The strength of field repair capability is a decisive factor in sustaining combined arms automatroid combat power.
+
+Field-repair automatroids—equipped with maintenance cranes, emergency power systems, and ample spare parts—operate behind the front line to provide emergency repairs, resupply, power support, and even rapid restart procedures. They minimize attrition and restore fighting strength, forming the backbone of operational endurance and battlefield resilience.</DMS_PRT_BattlefieldEndurance.description>
+
+  <DMS_PRT_IntegratedRFManagement.label>integrated RF management</DMS_PRT_IntegratedRFManagement.label>
+  <DMS_PRT_IntegratedRFManagement.description>Integrated RF management combines radar, communications, and electronic warfare through advanced phased arrays and modular, reconfigurable sensor architectures—guided by intelligent signal processing and resource management algorithms.
+
+Automatroids equipped with such systems can task high-orbit reconnaissance satellites for scouting hostile sites, distribute allied intelligence across the battlespace, and jam or spoof enemy electronic payloads. They are the information nerve center of combined arms forces—and a core prerequisite for true sensor-to-shooter coordination.</DMS_PRT_IntegratedRFManagement.description>
+
+  <DMS_PRT_IntelligentArtillery.label>networked artillery</DMS_PRT_IntelligentArtillery.label>
+  <DMS_PRT_IntelligentArtillery.description>Network-modernized artillery automatroids are deeply integrated into the battlefield information grid.
+
+They respond quickly to fire missions, using data-link target information to deliver high-precision cross-map or on-map strikes—efficiently clearing hostile strongpoints, armored targets, and massed troops, while providing timely and reliable fire support for frontline units.
+
+The adoption of advanced munitions—sensor-fuzed and cluster payloads among them—pushes their lethality even further, turning the howl of shells overhead into a nightmare for any who would oppose the colony.</DMS_PRT_IntelligentArtillery.description>
+
+  <DMS_PRT_AdvancedHeavyWeaponProject.label>advanced heavy weapons program</DMS_PRT_AdvancedHeavyWeaponProject.label>
+  <DMS_PRT_AdvancedHeavyWeaponProject.description>Next-generation primary weapons developed for heavy automatroids, including anti-armor electromagnetic cannons, laser weaponry that bypasses shields, and high-performance charge autocannons.</DMS_PRT_AdvancedHeavyWeaponProject.description>
+</LanguageData>

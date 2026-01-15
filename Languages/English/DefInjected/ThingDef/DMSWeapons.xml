@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_Gun_RailGun.label>Skybolt Retribution</DMS_Gun_RailGun.label>
+  <DMS_Gun_RailGun.description>AHWP-88A "Skybolt Retribution" is an 88mm electromagnetic rail-launch system intended as a next-generation ultra-heavy automatroid direct-fire main gun.
+
+A superconducting energy-storage coil and staged acceleration rails launch fin-stabilized sabot rounds at extreme velocity. An autoloader compresses reload time to seconds, while a compact pulse power unit sustains full-power firing. Cryogenic cooling limits rail heating, and recoil-damping hydraulics distribute the impulse across the chassis for stable follow-up shots.</DMS_Gun_RailGun.description>
+
+  <DMS_Bullet_RailGun.label>fin-stabilized rail sabot</DMS_Bullet_RailGun.label>
+
+  <DMS_Gun_LaserGun.label>Verdant Annihilation</DMS_Gun_LaserGun.label>
+  <DMS_Gun_LaserGun.description>AHWP-35L "Verdant Annihilation" is a high-energy chemical laser paired with adaptive optics, capable of sweeping a designated area with a devastating beam.
+
+Its variable-wavelength modulation automatically adjusts penetration behavior against different materials—melting armor weak points or detonating critical components with equal ease.</DMS_Gun_LaserGun.description>
+
+  <DMS_Gun_HeavyAutoCannon.label>Metal Storm</DMS_Gun_HeavyAutoCannon.label>
+  <DMS_Gun_HeavyAutoCannon.description>A fully automatic suppression weapon built for heavy automatroids.
+
+Seven rotating barrels and assisted feed systems unleash a shredding torrent effective against clustered targets and light vehicles. The modular feed supports quick ammo swaps (AP/HE), while heat-treated barrels and stabilized mounting sustain long bursts.</DMS_Gun_HeavyAutoCannon.description>
+
+  <DMS_Bullet_HeavyAutoCannon.label>30mm autocannon shell</DMS_Bullet_HeavyAutoCannon.label>
+
+  <DMS_Gun_MediumAutoCannon.label>Ripper</DMS_Gun_MediumAutoCannon.label>
+  <DMS_Gun_MediumAutoCannon.description>A balanced heavy-weapon platform for heavy automatroids.
+
+Three alternating barrels deliver dense, reliable fire with good mobility. A recoil-compensation system and self-cleaning mechanism reduce jams and maintain stability under harsh conditions.</DMS_Gun_MediumAutoCannon.description>
+
+  <DMS_Bullet_MediumAutoCannon.label>tungsten-core AP round</DMS_Bullet_MediumAutoCannon.label>
+
+  <DMS_Gun_MediumCannon.label>Breacher</DMS_Gun_MediumCannon.label>
+  <DMS_Gun_MediumCannon.description>A 57mm rapid-fire cannon designed for modern armor engagements.
+
+Hydraulic buffering and magazine loading combine traditional cannon punch with high rate of fire. Tungsten penetrators defeat armored targets, while programmable airburst rounds devastate exposed infantry.</DMS_Gun_MediumCannon.description>
+
+  <DMS_Bullet_MediumCannon.label>57mm cannon shell</DMS_Bullet_MediumCannon.label>
+
+  <DMS_Weapon_HeavyAutoCannon.label>Rod of Judgment</DMS_Weapon_HeavyAutoCannon.label>
+  <DMS_Weapon_HeavyAutoCannon.description>A repurposed 35mm AA cannon firing AHEAD-style airburst fragmentation rounds.
+
+Originally designed for anti-air, it was adapted for ground combat. Fragmentation is represented via explosive effect.</DMS_Weapon_HeavyAutoCannon.description>
+
+  <DMS_Bullet_HeavyAutoCannonBig.label>35mm AHEAD round</DMS_Bullet_HeavyAutoCannonBig.label>
+
+  <DMS_Gun_ChargeAutoCannon.label>Oblivion Calamity</DMS_Gun_ChargeAutoCannon.label>
+  <DMS_Gun_ChargeAutoCannon.description>AHWP-30A "Oblivion Calamity" is a 30mm charge-weapon system intended as a next-generation heavy automatroid suppression gun.
+
+Its charge rounds deliver high penetration against armored targets, addressing the lack of anti-armor performance in existing heavy automatroid weapon sets.</DMS_Gun_ChargeAutoCannon.description>
+
+  <DMS_Bullet_ChargeAutoCannon.label>charge round</DMS_Bullet_ChargeAutoCannon.label>
+
+  <DMS_Gun_HeavyCannon.label>Sword of Truth</DMS_Gun_HeavyCannon.label>
+  <DMS_Gun_HeavyCannon.description>A 100mm semi-automatic rifled tank gun known for its simple, reliable design.
+
+Widely mounted on armored platforms to engage tanks and heavy armored formations.</DMS_Gun_HeavyCannon.description>
+
+  <DMS_Bullet_HeavyCannon.label>fin-stabilized APFSDS</DMS_Bullet_HeavyCannon.label>
+</LanguageData>

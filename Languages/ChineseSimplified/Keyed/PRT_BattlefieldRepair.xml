@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <PRT_BattlefieldRepair.SelectCorpse>战地抢修：请选择机械体残骸</PRT_BattlefieldRepair.SelectCorpse>
+  <PRT_BattlefieldRepair.TargetNotDead>战地抢修：目标未死亡</PRT_BattlefieldRepair.TargetNotDead>
+  <PRT_BattlefieldRepair.OnlyMechCorpse>战地抢修：只能对机械体残骸使用</PRT_BattlefieldRepair.OnlyMechCorpse>
+  <PRT_BattlefieldRepair.OnlyFriendlyMechs>战地抢修：只能抢修友方机械体</PRT_BattlefieldRepair.OnlyFriendlyMechs>
+  <PRT_BattlefieldRepair.NotSameMap>战地抢修：目标不在同一张地图</PRT_BattlefieldRepair.NotSameMap>
+  <PRT_BattlefieldRepair.NeedTouchCorpse>战地抢修：需要接触目标残骸</PRT_BattlefieldRepair.NeedTouchCorpse>
+  <PRT_BattlefieldRepair.ResurrectFailed>战地抢修失败：无法复活该目标</PRT_BattlefieldRepair.ResurrectFailed>
+  <PRT_BattlefieldRepair.ResurrectSuccess>战地抢修完成：已复活</PRT_BattlefieldRepair.ResurrectSuccess>
+</LanguageData>

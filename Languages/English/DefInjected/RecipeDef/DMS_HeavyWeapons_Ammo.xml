@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MakeAmmo_88mmRailGun_AP.label>craft 88mm railgun sabot x5</MakeAmmo_88mmRailGun_AP.label>
+  <MakeAmmo_88mmRailGun_AP.description>Craft 5 rounds of 88mm railgun sabot.</MakeAmmo_88mmRailGun_AP.description>
+  <MakeAmmo_88mmRailGun_AP.jobString>Crafting 88mm railgun sabot x5.</MakeAmmo_88mmRailGun_AP.jobString>
+
+  <MakeAmmo_88mmRailGun_PF.label>craft 88mm programmable fragmentation round x5</MakeAmmo_88mmRailGun_PF.label>
+  <MakeAmmo_88mmRailGun_PF.description>Craft 5 rounds of 88mm programmable fragmentation rounds.</MakeAmmo_88mmRailGun_PF.description>
+  <MakeAmmo_88mmRailGun_PF.jobString>Crafting 88mm programmable fragmentation rounds x5.</MakeAmmo_88mmRailGun_PF.jobString>
+
+  <MakeAmmo_30x165mmCharged.label>craft 30x165mm charged cartridge x100</MakeAmmo_30x165mmCharged.label>
+  <MakeAmmo_30x165mmCharged.description>Craft 100 rounds of 30x165mm charged cartridges.</MakeAmmo_30x165mmCharged.description>
+  <MakeAmmo_30x165mmCharged.jobString>Crafting 30x165mm charged cartridges.</MakeAmmo_30x165mmCharged.jobString>
+
+  <MakeAmmo_30x165mmCharged_AP.label>craft 30x165mm charged (Conc.) cartridge x100</MakeAmmo_30x165mmCharged_AP.label>
+  <MakeAmmo_30x165mmCharged_AP.description>Craft 100 rounds of 30x165mm charged (Conc.) cartridges.</MakeAmmo_30x165mmCharged_AP.description>
+  <MakeAmmo_30x165mmCharged_AP.jobString>Crafting 30x165mm charged (Conc.) cartridges.</MakeAmmo_30x165mmCharged_AP.jobString>
+
+  <MakeAmmo_30x165mmCharged_Ion.label>craft 30x165mm charged (Ion) cartridge x100</MakeAmmo_30x165mmCharged_Ion.label>
+  <MakeAmmo_30x165mmCharged_Ion.description>Craft 100 rounds of 30x165mm charged (Ion) cartridges.</MakeAmmo_30x165mmCharged_Ion.description>
+  <MakeAmmo_30x165mmCharged_Ion.jobString>Crafting 30x165mm charged (Ion) cartridges.</MakeAmmo_30x165mmCharged_Ion.jobString>
+</LanguageData>

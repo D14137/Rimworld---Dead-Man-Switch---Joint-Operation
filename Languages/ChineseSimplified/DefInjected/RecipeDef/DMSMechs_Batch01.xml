@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_Make_AdvancedGeochelone.label>组装磐卫</DMS_Make_AdvancedGeochelone.label>
+  <DMS_Make_AdvancedGeochelone.description>组装磐卫</DMS_Make_AdvancedGeochelone.description>
+
+  <DMS_Mech_AdvancedGeocheloneBeta.label>组装伞卫</DMS_Mech_AdvancedGeocheloneBeta.label>
+  <DMS_Mech_AdvancedGeocheloneBeta.description>组装伞卫</DMS_Mech_AdvancedGeocheloneBeta.description>
+
+  <DMS_Mech_QuietusEye.label>组装灵枢</DMS_Mech_QuietusEye.label>
+  <DMS_Mech_QuietusEye.description>组装灵枢</DMS_Mech_QuietusEye.description>
+</LanguageData>

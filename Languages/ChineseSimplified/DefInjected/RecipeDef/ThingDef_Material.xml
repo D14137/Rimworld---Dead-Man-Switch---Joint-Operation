@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_Make_AramidCloth.label>制作碳合芳纶x80</DMS_Make_AramidCloth.label>
+  <DMS_Make_AramidCloth.description>通过大型工业设备生产碳合芳纶</DMS_Make_AramidCloth.description>
+
+  <DMS_Make_Mass_AramidCloth.label>制作碳合芳纶x400</DMS_Make_Mass_AramidCloth.label>
+  <DMS_Make_Mass_AramidCloth.description>通过大型工业设备大批量生产碳合芳纶，此量产配方可以稍微减少耗时</DMS_Make_Mass_AramidCloth.description>
+</LanguageData>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_Bullet_HailRocket.label>300mm high-explosive rocket</DMS_Bullet_HailRocket.label>
+  <DMS_Bullet_HailRocket_Shrapnel.label>300mm cluster rocket</DMS_Bullet_HailRocket_Shrapnel.label>
+  <DMS_Bullet_HailRocket_Shrapnel_SubProjectile.label>cluster rocket submunition</DMS_Bullet_HailRocket_Shrapnel_SubProjectile.label>
+  <DMS_Bullet_HailRocket_SADARM.label>300mm sensor-fuzed rocket</DMS_Bullet_HailRocket_SADARM.label>
+</LanguageData>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <AAC_MechCorps.label>rogue legion</AAC_MechCorps.label>
+  <AAC_MechCorps.description>The Rogue Legion is what remains after the central command core of the colonial fleet’s unmanned forces was corroded by a mechanoid hive-mind.
+
+Composed entirely of machine units, they operate with a highly coordinated, hive-like doctrine. Their ranks are typically equipped with gunpowder weapons and favor multi-wave assaults that grind down defenses. They show indiscriminate hostility toward any human settlement and systematically dismantle captured technology to strengthen themselves.
+
+Their bases are often established near geothermal anomalies, tapping the heat to sustain vast computational demands.</AAC_MechCorps.description>
+  <AAC_MechCorps.pawnSingular>autonomous unit</AAC_MechCorps.pawnSingular>
+  <AAC_MechCorps.pawnsPlural>autonomous units</AAC_MechCorps.pawnsPlural>
+</LanguageData>

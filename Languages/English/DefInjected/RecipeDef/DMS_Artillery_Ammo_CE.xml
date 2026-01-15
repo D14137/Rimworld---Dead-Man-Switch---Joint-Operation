@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MakeAmmo_300mmRocket_HE.label>craft 300mm high-explosive rocket (HE) x5</MakeAmmo_300mmRocket_HE.label>
+  <MakeAmmo_300mmRocket_HE.description>Craft 5 rounds of 300mm high-explosive rockets (HE).</MakeAmmo_300mmRocket_HE.description>
+  <MakeAmmo_300mmRocket_HE.jobString>Crafting 5 rounds of 300mm high-explosive rockets (HE).</MakeAmmo_300mmRocket_HE.jobString>
+
+  <MakeAmmo_300mmRocket_SADARM.label>craft 300mm sensor-fuzed rocket x5</MakeAmmo_300mmRocket_SADARM.label>
+  <MakeAmmo_300mmRocket_SADARM.description>Craft 5 rounds of 300mm sensor-fuzed rockets.</MakeAmmo_300mmRocket_SADARM.description>
+  <MakeAmmo_300mmRocket_SADARM.jobString>Crafting 5 rounds of 300mm sensor-fuzed rockets.</MakeAmmo_300mmRocket_SADARM.jobString>
+
+  <MakeAmmo_155mmHowitzerShell_SADARM.label>craft 155mm howitzer shell (sensor-fuzed) x5</MakeAmmo_155mmHowitzerShell_SADARM.label>
+  <MakeAmmo_155mmHowitzerShell_SADARM.description>Craft 5 rounds of 155mm sensor-fuzed howitzer shells.</MakeAmmo_155mmHowitzerShell_SADARM.description>
+  <MakeAmmo_155mmHowitzerShell_SADARM.jobString>Crafting 5 rounds of 155mm sensor-fuzed howitzer shells.</MakeAmmo_155mmHowitzerShell_SADARM.jobString>
+</LanguageData>

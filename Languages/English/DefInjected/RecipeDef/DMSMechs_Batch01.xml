@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_Make_AdvancedGeochelone.label>assemble Bastion</DMS_Make_AdvancedGeochelone.label>
+  <DMS_Make_AdvancedGeochelone.description>Assemble a Bastion.</DMS_Make_AdvancedGeochelone.description>
+
+  <DMS_Mech_AdvancedGeocheloneBeta.label>assemble Sky Ward</DMS_Mech_AdvancedGeocheloneBeta.label>
+  <DMS_Mech_AdvancedGeocheloneBeta.description>Assemble a Sky Ward.</DMS_Mech_AdvancedGeocheloneBeta.description>
+
+  <DMS_Mech_QuietusEye.label>assemble Quietus Eye</DMS_Mech_QuietusEye.label>
+  <DMS_Mech_QuietusEye.description>Assemble a Quietus Eye.</DMS_Mech_QuietusEye.description>
+</LanguageData>

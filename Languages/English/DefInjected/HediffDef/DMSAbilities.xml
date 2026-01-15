@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_IFFConfusion.label>IFF confusion</DMS_IFFConfusion.label>
+  <DMS_IFFConfusion.description>The identification system is destabilized, causing erratic behavior.</DMS_IFFConfusion.description>
+
+  <DMS_FireControlGuidance.label>fire-control guidance</DMS_FireControlGuidance.label>
+  <DMS_FireControlGuidance.description>This mechanoid is providing fire-control data to nearby allies.</DMS_FireControlGuidance.description>
+
+  <DMS_MechEnergyStabilizer.label>wireless power transfer active</DMS_MechEnergyStabilizer.label>
+  <DMS_MechEnergyStabilizer.description>Wireless power is being transmitted to nearby colony mechanoids.</DMS_MechEnergyStabilizer.description>
+
+  <DMS_FireControlGuidanceBuff.label>receiving fire-control data</DMS_FireControlGuidanceBuff.label>
+  <DMS_FireControlGuidanceBuff.description>Receiving fire-control guidance from an allied unit.</DMS_FireControlGuidanceBuff.description>
+</LanguageData>

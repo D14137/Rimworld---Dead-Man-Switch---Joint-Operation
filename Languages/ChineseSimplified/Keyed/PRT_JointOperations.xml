@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <PRT_JointOperations.SettingsCategory>失能机关：联合作战</PRT_JointOperations.SettingsCategory>
+  <PRT_JointOperations.EnableSoldatsWithRpg.Label>敌方士兵型机械体能否使用快反火箭筒（此修改需重启游戏后生效）</PRT_JointOperations.EnableSoldatsWithRpg.Label>
+  <PRT_JointOperations.RestartRequired>设置已更改：需要重启游戏后生效。</PRT_JointOperations.RestartRequired>
+  <PRT_JointOperations.ArtilleryDebugLog.Label>输出调试日志（默认关闭）</PRT_JointOperations.ArtilleryDebugLog.Label>
+  <PRT_JointOperations.ArtilleryDebugLog.Tip>开启后会输出详细调试日志（用于排查功能是否生效/错误来源）。</PRT_JointOperations.ArtilleryDebugLog.Tip>
+  <PRT_JointOperations.ArtilleryErrorMultiplier.Label>【仅CE使用】信息化炮兵误差乘数：{0}</PRT_JointOperations.ArtilleryErrorMultiplier.Label>
+  <PRT_JointOperations.ArtilleryErrorMultiplier.Tip>用于在CE环境下模拟信息化炮兵的高精度远程打击：将对CE间瞄射击的误差按乘数进行缩放（0=必中，1=CE原版）\n仅对本模组炮兵机械体有效。</PRT_JointOperations.ArtilleryErrorMultiplier.Tip>
+</LanguageData>

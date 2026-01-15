@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MakeAmmo_105mmTC_HE.label>craft 105mm high-explosive shell (HE) x5</MakeAmmo_105mmTC_HE.label>
+  <MakeAmmo_105mmTC_HE.description>Craft 5 rounds of 105mm high-explosive shells (HE).</MakeAmmo_105mmTC_HE.description>
+  <MakeAmmo_105mmTC_HE.jobString>Crafting 5 rounds of 105mm high-explosive shells (HE).</MakeAmmo_105mmTC_HE.jobString>
+
+  <MakeAmmo_105mmTC_HEAT.label>craft 105mm anti-armor shell (HEAT) x5</MakeAmmo_105mmTC_HEAT.label>
+  <MakeAmmo_105mmTC_HEAT.description>Craft 5 rounds of 105mm anti-armor shells (HEAT).</MakeAmmo_105mmTC_HEAT.description>
+  <MakeAmmo_105mmTC_HEAT.jobString>Crafting 5 rounds of 105mm anti-armor shells (HEAT).</MakeAmmo_105mmTC_HEAT.jobString>
+
+  <MakeAmmo_105mmTC_Sabot.label>craft 105mm APFSDS shell x5</MakeAmmo_105mmTC_Sabot.label>
+  <MakeAmmo_105mmTC_Sabot.description>Craft 5 rounds of 105mm APFSDS shells.</MakeAmmo_105mmTC_Sabot.description>
+  <MakeAmmo_105mmTC_Sabot.jobString>Crafting 5 rounds of 105mm APFSDS shells.</MakeAmmo_105mmTC_Sabot.jobString>
+</LanguageData>

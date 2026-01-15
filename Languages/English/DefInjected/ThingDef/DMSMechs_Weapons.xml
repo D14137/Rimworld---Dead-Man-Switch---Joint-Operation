@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_Gun_Vasilek_C.label>Dandelion</DMS_Gun_Vasilek_C.label>
+  <DMS_Gun_Vasilek_C.description>A magazine-fed, five-shot 80mm rapid-fire mortar. Supports multiple shell types (HE, EMP, smoke, incendiary) and provides flexible tactical fire support.</DMS_Gun_Vasilek_C.description>
+
+  <Bullet_Caretta_Shell_HighExplosive.label>80mm HE shell</Bullet_Caretta_Shell_HighExplosive.label>
+
+  <DMS_Gun_Skullcracker.label>"Skullcracker" 35mm autocannon</DMS_Gun_Skullcracker.label>
+  <DMS_Gun_Skullcracker.description>Point-defense against air (and ground). Twin-linked high-rate autocannon firing AP rounds with terrifying suppression against infantry and light armor.</DMS_Gun_Skullcracker.description>
+
+  <DMS_Bullet_Skullcracker.label>25mm AP round</DMS_Bullet_Skullcracker.label>
+
+  <DMS_Gun_Sledgehammer.label>"Sledgehammer" 155mm howitzer</DMS_Gun_Sledgehammer.label>
+  <DMS_Gun_Sledgehammer.description>Long-range precision fire support (155mm howitzer).
+
+Ammo: HE (general-purpose), SADARM (anti-armor submunitions), Shrapnel (anti-infantry area kill).</DMS_Gun_Sledgehammer.description>
+
+  <DMS_Gun_RocketNest.label>"Steel Rain" long-range rocket launcher</DMS_Gun_RocketNest.label>
+  <DMS_Gun_RocketNest.description>300mm long-range rocket artillery launcher.
+
+Ammo: HE rocket (general-purpose), SADARM rocket (anti-armor submunitions), Cluster rocket (anti-infantry area kill).</DMS_Gun_RocketNest.description>
+</LanguageData>

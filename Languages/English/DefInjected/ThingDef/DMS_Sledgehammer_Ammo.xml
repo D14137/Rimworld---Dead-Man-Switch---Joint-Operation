@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_Bullet_Sledgehammer.label>155mm high-explosive shell</DMS_Bullet_Sledgehammer.label>
+  <DMS_Bullet_Sledgehammer_Shrapnel.label>155mm shrapnel shell</DMS_Bullet_Sledgehammer_Shrapnel.label>
+  <DMS_Bullet_Shrapnel_SubProjectile.label>shrapnel subprojectile</DMS_Bullet_Shrapnel_SubProjectile.label>
+  <DMS_Bullet_Sledgehammer_SADARM.label>155mm sensor-fuzed shell</DMS_Bullet_Sledgehammer_SADARM.label>
+  <DMS_Skyfaller_SADARM_Submunition.label>sensor-fuzed submunition</DMS_Skyfaller_SADARM_Submunition.label>
+  <DMS_Bullet_SADARM_Submunition.label>sensor-fuzed warhead</DMS_Bullet_SADARM_Submunition.label>
+</LanguageData>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <PRT_OrbitalTargeter_GarbageRainNoLOS.label>轨道垃圾雨靶向器</PRT_OrbitalTargeter_GarbageRainNoLOS.label>
+  <PRT_OrbitalTargeter_GarbageRainNoLOS.description>无视野限制的轨道垃圾雨靶向器。可在全图任意位置指定坐标引导轨道垃圾雨投放。</PRT_OrbitalTargeter_GarbageRainNoLOS.description>
+  <PRT_OrbitalTargeter_GarbageRainNoLOS.verbs.0.label>引导轨道垃圾雨</PRT_OrbitalTargeter_GarbageRainNoLOS.verbs.0.label>
+
+  <PRT_OrbitalGarbageRainController.label>orbital garbage rain controller</PRT_OrbitalGarbageRainController.label>
+
+  <PRT_Skyfaller_GarbageRain_SmallMeteor.label>小型陨石（坠落中）</PRT_Skyfaller_GarbageRain_SmallMeteor.label>
+  <PRT_Skyfaller_GarbageRain_Meteor.label>陨石（坠落中）</PRT_Skyfaller_GarbageRain_Meteor.label>
+  <PRT_Skyfaller_GarbageRain_SatelliteWreck.label>卫星残骸（坠落中）</PRT_Skyfaller_GarbageRain_SatelliteWreck.label>
+
+  <PRT_Building_SatelliteWreck.label>卫星残骸</PRT_Building_SatelliteWreck.label>
+  <PRT_Building_SatelliteWreck.description>坠毁在地面的卫星残骸。可以拆除回收其中的钢铁与零部件。</PRT_Building_SatelliteWreck.description>
+
+  <PRT_Skyfaller_GarbageRain_ShipChunk.label>飞船残骸（坠落中）</PRT_Skyfaller_GarbageRain_ShipChunk.label>
+  <PRT_Skyfaller_GarbageRain_FinalShip.label>废弃轨道设施（坠落中）</PRT_Skyfaller_GarbageRain_FinalShip.label>
+</LanguageData>

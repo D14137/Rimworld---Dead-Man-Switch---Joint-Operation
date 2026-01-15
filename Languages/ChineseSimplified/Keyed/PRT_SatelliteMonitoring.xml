@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <PRT_SatelliteMonitoring.StartMonitoring.Label>卫星监视</PRT_SatelliteMonitoring.StartMonitoring.Label>
+  <PRT_SatelliteMonitoring.StartMonitoring.Desc>在大地图上选择一个据点/事件点并生成地图进行监视。</PRT_SatelliteMonitoring.StartMonitoring.Desc>
+
+  <PRT_SatelliteMonitoring.StopMonitoring.Label>停止监视</PRT_SatelliteMonitoring.StopMonitoring.Label>
+  <PRT_SatelliteMonitoring.StopMonitoring.Desc>停止当前卫星监视并返回上一张地图。</PRT_SatelliteMonitoring.StopMonitoring.Desc>
+
+  <PRT_SatelliteMonitoring.JumpToObserver.Label>回到监视者</PRT_SatelliteMonitoring.JumpToObserver.Label>
+  <PRT_SatelliteMonitoring.JumpToObserver.Desc>快速跳转回监视单位所在地图并选中它。</PRT_SatelliteMonitoring.JumpToObserver.Desc>
+
+  <PRT_SatelliteMonitoring.CannotStart.ObserverInvalid>无法开始监视：监视单位不可用</PRT_SatelliteMonitoring.CannotStart.ObserverInvalid>
+  <PRT_SatelliteMonitoring.InvalidTarget>无效目标</PRT_SatelliteMonitoring.InvalidTarget>
+  <PRT_SatelliteMonitoring.NoMonitorableMapParent>该位置没有可监视的据点/事件点</PRT_SatelliteMonitoring.NoMonitorableMapParent>
+  <PRT_SatelliteMonitoring.UnsupportedTarget>该目标不支持监视</PRT_SatelliteMonitoring.UnsupportedTarget>
+  <PRT_SatelliteMonitoring.BeginTargetingFailed>无法开始世界选点</PRT_SatelliteMonitoring.BeginTargetingFailed>
+  <PRT_SatelliteMonitoring.GenerateMapFailed>无法生成该目标地图</PRT_SatelliteMonitoring.GenerateMapFailed>
+
+  <PRT_SatelliteMonitoring.MonitoringStarted>已开始监视：{0}</PRT_SatelliteMonitoring.MonitoringStarted>
+  <PRT_SatelliteMonitoring.TargetCleared>目标已清剿：{0}</PRT_SatelliteMonitoring.TargetCleared>
+  <PRT_SatelliteMonitoring.SiteDestroyed>据点 {0} 已被摧毁！</PRT_SatelliteMonitoring.SiteDestroyed>
+  <PRT_SatelliteMonitoring.TargetDestroyed>{0} 已被摧毁！</PRT_SatelliteMonitoring.TargetDestroyed>
+</LanguageData>

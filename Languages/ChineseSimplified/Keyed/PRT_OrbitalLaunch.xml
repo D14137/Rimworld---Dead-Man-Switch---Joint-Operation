@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <PRT_OrbitalLaunch.LaunchSatellite.Label>发射卫星</PRT_OrbitalLaunch.LaunchSatellite.Label>
+  <PRT_OrbitalLaunch.LaunchSatellite.Desc>将卫星发射至轨道，生成轨道轰炸靶向器。需要运输仓燃料口且燃料充足。</PRT_OrbitalLaunch.LaunchSatellite.Desc>
+</LanguageData>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <PRT_JointOperations.SettingsCategory>Dead Man Switch - Joint Operations</PRT_JointOperations.SettingsCategory>
+  <PRT_JointOperations.EnableSoldatsWithRpg.Label>Allow enemy soldier-type mechs to use Rapid RPG (requires restart)</PRT_JointOperations.EnableSoldatsWithRpg.Label>
+  <PRT_JointOperations.RestartRequired>Settings changed: restart the game to apply.</PRT_JointOperations.RestartRequired>
+  <PRT_JointOperations.ArtilleryDebugLog.Label>Output debug log (default: off)</PRT_JointOperations.ArtilleryDebugLog.Label>
+  <PRT_JointOperations.ArtilleryDebugLog.Tip>When enabled, detailed debug logs will be printed (for verifying whether the feature is working and tracking error sources).</PRT_JointOperations.ArtilleryDebugLog.Tip>
+  <PRT_JointOperations.ArtilleryErrorMultiplier.Label>[CE only] Informatized artillery error multiplier: {0}</PRT_JointOperations.ArtilleryErrorMultiplier.Label>
+  <PRT_JointOperations.ArtilleryErrorMultiplier.Tip>Simulates informatized artillery precision in CE: scales CE indirect fire error by this multiplier (0 = perfect hit, 1 = CE vanilla)\nOnly applies to artillery mechs from this mod.</PRT_JointOperations.ArtilleryErrorMultiplier.Tip>
+</LanguageData>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_Make_NuclearBattery.label>craft fission battery</DMS_Make_NuclearBattery.label>
+  <DMS_Make_NuclearBattery.description>Craft a fission battery for automatroids.</DMS_Make_NuclearBattery.description>
+
+  <DMS_Make_ReinforcedBarrel.label>craft reinforced barrel x4</DMS_Make_ReinforcedBarrel.label>
+  <DMS_Make_ReinforcedBarrel.description>Fabricate a long reinforced barrel and cut it into four segments, greatly improving production efficiency.</DMS_Make_ReinforcedBarrel.description>
+
+  <DMS_Make_Mass_ComponentIndustrial.label>batch-make components x20</DMS_Make_Mass_ComponentIndustrial.label>
+  <DMS_Make_Mass_ComponentIndustrial.description>Mass-produce components using integrated coordinated-control techniques.</DMS_Make_Mass_ComponentIndustrial.description>
+
+  <DMS_Make_Mass_ComponentStamped.label>batch-make stamped parts x20</DMS_Make_Mass_ComponentStamped.label>
+  <DMS_Make_Mass_ComponentStamped.description>Mass-produce stamped parts using integrated coordinated-control techniques.</DMS_Make_Mass_ComponentStamped.description>
+
+  <DMS_Make_Plasteel.label>produce plasteel x80</DMS_Make_Plasteel.label>
+  <DMS_Make_Plasteel.description>Produce plasteel using heavy industrial equipment.</DMS_Make_Plasteel.description>
+
+  <DMS_Make_Mass_Plasteel.label>produce plasteel x400</DMS_Make_Mass_Plasteel.label>
+  <DMS_Make_Mass_Plasteel.description>Mass-produce plasteel using heavy industrial equipment. This bulk recipe slightly reduces the required work.</DMS_Make_Mass_Plasteel.description>
+
+  <DMS_Make_Mass_Tungsteel.label>produce tungsteel x400</DMS_Make_Mass_Tungsteel.label>
+  <DMS_Make_Mass_Tungsteel.description>Mass-produce tungsteel using heavy industrial equipment. This bulk recipe reduces both work and raw material costs.</DMS_Make_Mass_Tungsteel.description>
+
+  <DMS_Make_Neutroamine.label>produce neutroamine x80</DMS_Make_Neutroamine.label>
+  <DMS_Make_Neutroamine.description>Produce neutroamine using heavy industrial equipment.</DMS_Make_Neutroamine.description>
+
+  <DMS_Make_Mass_Neutroamine.label>produce neutroamine x400</DMS_Make_Mass_Neutroamine.label>
+  <DMS_Make_Mass_Neutroamine.description>Mass-produce neutroamine using heavy industrial equipment. This bulk recipe slightly reduces the required work.</DMS_Make_Mass_Neutroamine.description>
+
+  <DMS_PRT_Make_Synthread.label>produce synthread x80</DMS_PRT_Make_Synthread.label>
+  <DMS_PRT_Make_Synthread.description>Produce synthread using heavy industrial equipment.</DMS_PRT_Make_Synthread.description>
+
+  <DMS_PRT_Make_Mass_Synthread.label>produce synthread x400</DMS_PRT_Make_Mass_Synthread.label>
+  <DMS_PRT_Make_Mass_Synthread.description>Mass-produce synthread using heavy industrial equipment. This bulk recipe slightly reduces the required work and raw material usage.</DMS_PRT_Make_Mass_Synthread.description>
+</LanguageData>

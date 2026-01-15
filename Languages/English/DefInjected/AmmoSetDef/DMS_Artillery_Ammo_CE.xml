@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <AmmoSet_300mmRocket.label>300mm long-range rockets</AmmoSet_300mmRocket.label>
+  <SADARM.label>Terminal-Sensitive Munition</SADARM.label>
+  <SADARM.description>The terminal-sensitive munition is a type of smart ammunition that releases a large number of intelligent submunitions during the terminal phase of flight. These submunitions autonomously detect and attack targets, making it an excellent weapon for engaging armored clusters.</SADARM.description>
+  <RailgunHE.label>Magnetic Rail Projectile HE</RailgunHE.label>
+  <RailgunHE.description>The structure of the magnetic rail high-explosive projectile is similar to that of the magnetic rail armor-piercing projectile, featuring a sabot and an armature, but the armor-piercing payload is replaced with a preformed fragment payload designed to engage personnel and damage light structures.</RailgunHE.description>
+</LanguageData>

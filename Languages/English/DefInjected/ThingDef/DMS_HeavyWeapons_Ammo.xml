@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Ammo_88mmRailGun_AP.label>88mm railgun sabot</Ammo_88mmRailGun_AP.label>
+  <Ammo_88mmRailGun_PF.label>88mm programmable fragmentation round</Ammo_88mmRailGun_PF.label>
+
+  <Bullet_88mmRailGun_AP.label>88mm railgun sabot</Bullet_88mmRailGun_AP.label>
+  <Bullet_88mmRailGun_PF.label>88mm programmable fragmentation round</Bullet_88mmRailGun_PF.label>
+
+  <Ammo_30x165mmCharged.label>30x165mm charged round</Ammo_30x165mmCharged.label>
+  <Ammo_30x165mmCharged_AP.label>30x165mm charged round (Conc.)</Ammo_30x165mmCharged_AP.label>
+  <Ammo_30x165mmCharged_Ion.label>30x165mm charged round (Ion)</Ammo_30x165mmCharged_Ion.label>
+
+  <Bullet_30x165mmCharged.label>30x165mm charged bullet</Bullet_30x165mmCharged.label>
+  <Bullet_30x165mmCharged_AP.label>30x165mm charged bullet (Conc.)</Bullet_30x165mmCharged_AP.label>
+  <Bullet_30x165mmCharged_Ion.label>30x165mm charged bullet (Ion)</Bullet_30x165mmCharged_Ion.label>
+</LanguageData>

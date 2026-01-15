@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_FireControlGuidance.label>火控引导</DMS_FireControlGuidance.label>
+  <DMS_FireControlGuidance.description>通过主动雷达锁定敌方目标，并向周围友方机兵提供火控数据</DMS_FireControlGuidance.description>
+
+  <DMS_MechEnergyStabilizer.label>无线输电</DMS_MechEnergyStabilizer.label>
+  <DMS_MechEnergyStabilizer.description>启动无线输电装置，使周围己方机械体的电量稳定上涨</DMS_MechEnergyStabilizer.description>
+
+  <DMS_EmergencyPowerTransfer.label>紧急输电</DMS_EmergencyPowerTransfer.label>
+  <DMS_EmergencyPowerTransfer.description>对目标殖民地机械体进行紧急输电，将其电量补满</DMS_EmergencyPowerTransfer.description>
+
+  <DMS_BattlefieldRepair.label>战地抢修</DMS_BattlefieldRepair.label>
+  <DMS_BattlefieldRepair.description>接触目标机械体残骸并执行战地抢修，复活死亡的己方机械体。</DMS_BattlefieldRepair.description>
+
+  <DMS_IFFConfusionPulse.label>敌我识别干扰</DMS_IFFConfusionPulse.label>
+  <DMS_IFFConfusionPulse.description>向目标区域释放高强度干扰信号，使范围内敌对机械体的敌我识别模块错乱，无法锁定我方单位，并间歇性地将敌方机械体判定为攻击目标。</DMS_IFFConfusionPulse.description>
+</LanguageData>

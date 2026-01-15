@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_Make_NuclearBattery.label>制作裂变电池</DMS_Make_NuclearBattery.label>
+  <DMS_Make_NuclearBattery.description>制作一节供机兵使用的裂变电池</DMS_Make_NuclearBattery.description>
+
+  <DMS_Make_ReinforcedBarrel.label>制作加固炮管x4</DMS_Make_ReinforcedBarrel.label>
+  <DMS_Make_ReinforcedBarrel.description>先制作一根长加固炮管，再切割成4等份，因此生产效率得到了极大提升</DMS_Make_ReinforcedBarrel.description>
+
+  <DMS_Make_Mass_ComponentIndustrial.label>制作零部件x20</DMS_Make_Mass_ComponentIndustrial.label>
+  <DMS_Make_Mass_ComponentIndustrial.description>利用集成联控技术批量制作零部件</DMS_Make_Mass_ComponentIndustrial.description>
+
+  <DMS_Make_Mass_ComponentStamped.label>制作冲压零件x20</DMS_Make_Mass_ComponentStamped.label>
+  <DMS_Make_Mass_ComponentStamped.description>利用集成联控技术批量制作冲压零件</DMS_Make_Mass_ComponentStamped.description>
+
+  <DMS_Make_Plasteel.label>制作玻璃钢x80</DMS_Make_Plasteel.label>
+  <DMS_Make_Plasteel.description>通过大型工业设备生产玻璃钢</DMS_Make_Plasteel.description>
+
+  <DMS_Make_Mass_Plasteel.label>制作玻璃钢x400</DMS_Make_Mass_Plasteel.label>
+  <DMS_Make_Mass_Plasteel.description>通过大型工业设备大批量生产玻璃钢，此量产配方可以稍微减少耗时</DMS_Make_Mass_Plasteel.description>
+
+  <DMS_Make_Mass_Tungsteel.label>制作钨钢x400</DMS_Make_Mass_Tungsteel.label>
+  <DMS_Make_Mass_Tungsteel.description>通过大型工业设备大批量生产钨钢，此量产配方可以减少耗时和原材料消耗</DMS_Make_Mass_Tungsteel.description>
+
+  <DMS_Make_Neutroamine.label>制作中性胺x80</DMS_Make_Neutroamine.label>
+  <DMS_Make_Neutroamine.description>通过大型工业设备生产中性胺</DMS_Make_Neutroamine.description>
+
+  <DMS_Make_Mass_Neutroamine.label>制作中性胺x400</DMS_Make_Mass_Neutroamine.label>
+  <DMS_Make_Mass_Neutroamine.description>通过大型工业设备大批量生产中性胺，此量产配方可以稍微减少耗时</DMS_Make_Mass_Neutroamine.description>
+
+  <DMS_PRT_Make_Synthread.label>制作合成纤维x80</DMS_PRT_Make_Synthread.label>
+  <DMS_PRT_Make_Synthread.description>通过大型工业设备生产合成纤维</DMS_PRT_Make_Synthread.description>
+
+  <DMS_PRT_Make_Mass_Synthread.label>制作合成纤维x400</DMS_PRT_Make_Mass_Synthread.label>
+  <DMS_PRT_Make_Mass_Synthread.description>通过大型工业设备大批量生产合成纤维，此量产配方可以稍微减少耗时和原材料使用</DMS_PRT_Make_Mass_Synthread.description>
+</LanguageData>

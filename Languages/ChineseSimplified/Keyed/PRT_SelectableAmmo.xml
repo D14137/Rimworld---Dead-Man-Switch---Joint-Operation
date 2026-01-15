@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <PRT_SelectableAmmo.SwitchAmmo.Label>切换弹种</PRT_SelectableAmmo.SwitchAmmo.Label>
+  <PRT_SelectableAmmo.CurrentAmmo.Desc>当前弹种: {0}</PRT_SelectableAmmo.CurrentAmmo.Desc>
+</LanguageData>

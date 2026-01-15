@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DMS_Mech_Tinker.label>Tinker</DMS_Mech_Tinker.label>
+  <DMS_Mech_Tinker.description>Codename “Tinker.” A tracked armored field-repair vehicle—the battlefield doctor of heavy automatroid formations.
+
+It follows damaged medium/heavy units under fire and performs emergency patching, module swaps, and powertrain fixes. Outside combat it doubles as rugged engineering equipment. Its value is simple: turn battlefield losses back into usable combat power.</DMS_Mech_Tinker.description>
+
+  <DMS_Mech_Dandelion.label>Dandelion</DMS_Mech_Dandelion.label>
+  <DMS_Mech_Dandelion.description>Codename “Narukamizuchi.” A magazine-fed 80mm rapid-fire self-propelled mortar known for its low, relentless thumps.
+
+Its signature five-round burst floods an area with fragmentation and blast, suppressing exposed infantry, breaking up rallies, and tearing up light fortifications. Linked to the battlefield network, it can answer marked targets with brutal speed.</DMS_Mech_Dandelion.description>
+
+  <DMS_Mech_Obsidian.label>Obsidian</DMS_Mech_Obsidian.label>
+  <DMS_Mech_Obsidian.description>Codename “Stonebreaker.” A cost-effective heavy automatroid built for large-scale war.
+
+Thick frontal armor, modular construction, and easy maintenance let it fight for long stretches in harsh environments. Its mobility is average, but its fire control and stubborn front defense make it a true walking bunker.</DMS_Mech_Obsidian.description>
+
+  <DMS_Mech_Ranger.label>Ranger</DMS_Mech_Ranger.label>
+  <DMS_Mech_Ranger.description>Codename “Iron Man.” A highly modular 1.9m third-generation humanoid combat unit for infiltration and rapid response.
+
+Silent bionic joints, lightweight composite armor, and tactical AI allow it to move and plan like a special-operations asset. Folded high-frequency blades give it terrifying armor-piercing melee, while its back mounts accept comms/EW/medical payloads. Its adaptive camouflage can blend its silhouette within seconds.</DMS_Mech_Ranger.description>
+
+  <DMS_Mech_IronCurtain.label>Iron Curtain</DMS_Mech_IronCurtain.label>
+  <DMS_Mech_IronCurtain.description>Codename “Titan Breaker.” A massive bipedal heavy armored mainline automatroid—built to crack strongpoints and armored resistance.
+
+It combines terrain-crossing mobility with direct-fire and suppression, forcing breaches where vehicles cannot go. More than a killer, it breaks the structure of a defense line—one iron step at a time.</DMS_Mech_IronCurtain.description>
+
+  <DMS_Mech_Skullcracker.label>Skullcracker</DMS_Mech_Skullcracker.label>
+  <DMS_Mech_Skullcracker.description>Codename “Terminator.” A tracked escort autocannon system intended as the last-ditch air-defense layer.
+
+Its high-rate 25mm fire creates a lethal curtain against drones and munitions. In practice, commanders often use it for direct fire: it shreds AT teams, firing ports, and light vehicles, turning entire sectors into a no-life zone in seconds.</DMS_Mech_Skullcracker.description>
+
+  <DMS_Mech_CarettaHeavy.label>Sledgehammer</DMS_Mech_CarettaHeavy.label>
+  <DMS_Mech_CarettaHeavy.description>Codename “Ground Shaker.” A tracked 155mm heavy howitzer—the backbone of indirect fire support.
+
+Networked targeting lets it answer recon marks with minimal delay. It can also perform cross-map strikes (24 world tiles; 4-tile spread).
+
+Ammo: HE (general-purpose), SADARM (anti-armor submunitions), Shrapnel (anti-infantry area kill).</DMS_Mech_CarettaHeavy.description>
+
+  <DMS_Mech_CarettaRocket.label>Steel Rain</DMS_Mech_CarettaRocket.label>
+  <DMS_Mech_CarettaRocket.description>Codename “Thunderstorm Caller.” A tracked 300mm long-range rocket artillery platform.
+
+It strikes deep targets from relative safety, reshaping the battlespace with dense salvos. Supports cross-map strikes (100 world tiles; 12-tile spread).
+
+Ammo: HE rocket (general-purpose), SADARM rocket (anti-armor submunitions), Cluster rocket (anti-infantry area kill).</DMS_Mech_CarettaRocket.description>
+</LanguageData>
